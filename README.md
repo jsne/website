@@ -4,19 +4,18 @@
   </a>
   <h1>The JavaScript North East Website</h1>
   <a href="https://jsne.co.uk" target="_blank">https://jsne.co.uk</a>
-
 </div>
 
 ---
 
-## Useful Links
+## Links
 
 - [Design](https://www.figma.com/file/O24nLj4pfD9rMKYhkjetzM/JSNE-Site-2020?node-id=252%3A0)
 
 ## Built with
 
-- TypeScript
+- [TypeScript](https://www.typescriptlang.org/)
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Contentful](https://www.contentful.com/)
-- [Stiches](https://stitches.dev/)
+- [Stitches](https://stitches.dev/)
 - [Radix-ui](https://radix-ui.com/primitives/docs/overview/introduction)
