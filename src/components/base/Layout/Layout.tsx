@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { LayoutHead, LayoutHeadProps } from './LayoutHead';
-import { LayoutProviders } from './LayoutProviders';
 import { LayoutStyles } from './LayoutStyles';
 
 export interface LayoutProps {
@@ -14,6 +13,6 @@ export const Layout: React.FC<LayoutProps> = ({ children, head }) => (
   <>
     <LayoutHead {...head} />
     <LayoutStyles />
-    <LayoutProviders>{children}</LayoutProviders>
+    {children}
   </>
 );

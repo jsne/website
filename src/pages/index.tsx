@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Button } from '~/components/ui/Button';
 import { Layout } from '~/components/base/Layout';
 import { Text } from '~/components/ui/Text';
 
@@ -9,6 +10,9 @@ const IndexPage: React.FC = () => {
       <header>
         <Text as="h1">Hello</Text>
       </header>
+      <Button as="a" href="/test" appearance="primary">
+        Hello
+      </Button>
       <main>Main</main>
     </Layout>
   );

@@ -29,7 +29,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    'gatsby-plugin-emotion',
     'gatsby-plugin-offline',
     'gatsby-plugin-preload-fonts',
     'gatsby-plugin-react-helmet',

@@ -9,14 +9,16 @@
   ],
   "scripts": {
     "bootstrap": "cp ./env.example .env && yarn install --frozen-lockfile",
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "lint": "eslint --rule \"'no-alert': 'error', 'no-console': 'error', 'no-debugger': 'error', '@typescript-eslint/no-unused-vars': ['error', { args: 'all', argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true }]\"",
     "preload-fonts": "gatsby-preload-fonts",
+    "serve": "gatsby serve",
+    "start": "gatsby develop",
     "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook"
+    "storybook:build": "build-storybook",
+    "test": "jest"
   },
   "browserslist": {
     "production": [
@@ -42,7 +44,7 @@
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
       "pretty-quick --staged",
-      "eslint --config ./.eslintrc.precommit.js --fix",
+      "yarn lint -- --cache --fix",
       "yarn test --bail --findRelatedTests"
     ]
   },
@@ -55,11 +57,9 @@
     "trailingComma": "all"
   },
   "dependencies": {
-    "@emotion/core": "^11.0.0",
-    "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@stitches/react": "^0.0.2",
     "@svgr/webpack": "^5.5.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
@@ -68,7 +68,6 @@
     "fork-ts-checker-webpack-plugin": "^6.0.8",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.9.0",
-    "gatsby-plugin-emotion": "^5.2.0",
     "gatsby-plugin-graphql-codegen": "^2.7.1",
     "gatsby-plugin-manifest": "^2.10.0",
     "gatsby-plugin-mdx": "^1.8.0",
@@ -85,7 +84,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "theme-ui": "^0.3.5",
     "typescript": "^4.1.3"
   },
   "devDependencies": {
@@ -111,7 +109,6 @@
     "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
-    "stylelint": "^13.8.0",
-    "stylelint-processor-styled-components": "^1.10.0"
+    "pretty-quick": "^3.1.0"
   }
 }
