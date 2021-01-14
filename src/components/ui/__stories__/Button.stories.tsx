@@ -15,10 +15,17 @@ export const Secondary = (args) => <Button {...args} />;
 Secondary.args = { appearance: 'secondary', children: 'Secondary' };
 
 export const Disabled = (args) => (
-  <div style={{ display: 'grid', gap: '2rem', gridAutoFlow: 'column' }}>
+  <div style={{ display: 'inline-grid', gap: '2rem', gridAutoFlow: 'column' }}>
     <Button {...args} appearance="primary" />
     <Button {...args} appearance="secondary" />
   </div>
 );
 
-Disabled.args = { children: 'Disabled 🙅‍♀️', disabled: true };
+Disabled.argTypes = {
+  appearance: { control: { disable: true }, table: { disable: true } },
+};
+
+Disabled.args = {
+  children: 'Disabled 🙅‍♀️',
+  disabled: true,
+};

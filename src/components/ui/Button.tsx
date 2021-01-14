@@ -15,7 +15,7 @@ export const Button = styled('button', {
   cursor: 'pointer',
   transitionCall: 'filter, transform',
 
-  '&::before': {
+  '::before': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -33,16 +33,21 @@ export const Button = styled('button', {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
 
-    '&::before': {
+    '::before': {
       filter: 'blur(.5rem)',
       opacity: 1,
     },
+  },
+
+  ':active:not([disabled])': {
+    transform: 'scale(0.975)',
   },
 
   '&[disabled]': {
     cursor: 'not-allowed',
     filter: 'grayscale(.75)',
   },
+
   variants: {
     appearance: {
       primary: {
