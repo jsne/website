@@ -6,17 +6,24 @@ export const { styled, css } = createStyled({
   prefix: 'jsne',
   tokens,
   breakpoints: {
-    xxs: (rule) => `@media (min-width: 480px) { ${rule} }`,
-    xs: (rule) => `@media (min-width: 640px) { ${rule} }`,
-    sm: (rule) => `@media (min-width: 768px) { ${rule} }`,
-    md: (rule) => `@media (min-width: 1024px) { ${rule} }`,
-    lg: (rule) => `@media (min-width: 1280px) { ${rule} }`,
-    xl: (rule) => `@media (min-width: 1440px) { ${rule} }`,
-    xxl: (rule) => `@media (min-width: 1920px) { ${rule} }`,
+    bpxxs: (rule) => `@media (min-width: 480px) { ${rule} }`,
+    bpxs: (rule) => `@media (min-width: 640px) { ${rule} }`,
+    bpsm: (rule) => `@media (min-width: 768px) { ${rule} }`,
+    bpmd: (rule) => `@media (min-width: 1024px) { ${rule} }`,
+    bplg: (rule) => `@media (min-width: 1280px) { ${rule} }`,
+    bpxl: (rule) => `@media (min-width: 1440px) { ${rule} }`,
+    bpxxl: (rule) => `@media (min-width: 1920px) { ${rule} }`,
   },
   utils: {
+    /** Get tokenised transition targetting specific CSS properties. */
+    transitionCall: (property: string) => ({
+      transitionDuration: tokens.transition.$duration,
+      transitionTimingFunction: tokens.transition.$timingFunction,
+      transitionProperty: property,
+    }),
+
     /** Get linear-gradient `background-image` with accessible `color`. */
-    linearGradient: (/*config*/) => (variant: 'primary' | 'secondary') => {
+    linearGradient: (variant: 'primary' | 'secondary') => {
       // Lil' hack to dynamically map color variant values.
       const tokenColors = tokens.colors as Record<string, string>;
 

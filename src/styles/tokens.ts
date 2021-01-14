@@ -1,4 +1,9 @@
-import { getLineHeight, remify } from './utilities';
+/** Calculate unitless line-height from pixel font-size and line-height. */
+export const getLineHeight = (fontSize: number, lineHeight: number): string =>
+  (lineHeight / fontSize).toFixed(3);
+
+/** Convert pixel to rem. */
+export const remify = (px: number): string => `${px / 16}rem`;
 
 export type TextVariantKey = '$h1' | '$h2' | '$h3' | '$preHeading' | '$p';
 
@@ -94,5 +99,9 @@ export const tokens = {
     $6: '1.5rem',
     $7: '1.75rem',
     $8: '2rem',
+  },
+  transition: {
+    $timingFunction: 'cubic-bezier(.63,-0.34,.28,1.54)',
+    $duration: '.375s',
   },
 };
