@@ -6,6 +6,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'JavaScript North East',
+    siteUrl: 'https://jsne.co.uk',
   },
   plugins: [
     {
@@ -16,12 +17,12 @@ module.exports = {
         allExtensions: true,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-graphql-codegen`,
-    //   options: {
-    //     fileName: `types/graphql-types.d.ts`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        fileName: `types/graphql-types.d.ts`,
+      },
+    },
     {
       resolve: 'gatsby-source-contentful',
       options: {
@@ -31,7 +32,7 @@ module.exports = {
     },
     'gatsby-plugin-offline',
     'gatsby-plugin-preload-fonts',
-    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-svgr',

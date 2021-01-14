@@ -1,5 +1,9 @@
-const path = require('path');
+/* eslint-env node */
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+
+const { webpackConfigResolveAlias } = require('./config/webpack.config');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
@@ -9,8 +13,6 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
       }),
       new ForkTsCheckerWebpackPlugin(),
     ],
-    resolve: {
-      alias: { '~': path.resolve(__dirname, 'src') },
-    },
+    resolve: { alias: webpackConfigResolveAlias },
   });
 };
