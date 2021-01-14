@@ -15,13 +15,6 @@ export const { styled, css } = createStyled({
     bpxxl: (rule) => `@media (min-width: 1920px) { ${rule} }`,
   },
   utils: {
-    /** Get tokenised transition targetting specific CSS properties. */
-    transitionCall: (property: string) => ({
-      transitionDuration: tokens.transition.$duration,
-      transitionTimingFunction: tokens.transition.$timingFunction,
-      transitionProperty: property,
-    }),
-
     /** Get linear-gradient `background-image` with accessible `color`. */
     linearGradient: (variant: 'primary' | 'secondary') => {
       // Lil' hack to dynamically map color variant values.
@@ -38,5 +31,15 @@ export const { styled, css } = createStyled({
         color: tokenColors[`$${variant}Contrast`],
       };
     },
+
+    /** Apply specific styles for users who prefer reduced motion. */
+    prefersReducedMotion: (value) => ({ '@media(prefers-reduced-motion)': value }),
+
+    /** Get tokenised transition targetting specific CSS properties. */
+    transitionCall: (property: string) => ({
+      transitionDuration: tokens.transition.$duration,
+      transitionTimingFunction: tokens.transition.$timingFunction,
+      transitionProperty: property,
+    }),
   },
 });

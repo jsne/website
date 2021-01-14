@@ -102,6 +102,6 @@ export const tokens = {
   },
   transition: {
     $timingFunction: 'cubic-bezier(.63,-0.34,.28,1.54)',
-    $duration: '.375s',
+    $duration: '.4s',
   },
 };
