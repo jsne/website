@@ -1,7 +1,9 @@
 import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
+
+import '~/styles/global.css';
 
 import { LayoutHead, LayoutHeadProps } from './LayoutHead';
-import { LayoutStyles } from './LayoutStyles';
 
 export interface LayoutProps {
   /** Props to apply within `head`. */
@@ -10,9 +12,8 @@ export interface LayoutProps {
 
 /** Root component for all page layouts. */
 export const Layout: React.FC<LayoutProps> = ({ children, head }) => (
-  <>
+  <HelmetProvider>
     <LayoutHead {...head} />
-    <LayoutStyles />
     {children}
-  </>
+  </HelmetProvider>
 );
