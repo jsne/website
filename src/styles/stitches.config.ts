@@ -1,6 +1,6 @@
 import { createStyled } from '@stitches/react';
 
-import { tokens } from './tokens';
+import { TextVariantKey, tokens, Tokens } from './tokens';
 
 export const { styled, css } = createStyled({
   prefix: 'jsne',
@@ -15,8 +15,13 @@ export const { styled, css } = createStyled({
     bpxxl: (rule) => `@media (min-width: 1920px) { ${rule} }`,
   },
   utils: {
+    /** Apply preset box-shadow with custom color. */
+    getBoxShadow: (value: keyof Tokens['colors'] = '$shadow1') => ({
+      boxShadow: `0 .175rem .5rem ${value}, .16rem .25rem .175rem ${value}`,
+    }),
+
     /** Get linear-gradient `background-image` with accessible `color`. */
-    linearGradient: (variant: 'primary' | 'secondary') => {
+    getLinearGradient: (variant: 'primary' | 'secondary') => {
       // Lil' hack to dynamically map color variant values.
       const tokenColors = tokens.colors as Record<string, string>;
 
@@ -32,14 +37,37 @@ export const { styled, css } = createStyled({
       };
     },
 
-    /** Apply specific styles for users who prefer reduced motion. */
-    prefersReducedMotion: (value) => ({ '@media(prefers-reduced-motion)': value }),
+    /** Apply 'outline' styles (really uses `box-shadow`). */
+    getOutline: (value: keyof Tokens['colors'] = '$secondary1') => ({
+      outline: 0,
+      boxShadow: `0 0 0 0.2rem ${value}`,
+    }),
 
-    /** Get tokenised transition targetting specific CSS properties. */
-    transitionCall: (property: string) => ({
-      transitionDuration: tokens.transition.$duration,
-      transitionTimingFunction: tokens.transition.$timingFunction,
+    /** Apply preset font styles. */
+    getText: (value: TextVariantKey) => {
+      let fontWeight: keyof Tokens['fontWeights'] = '$heavy';
+
+      if (value === '$p') {
+        fontWeight = '$regular';
+      } else if (value === '$h3') {
+        fontWeight = '$bold';
+      }
+
+      return {
+        fontSize: value,
+        lineHeight: value,
+        fontWeight,
+      };
+    },
+
+    /** Apply tokenised transition targeting specific CSS properties. */
+    getTransition: (property: string) => ({
+      transitionDuration: tokens.transitions.$duration,
+      transitionTimingFunction: tokens.transitions.$timingFunction,
       transitionProperty: property,
     }),
+
+    /** Apply specific styles for users who prefer reduced motion. */
+    prefersReducedMotion: (value) => ({ '@media(prefers-reduced-motion)': value }),
   },
 });

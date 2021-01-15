@@ -4,6 +4,7 @@ import { styled } from '~/styles/stitches.config';
 export const Button = styled('button', {
   position: 'relative',
   fontWeight: '$medium',
+  fontSize: '$p',
   display: 'inline-flex',
   justifyContent: 'center',
   minWidth: '9.5rem',
@@ -13,7 +14,8 @@ export const Button = styled('button', {
   textDecoration: 'none',
   appearance: 'none',
   cursor: 'pointer',
-  transitionCall: 'filter, transform',
+  getBoxShadow: '$shadow1',
+  getTransition: 'box-shadow, filter, transform',
 
   '::before': {
     content: '""',
@@ -24,14 +26,15 @@ export const Button = styled('button', {
     height: '100%',
     backgroundImage: 'inherit',
     borderRadius: 'inherit',
-    transitionCall: 'filter, opacity',
     opacity: 0,
     zIndex: -1,
+    getTransition: 'box-shadow, filter, opacity',
   },
 
   ':hover:not([disabled])': {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
+    getBoxShadow: '$shadow2',
 
     '::before': {
       filter: 'blur(.5rem)',
@@ -40,7 +43,7 @@ export const Button = styled('button', {
   },
 
   ':active:not([disabled])': {
-    transform: 'scale(0.975)',
+    transform: 'scale(1.05) translateY(.15rem)',
   },
 
   '&[disabled]': {
@@ -49,12 +52,19 @@ export const Button = styled('button', {
   },
 
   variants: {
-    appearance: {
+    button: {
       primary: {
-        linearGradient: 'primary',
+        getLinearGradient: 'primary',
+        ':focus': {
+          getOutline: '$secondary1',
+        },
       },
+
       secondary: {
-        linearGradient: 'secondary',
+        getLinearGradient: 'secondary',
+        ':focus': {
+          getOutline: '$primary1',
+        },
       },
     },
   },

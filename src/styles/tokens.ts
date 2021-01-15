@@ -1,28 +1,22 @@
-/** Calculate unitless line-height from pixel font-size and line-height. */
-export const getLineHeight = (fontSize: number, lineHeight: number): string =>
-  (lineHeight / fontSize).toFixed(3);
-
 /** Convert pixel to rem. */
 export const remify = (px: number): string => `${px / 16}rem`;
 
-export type TextVariantKey = '$h1' | '$h2' | '$h3' | '$preHeading' | '$p';
-
+export const textVariantKeys = ['$h1', '$h2', '$h3', '$p'] as const;
+export type TextVariantKey = typeof textVariantKeys[number];
 export type TextVariantMap = { [k in TextVariantKey]: string };
 
 const fontSizes: TextVariantMap = {
-  $h1: remify(30),
-  $h2: remify(18),
-  $h3: remify(16),
-  $preHeading: remify(13),
-  $p: remify(12),
+  $h1: remify(52),
+  $h2: remify(44),
+  $h3: remify(40),
+  $p: remify(16),
 };
 
 const lineHeights: TextVariantMap = {
-  $h1: getLineHeight(30, 35),
-  $h2: getLineHeight(18, 20),
-  $h3: getLineHeight(16, 18),
-  $preHeading: getLineHeight(14, 16),
-  $p: getLineHeight(12, 14),
+  $h1: '1.2',
+  $h2: '1.2',
+  $h3: '1.2',
+  $p: '1.55',
 };
 
 const fontWeights = {
@@ -53,7 +47,10 @@ const colors = {
   $secondary1: '#A26BFC',
   $secondary2: '#682EC6',
   $secondary3: '#4220A3',
-  $secondaryContrast: '#FFFFFF',
+  $secondaryContrast: '#F6F5FC',
+
+  $shadow1: 'rgba(0, 0, 0, .085)',
+  $shadow2: 'rgba(0, 0, 0, .035)',
 
   // Direct color definitions.
 
@@ -79,7 +76,7 @@ const colors = {
 };
 
 export const tokens = {
-  borderStyles: { $1: 'solid' },
+  borderStyles: { $base: 'solid' },
   borderWidths: { $1: '0.0625rem', $2: '0.125rem' },
   colors,
   fonts: {
@@ -100,8 +97,10 @@ export const tokens = {
     $7: '1.75rem',
     $8: '2rem',
   },
-  transition: {
-    $timingFunction: 'cubic-bezier(.63,-0.34,.28,1.54)',
+  transitions: {
+    $timingFunction: 'cubic-bezier(.56, -0.93, .47, 1.92)',
     $duration: '.4s',
   },
 };
+
+export type Tokens = typeof tokens;

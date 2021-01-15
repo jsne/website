@@ -8,21 +8,21 @@ export default {
 
 export const Primary = (args) => <Button {...args} />;
 
-Primary.args = { appearance: 'primary', children: 'Primary' };
+Primary.args = { button: 'primary', children: 'Primary' };
 
 export const Secondary = (args) => <Button {...args} />;
 
-Secondary.args = { appearance: 'secondary', children: 'Secondary' };
+Secondary.args = { button: 'secondary', children: 'Secondary' };
 
 export const Disabled = (args) => (
   <div style={{ display: 'inline-grid', gap: '2rem', gridAutoFlow: 'column' }}>
-    <Button {...args} appearance="primary" />
-    <Button {...args} appearance="secondary" />
+    <Button {...args} button="primary" />
+    <Button {...args} button="secondary" />
   </div>
 );
 
 Disabled.argTypes = {
-  appearance: { control: { disable: true }, table: { disable: true } },
+  button: { control: { disable: true }, table: { disable: true } },
 };
 
 Disabled.args = {
