@@ -6,8 +6,13 @@ export const Text = styled('p', {
   marginBottom: 0,
 
   variants: {
-    text: Object.fromEntries(
-      textVariantKeys.map((variant) => [variant, { getText: variant }]),
+    textSize: Object.fromEntries(
+      textVariantKeys.map((variant) => [variant, { withTextSize: variant }]),
     ),
+    textAppearance: {
+      preHeading: {
+        color: '$pageContrast1',
+      },
+    },
   },
 });

@@ -1,22 +1,32 @@
 /** Convert pixel to rem. */
 export const remify = (px: number): string => `${px / 16}rem`;
 
-export const textVariantKeys = ['$h1', '$h2', '$h3', '$p'] as const;
-export type TextVariantKey = typeof textVariantKeys[number];
-export type TextVariantMap = { [k in TextVariantKey]: string };
+/** Base keys used for text variants (without `$`) for utils. */
+export const textVariantKeys = ['h1', 'h2', 'h3', 'p', 'preHeading'] as const;
 
-const fontSizes: TextVariantMap = {
+/** Text keys *without* `$` prefix. */
+export type TextVariantKey = typeof textVariantKeys[number];
+
+/** Text keys *with* `$` prefix to directly reference tokens. */
+export type TextTokenKey = `$${typeof textVariantKeys[number]}`;
+
+/** Tokenised text dictionary. */
+export type TextTokenDictionary = { [k in TextTokenKey]: string };
+
+const fontSizes: TextTokenDictionary = {
   $h1: remify(52),
   $h2: remify(44),
   $h3: remify(40),
   $p: remify(16),
+  $preHeading: remify(16),
 };
 
-const lineHeights: TextVariantMap = {
+const lineHeights: TextTokenDictionary = {
   $h1: '1.2',
   $h2: '1.2',
   $h3: '1.2',
   $p: '1.55',
+  $preHeading: '1.55',
 };
 
 const fontWeights = {
@@ -49,14 +59,15 @@ const colors = {
   $secondary3: '#4220A3',
   $secondaryContrast: '#F6F5FC',
 
+  $tertiary1: '#56CCF2',
+  $tertiary2: '#2D9CDB',
+  $tertiary3: '#2F59ED',
+  $tertiaryContrast: '#F6F5FC',
+
   $shadow1: 'rgba(0, 0, 0, .085)',
   $shadow2: 'rgba(0, 0, 0, .035)',
 
   // Direct color definitions.
-
-  $blue1: '#56CCF2',
-  $blue2: '#2D9CDB',
-  $blue3: '#2F59ED',
 
   $green1: '#6FCF97',
   $green2: '#27AE60',
@@ -80,12 +91,12 @@ export const tokens = {
   borderWidths: { $1: '0.0625rem', $2: '0.125rem' },
   colors,
   fonts: {
-    base: 'inter, system-ui, sans-serif',
+    $base: 'inter, system-ui, sans-serif',
   },
   fontSizes,
   fontWeights,
   lineHeights,
-  radii: { $1: '.25rem' },
+  radii: { $1: '.25rem', $2: '.5rem' },
   shadows: {},
   space: {
     $1: '.25rem',

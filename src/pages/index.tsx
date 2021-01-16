@@ -10,7 +10,7 @@ const IndexPage: React.FC = () => {
       <header>
         <Text as="h1">Hello</Text>
       </header>
-      <Button as="a" href="/test" button="primary">
+      <Button as="a" href="/test" buttonAppearance="primary">
         Hello
       </Button>
       <main>Main</main>

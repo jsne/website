@@ -14,8 +14,8 @@ export const Button = styled('button', {
   textDecoration: 'none',
   appearance: 'none',
   cursor: 'pointer',
-  getBoxShadow: '$shadow1',
-  getTransition: 'box-shadow, filter, transform',
+  withBoxShadow: '$shadow1',
+  withTransition: 'box-shadow, filter, transform',
 
   '::before': {
     content: '""',
@@ -28,13 +28,13 @@ export const Button = styled('button', {
     borderRadius: 'inherit',
     opacity: 0,
     zIndex: -1,
-    getTransition: 'box-shadow, filter, opacity',
+    withTransition: 'box-shadow, filter, opacity',
   },
 
   ':hover:not([disabled])': {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
-    getBoxShadow: '$shadow2',
+    withBoxShadow: '$shadow2',
 
     '::before': {
       filter: 'blur(.5rem)',
@@ -52,18 +52,18 @@ export const Button = styled('button', {
   },
 
   variants: {
-    button: {
+    buttonAppearance: {
       primary: {
-        getLinearGradient: 'primary',
+        withLinearGradient: 'primary',
         ':focus': {
-          getOutline: '$secondary1',
+          withOutline: '$secondary1',
         },
       },
 
       secondary: {
-        getLinearGradient: 'secondary',
+        withLinearGradient: 'secondary',
         ':focus': {
-          getOutline: '$primary1',
+          withOutline: '$primary3',
         },
       },
     },

@@ -16,12 +16,12 @@ export const { styled, css } = createStyled({
   },
   utils: {
     /** Apply preset box-shadow with custom color. */
-    getBoxShadow: (value: keyof Tokens['colors'] = '$shadow1') => ({
+    withBoxShadow: (value: keyof Tokens['colors'] = '$shadow1') => ({
       boxShadow: `0 .175rem .5rem ${value}, .16rem .25rem .175rem ${value}`,
     }),
 
     /** Get linear-gradient `background-image` with accessible `color`. */
-    getLinearGradient: (variant: 'primary' | 'secondary') => {
+    withLinearGradient: (variant: 'primary' | 'secondary' | 'tertiary') => {
       // Lil' hack to dynamically map color variant values.
       const tokenColors = tokens.colors as Record<string, string>;
 
@@ -38,36 +38,38 @@ export const { styled, css } = createStyled({
     },
 
     /** Apply 'outline' styles (really uses `box-shadow`). */
-    getOutline: (value: keyof Tokens['colors'] = '$secondary1') => ({
+    withOutline: (value: keyof Tokens['colors'] = '$secondary1') => ({
       outline: 0,
       boxShadow: `0 0 0 0.2rem ${value}`,
     }),
 
     /** Apply preset font styles. */
-    getText: (value: TextVariantKey) => {
+    withTextSize: (value: TextVariantKey) => {
       let fontWeight: keyof Tokens['fontWeights'] = '$heavy';
 
-      if (value === '$p') {
+      if (value === 'p') {
         fontWeight = '$regular';
-      } else if (value === '$h3') {
+      } else if (value === 'preHeading') {
+        fontWeight = '$medium';
+      } else if (value === 'h3') {
         fontWeight = '$bold';
       }
 
       return {
-        fontSize: value,
-        lineHeight: value,
+        fontSize: `$${value}`,
+        lineHeight: `$${value}`,
         fontWeight,
       };
     },
 
     /** Apply tokenised transition targeting specific CSS properties. */
-    getTransition: (property: string) => ({
+    withTransition: (property: string) => ({
       transitionDuration: tokens.transitions.$duration,
       transitionTimingFunction: tokens.transitions.$timingFunction,
       transitionProperty: property,
     }),
 
     /** Apply specific styles for users who prefer reduced motion. */
-    prefersReducedMotion: (value) => ({ '@media(prefers-reduced-motion)': value }),
+    withPrefersReducedMotion: (value) => ({ '@media(prefers-reduced-motion)': value }),
   },
 });
