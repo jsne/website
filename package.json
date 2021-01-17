@@ -18,7 +18,8 @@
     "start": "gatsby develop",
     "storybook": "start-storybook --ci -p 6006",
     "storybook:build": "build-storybook",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "browserslist": {
     "production": [
@@ -94,6 +95,7 @@
     "@storybook/addon-console": "^1.2.2",
     "@storybook/addon-essentials": "^6.2.0-alpha.15",
     "@storybook/addon-links": "^6.2.0-alpha.15",
+    "@storybook/addon-storysource": "^6.2.0-alpha.15",
     "@storybook/addon-viewport": "^6.2.0-alpha.15",
     "@storybook/react": "^6.2.0-alpha.15",
     "@testing-library/jest-dom": "^5.11.8",

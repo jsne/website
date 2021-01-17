@@ -2484,6 +2484,26 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
+"@storybook/addon-storysource@^6.2.0-alpha.15":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/addon-storysource/-/addon-storysource-6.2.0-alpha.16.tgz#f91cdb5e4170bae6c5ad55a9fe24c550eeb8acfb"
+  integrity sha512-3CFvjBMPlopiWeIWH2eBx/Sce0Hya5F6salN0rjppD4rEKaA4GSEQpqpmnr5V6YftvfCRQ5BPMqaVc6l/nrTIQ==
+  dependencies:
+    "@storybook/addons" "6.2.0-alpha.16"
+    "@storybook/api" "6.2.0-alpha.16"
+    "@storybook/client-logger" "6.2.0-alpha.16"
+    "@storybook/components" "6.2.0-alpha.16"
+    "@storybook/router" "6.2.0-alpha.16"
+    "@storybook/source-loader" "6.2.0-alpha.16"
+    "@storybook/theming" "6.2.0-alpha.16"
+    core-js "^3.8.2"
+    estraverse "^4.3.0"
+    loader-utils "^2.0.0"
+    prettier "~2.2.1"
+    prop-types "^15.7.2"
+    react-syntax-highlighter "^13.5.3"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/addon-toolbars@6.2.0-alpha.15":
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/addon-toolbars/-/addon-toolbars-6.2.0-alpha.15.tgz#501429850e369b25e59c135c18ab7cb41f165c45"
@@ -2527,6 +2547,21 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
+"@storybook/addons@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/addons/-/addons-6.2.0-alpha.16.tgz#1f5a11998f3b62f6ad9e0e803eea9d956bec793f"
+  integrity sha512-YG9GOc0TNxhXThVoKxXuqkocmAvnB9o7d2bVbLCEF9EJ2xAioQ5v5ofkOu2NDpx/pWm0Yd6Em+nhTtB92e7KWQ==
+  dependencies:
+    "@storybook/api" "6.2.0-alpha.16"
+    "@storybook/channels" "6.2.0-alpha.16"
+    "@storybook/client-logger" "6.2.0-alpha.16"
+    "@storybook/core-events" "6.2.0-alpha.16"
+    "@storybook/router" "6.2.0-alpha.16"
+    "@storybook/theming" "6.2.0-alpha.16"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/api@6.2.0-alpha.15":
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/api/-/api-6.2.0-alpha.15.tgz#7fc3ca4cefa82e439e662b35e8434b1fc209e22b"
@@ -2540,6 +2575,31 @@
     "@storybook/router" "6.2.0-alpha.15"
     "@storybook/semver" "^7.3.2"
     "@storybook/theming" "6.2.0-alpha.15"
+    "@types/reach__router" "^1.3.6"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    memoizerific "^1.11.3"
+    regenerator-runtime "^0.13.7"
+    store2 "^2.12.0"
+    telejson "^5.1.0"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/api@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/api/-/api-6.2.0-alpha.16.tgz#b43e960f9188e3c612e415182d54dc94803c85f3"
+  integrity sha512-g8pI9xhGKtmYo+hTkMgKlxa9Jo2D7IonB/eDcyNE7jvS8RRp1EO6sxI8URVae2MJWB+wgR5hoi9ugOBE6nUZYg==
+  dependencies:
+    "@reach/router" "^1.3.4"
+    "@storybook/channels" "6.2.0-alpha.16"
+    "@storybook/client-logger" "6.2.0-alpha.16"
+    "@storybook/core-events" "6.2.0-alpha.16"
+    "@storybook/csf" "0.0.1"
+    "@storybook/router" "6.2.0-alpha.16"
+    "@storybook/semver" "^7.3.2"
+    "@storybook/theming" "6.2.0-alpha.16"
     "@types/reach__router" "^1.3.6"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
@@ -2569,6 +2629,15 @@
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/channels/-/channels-6.2.0-alpha.15.tgz#e2079b097b5c75f3f4b134dc92c2e1c2a08bc4ad"
   integrity sha512-yubfI79onV+cF3K8OS3POxmQYtYSbiHFwBO44IJaHqNK6w8b9chdDOg2w1uZkR7y8WRBZzW/57jKLxut2Ju7Kg==
+  dependencies:
+    core-js "^3.8.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/channels@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/channels/-/channels-6.2.0-alpha.16.tgz#2b1382a366ce2b341781ff0bc6a24de45fbe001a"
+  integrity sha512-chpO0LooRJke3RRAI5B7glZGCS7N8SrBVb23N8Dd38ITFx9L/orGnKUrNXamtCJL00Yahe/p3NWI+Y01jRZvkQ==
   dependencies:
     core-js "^3.8.2"
     ts-dedent "^2.0.0"
@@ -2606,6 +2675,14 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
+"@storybook/client-logger@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/client-logger/-/client-logger-6.2.0-alpha.16.tgz#cf8d8b27a6d786e3b3d84af9d4ba239da73cda53"
+  integrity sha512-rLMgR1Hp5nZfTN+K3MKeEGcVnsRJ23Z+at09cTlvIOdpXT6mVNQzWSnVr6nfL11fKPxfId1zPsqQ30iGjXZY1A==
+  dependencies:
+    core-js "^3.8.2"
+    global "^4.4.0"
+
 "@storybook/components@6.2.0-alpha.15":
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/components/-/components-6.2.0-alpha.15.tgz#9b1ebfc10ddc0cc44194606b12db4384358d33df"
@@ -2632,10 +2709,43 @@
     react-textarea-autosize "^8.3.0"
     ts-dedent "^2.0.0"
 
+"@storybook/components@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/components/-/components-6.2.0-alpha.16.tgz#5dced9d6e068c4b018f3db081ca2e7e4dbe8b5cc"
+  integrity sha512-sRmObQuayJstA6F64VWjfyzCnHRaPvuRFFgCHUqu5s2JexEj/884Hvmu4M4jzdi83tUbCOmexZWG6yLmar5SqQ==
+  dependencies:
+    "@popperjs/core" "^2.6.0"
+    "@storybook/client-logger" "6.2.0-alpha.16"
+    "@storybook/csf" "0.0.1"
+    "@storybook/theming" "6.2.0-alpha.16"
+    "@types/overlayscrollbars" "^1.12.0"
+    "@types/react-color" "^3.0.4"
+    "@types/react-syntax-highlighter" "11.0.5"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.20"
+    markdown-to-jsx "^6.11.4"
+    memoizerific "^1.11.3"
+    overlayscrollbars "^1.13.1"
+    polished "^3.6.7"
+    react-color "^2.19.3"
+    react-popper-tooltip "^3.1.1"
+    react-syntax-highlighter "^13.5.3"
+    react-textarea-autosize "^8.3.0"
+    ts-dedent "^2.0.0"
+
 "@storybook/core-events@6.2.0-alpha.15":
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/core-events/-/core-events-6.2.0-alpha.15.tgz#d8a419444f33f9c7b1e65ba84d547bfa5d0e5bf6"
   integrity sha512-KhWcUJFDeb4aEplq8JRbPcuRAhIc/r8uvz913I0prHtbtK+6Jfb40ZZ4GcMC/CjaGQJvGYBkf2z14lLic9ytfg==
+  dependencies:
+    core-js "^3.8.2"
+
+"@storybook/core-events@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/core-events/-/core-events-6.2.0-alpha.16.tgz#477c7101ee3f7bba1d342149dd8789a290ba683d"
+  integrity sha512-dpO15a6Voszq7Dy5stHMHFkW80RiXSfEFsBAQEoekjFRJdLJVaC0EqRScHVwujgjSJ0Tqdzgx5QeBJ6Y3rVDyg==
   dependencies:
     core-js "^3.8.2"
 
@@ -2813,6 +2923,18 @@
     memoizerific "^1.11.3"
     qs "^6.9.5"
 
+"@storybook/router@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/router/-/router-6.2.0-alpha.16.tgz#d444e7a50a4f31a26d9c5d6e19229635fe9ec96a"
+  integrity sha512-RBuA1cNVMAQRr6lv7+TXy54QhzUlf+mtCIV5vLWCm/zlMWBF9XklYSdScEnBqO5mYLhiG+STbK6q8+wge5VYig==
+  dependencies:
+    "@reach/router" "^1.3.4"
+    "@types/reach__router" "^1.3.6"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    qs "^6.9.5"
+
 "@storybook/semver@^7.3.2":
   version "7.3.2"
   resolved "https://registry.npmjs.org/@storybook/semver/-/semver-7.3.2.tgz#f3b9c44a1c9a0b933c04e66d0048fcf2fa10dac0"
@@ -2838,6 +2960,23 @@
     regenerator-runtime "^0.13.7"
     source-map "^0.7.3"
 
+"@storybook/source-loader@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/source-loader/-/source-loader-6.2.0-alpha.16.tgz#81706e30da1be92e9dde88cb5aa412b19bfe41e5"
+  integrity sha512-q8TVJF9F8i7bS4365PzlRd60xhd6juOuDkSbeN1ziJfZT/mrEVXR6PUV5zbaxGEJBoUxebnqjtw2YZ1uKSavqw==
+  dependencies:
+    "@storybook/addons" "6.2.0-alpha.16"
+    "@storybook/client-logger" "6.2.0-alpha.16"
+    "@storybook/csf" "0.0.1"
+    core-js "^3.8.2"
+    estraverse "^4.3.0"
+    global "^4.4.0"
+    loader-utils "^2.0.0"
+    lodash "^4.17.20"
+    prettier "~2.2.1"
+    regenerator-runtime "^0.13.7"
+    source-map "^0.7.3"
+
 "@storybook/theming@6.2.0-alpha.15":
   version "6.2.0-alpha.15"
   resolved "https://registry.npmjs.org/@storybook/theming/-/theming-6.2.0-alpha.15.tgz#5dce973ab0885770207c9ff12dec6b2ac0679aa5"
@@ -2847,6 +2986,24 @@
     "@emotion/is-prop-valid" "^0.8.6"
     "@emotion/styled" "^10.0.27"
     "@storybook/client-logger" "6.2.0-alpha.15"
+    core-js "^3.8.2"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.27"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    polished "^3.6.7"
+    resolve-from "^5.0.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/theming@6.2.0-alpha.16":
+  version "6.2.0-alpha.16"
+  resolved "https://registry.npmjs.org/@storybook/theming/-/theming-6.2.0-alpha.16.tgz#f1937ff1ba2901e01655cdeb0479cb9cee085e1b"
+  integrity sha512-KmSK5ZMGyHA8Tfb0ilQNDdRkLKR/YamHO83tmCcipN6b7WuPZyTiukgqzPNS+Vhk/t6KD8TVW1Aav21mASUN/Q==
+  dependencies:
+    "@emotion/core" "^10.1.1"
+    "@emotion/is-prop-valid" "^0.8.6"
+    "@emotion/styled" "^10.0.27"
+    "@storybook/client-logger" "6.2.0-alpha.16"
     core-js "^3.8.2"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.27"
