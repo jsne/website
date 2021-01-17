@@ -1,4 +1,8 @@
-const { webpackConfigResolveAlias } = require('../config/webpack.config');
+const webpack = require('webpack');
+const {
+  webpackConfigPluginDefineOptions,
+  webpackConfigResolveAlias,
+} = require('../config/webpack.config');
 
 module.exports = {
   addons: [
@@ -28,6 +32,10 @@ module.exports = {
   },
   webpackFinal: async (config: any) => ({
     ...config,
+    plugins: [
+      ...config.plugins,
+      new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
+    ],
     resolve: {
       ...config.resolve,
       alias: {

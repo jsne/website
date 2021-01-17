@@ -3,14 +3,15 @@
 
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
-const { webpackConfigResolveAlias } = require('./config/webpack.config');
+const {
+  webpackConfigPluginDefineOptions,
+  webpackConfigResolveAlias,
+} = require('./config/webpack.config');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
     plugins: [
-      plugins.define({
-        __DEVELOPMENT__: stage === `develop` || stage === `develop-html`,
-      }),
+      plugins.define(webpackConfigPluginDefineOptions(stage)),
       new ForkTsCheckerWebpackPlugin(),
     ],
     resolve: { alias: webpackConfigResolveAlias },

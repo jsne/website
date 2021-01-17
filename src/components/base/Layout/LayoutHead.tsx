@@ -6,6 +6,7 @@ export type LayoutHeadProps = HelmetProps;
 /** `head` element with default global styles. */
 export const LayoutHead: React.FC<LayoutHeadProps> = (props) => (
   <Helmet {...props}>
+    {!__IS_LIVE__ && <meta name="robots" content="noindex, nofollow" />}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
