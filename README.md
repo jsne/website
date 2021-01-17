@@ -9,10 +9,10 @@
   <br />
 
 <a href="https://app.netlify.com/sites/jsne-website/deploys">
-  <img alt="Deployment status" src="https://img.shields.io/netlify/57164a3b-9cad-472f-bfc4-56171dc261c3">
+  <img alt="Deployment status" src="https://img.shields.io/netlify/57164a3b-9cad-472f-bfc4-56171dc261c3?label=Website">
 </a>
 <a href="https://jsne-ui.netlify.app">
-  <img alt="UI Kit" src="https://raw.githubusercontent.com/storybookjs/brand/8d28584c89959d7075c237e9345955c895048977/badge/badge-storybook.svg" />
+  <img alt="UI Kit" src="https://img.shields.io/netlify/a236bde7-e808-44d0-8578-2ae647d2a615?label=UI%20Kit">
 </a>
 
 </div>
