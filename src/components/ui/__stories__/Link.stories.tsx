@@ -25,18 +25,14 @@ export const LinkPrimary = (args) => (
 );
 LinkPrimary.args = { children: 'This is h1 Text', href: '#', linkAppearance: 'primary' };
 
-export const LinkSecondary = (args) => (
-  <Link {...args} style={{ backgroundColor: 'black' }} />
-);
+export const LinkSecondary = (args) => <Link {...args} />;
 LinkSecondary.args = {
   children: 'This is h1 Text',
   href: '#',
   linkAppearance: 'secondary',
 };
 
-export const LinkTertiary = (args) => (
-  <Link {...args} style={{ backgroundColor: 'black' }} />
-);
+export const LinkTertiary = (args) => <Link {...args} />;
 LinkTertiary.args = {
   children: 'This is h1 Text',
   href: '#',

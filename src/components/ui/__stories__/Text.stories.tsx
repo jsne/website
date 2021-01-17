@@ -36,7 +36,7 @@ export const P = (args) => <Text {...args} style={{ maxWidth: '24rem' }} />;
 P.args = {
   children:
     'Okay, Mr. Mayor. Feast your ears on that Spin Doctors mix. Any amount of cheese before a date is too much cheese. Well, I don’t know how many years on this Earth I got left. I’m gonna get real weird with it.',
-  textSize: '$p',
+  textSize: 'p',
 };
 
 export const PreHeading = (args) => <Text {...args} />;
