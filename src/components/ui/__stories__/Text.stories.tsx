@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from '../Text';
 
-import { textVariantKeys } from '~/styles/tokens';
+import { tokenTextBaseKeys } from '~/styles/types';
 
 export default {
   title: 'Text',
@@ -10,9 +10,9 @@ export default {
 
 export const All = () => (
   <>
-    {textVariantKeys.map((variant) => (
-      <Text key={variant} textSize={variant}>
-        {variant} example text
+    {tokenTextBaseKeys.map((baseKey) => (
+      <Text key={baseKey} textSize={baseKey}>
+        {baseKey} example text
       </Text>
     ))}
   </>
@@ -42,6 +42,5 @@ P.args = {
 export const PreHeading = (args) => <Text {...args} />;
 PreHeading.args = {
   children: 'Is your cat making TOO MUCH NOISE ALL THE TIME?',
-  textAppearance: 'preHeading',
   textSize: 'preHeading',
 };

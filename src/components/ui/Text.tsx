@@ -1,5 +1,7 @@
+import { StitchesProps } from '@stitches/react';
+
 import { styled } from '~/styles/stitches.config';
-import { textVariantKeys } from '~/styles/tokens';
+import { tokenTextBaseKeys } from '~/styles/types';
 
 export const Text = styled('p', {
   marginTop: 0,
@@ -7,12 +9,9 @@ export const Text = styled('p', {
 
   variants: {
     textSize: Object.fromEntries(
-      textVariantKeys.map((variant) => [variant, { withTextSize: variant }]),
+      tokenTextBaseKeys.map((baseKey) => [baseKey, { withTextSize: baseKey }]),
     ),
-    textAppearance: {
-      preHeading: {
-        color: '$pageContrast1',
-      },
-    },
   },
 });
+
+export type TextProps = StitchesProps<typeof Text>;

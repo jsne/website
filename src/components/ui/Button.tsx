@@ -8,7 +8,7 @@ export const Button = styled('button', {
   display: 'inline-flex',
   justifyContent: 'center',
   minWidth: '9.5rem',
-  padding: '$4 $5',
+  padding: '$5 $6',
   border: 0,
   borderRadius: '$1',
   textDecoration: 'none',

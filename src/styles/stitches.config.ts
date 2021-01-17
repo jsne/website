@@ -1,6 +1,7 @@
 import { createStyled } from '@stitches/react';
 
-import { TextVariantKey, tokens, Tokens } from './tokens';
+import { tokens, Tokens } from './tokens';
+import { TokenTextBaseKey } from './types';
 
 export const { styled, css } = createStyled({
   prefix: 'jsne',
@@ -44,7 +45,7 @@ export const { styled, css } = createStyled({
     }),
 
     /** Apply preset font styles. */
-    withTextSize: (value: TextVariantKey) => {
+    withTextSize: (value: TokenTextBaseKey) => {
       let fontWeight: keyof Tokens['fontWeights'] = '$heavy';
 
       if (value === 'p') {

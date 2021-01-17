@@ -1,19 +1,9 @@
+import { TokenTextDictionary } from './types';
+
 /** Convert pixel to rem. */
 export const remify = (px: number): string => `${px / 16}rem`;
 
-/** Base keys used for text variants (without `$`) for utils. */
-export const textVariantKeys = ['h1', 'h2', 'h3', 'p', 'preHeading'] as const;
-
-/** Text keys *without* `$` prefix. */
-export type TextVariantKey = typeof textVariantKeys[number];
-
-/** Text keys *with* `$` prefix to directly reference tokens. */
-export type TextTokenKey = `$${typeof textVariantKeys[number]}`;
-
-/** Tokenised text dictionary. */
-export type TextTokenDictionary = { [k in TextTokenKey]: string };
-
-const fontSizes: TextTokenDictionary = {
+const fontSizes: TokenTextDictionary = {
   $h1: remify(52),
   $h2: remify(44),
   $h3: remify(40),
@@ -21,7 +11,7 @@ const fontSizes: TextTokenDictionary = {
   $preHeading: remify(16),
 };
 
-const lineHeights: TextTokenDictionary = {
+const lineHeights: TokenTextDictionary = {
   $h1: '1.2',
   $h2: '1.2',
   $h3: '1.2',
