@@ -81,7 +81,7 @@ export const tokens = {
   borderWidths: { $1: '0.0625rem', $2: '0.125rem' },
   colors,
   fonts: {
-    $base: 'inter, system-ui, sans-serif',
+    $base: '"inter", serif',
   },
   fontSizes,
   fontWeights,
