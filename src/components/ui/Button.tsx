@@ -2,7 +2,6 @@ import { styled } from '~/styles/stitches.config';
 
 /** Generic variant-controlled button. */
 export const Button = styled('button', {
-  position: 'relative',
   fontWeight: '$medium',
   fontSize: '$p',
   display: 'inline-flex',
@@ -24,10 +23,11 @@ export const Button = styled('button', {
     left: 0,
     width: '100%',
     height: '100%',
+    zIndex: -1,
     backgroundImage: 'inherit',
     borderRadius: 'inherit',
     opacity: 0,
-    zIndex: -1,
+    pointerEvents: 'none',
     withTransition: 'box-shadow, filter, opacity',
   },
 

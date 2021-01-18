@@ -24,7 +24,7 @@ All.argTypes = {
 };
 
 export const H1 = (args) => <Text {...args} />;
-H1.args = { children: 'This is h1 Text', textSize: 'h1' };
+H1.args = { as: 'h1', children: 'This is h1 Text', textSize: 'h1' };
 
 export const H2 = (args) => <Text {...args} />;
 H2.args = { as: 'h2', children: 'This is h2 Text', textSize: 'h2' };
