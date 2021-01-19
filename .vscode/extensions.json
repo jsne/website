@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "apollographql.vscode-apollo",
+    "chrislajoie.vscode-modelines",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "eg2.vscode-npm-script",
+    "esbenp.prettier-vscode",
+    "exiasr.hadolint",
+    "firsttris.vscode-jest-runner",
+    "jpoissonnier.vscode-styled-components",
+    "mikestead.dotenv",
+    "ms-azuretools.vscode-docker",
+    "orta.vscode-jest",
+    "redhat.vscode-yaml",
+    "silvenon.mdx",
+    "stylelint.vscode-stylelint"
+  ]
+}

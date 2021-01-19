@@ -68,8 +68,8 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# Auto generated file
-types/graphql-types.d.ts
+# Auto generated files
+src/generated
 
 # Custom
 *.ignore

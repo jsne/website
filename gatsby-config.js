@@ -18,9 +18,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-graphql-codegen`,
+      resolve: 'gatsby-plugin-typegen',
       options: {
-        fileName: `types/graphql-types.d.ts`,
+        emitPluginDocuments: {
+          'src/generated/gatsby-schema-documents.graphql': true,
+        },
+        emitSchema: {
+          'src/generated/gatsby-schema.json': true,
+          'src/generated/gatsby-schema.graphql': true,
+        },
+        outputPath: `src/generated/gatsby-schema.d.ts`,
       },
     },
     {
