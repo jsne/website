@@ -1,3 +1,4 @@
+import { StitchesProps } from '@stitches/react';
 import React from 'react';
 
 import { styled } from '~/styles/stitches.config';
@@ -11,12 +12,31 @@ export const CardRoot = styled('section', {
   borderRadius: '$2',
   overflow: 'hidden',
   withBoxShadow: '$shadow1',
+
+  variants: {
+    cardLayout: {
+      horizontal: {
+        display: 'flex',
+        flexDirection: 'row',
+      },
+    },
+  },
 });
+
+export type CardRootProps = StitchesProps<typeof CardRoot>;
 
 export const CardMedia = styled('div', {
   position: 'relative',
   background: '$pageContrast1',
   paddingTop: '56.25%',
+
+  variants: {
+    cardLayout: {
+      horizontal: {
+        paddingTop: 0,
+      },
+    },
+  },
 });
 
 export const CardImg = styled('img', {
@@ -27,12 +47,29 @@ export const CardImg = styled('img', {
   width: '100%',
   height: '100%',
   objectFit: 'cover',
+
+  variants: {
+    cardLayout: {
+      horizontal: {
+        position: 'static',
+      },
+    },
+  },
 });
 
 export const CardBody = styled('div', {
   display: 'grid',
   gap: '$4',
   padding: '$5',
+
+  variants: {
+    cardLayout: {
+      horizontal: {
+        gap: '$5',
+        padding: '$7',
+      },
+    },
+  },
 });
 
 export type CardTextProps = Omit<TextProps, 'textSize'>;
@@ -53,7 +90,7 @@ export const CardPreheading: React.FC<CardTextProps> = ({ css, ...props }) => (
 export const CardHeading: React.FC<CardTextProps> = ({ css, ...props }) => (
   <Text
     as="h2"
-    css={{ color: '$pageContrast3', ...(css as CssPropHack) }}
+    css={{ color: '$pageContrast3', wordBreak: 'break-word', ...(css as CssPropHack) }}
     textSize="h2"
     {...props}
   />
@@ -68,5 +105,17 @@ export const CardParagraph: React.FC<CardTextProps> = ({ css, ...props }) => (
 );
 
 export const CardCtas = styled('div', {
+  display: 'grid',
+  gridAutoFlow: 'column',
+  justifyContent: 'flex-start',
+  gap: '$5',
   marginTop: '$1',
+
+  variants: {
+    cardLayout: {
+      horizontal: {
+        gap: '$7',
+      },
+    },
+  },
 });

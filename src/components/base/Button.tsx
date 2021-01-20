@@ -63,7 +63,7 @@ export const Button = styled('button', {
       secondary: {
         withLinearGradient: 'secondary',
         ':focus': {
-          withOutline: '$primary3',
+          withOutline: '$tertiary1',
         },
       },
     },

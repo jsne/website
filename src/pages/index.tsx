@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Button } from '~/components/ui/Button';
-import { Layout } from '~/components/base/Layout';
-import { Text } from '~/components/ui/Text';
+import { Button } from '~/components/base/Button';
+import { Text } from '~/components/base/Text';
+import { Layout } from '~/components/template/Layout';
 
 const IndexPage: React.FC = () => {
   return (

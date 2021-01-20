@@ -4,7 +4,7 @@ import { Text } from '../Text';
 import { tokenTextBaseKeys } from '~/styles/types';
 
 export default {
-  title: 'Text',
+  title: 'Base/Text',
   component: Text,
 };
 
