@@ -3,7 +3,7 @@ import { addDecorator, addParameters } from '@storybook/react';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withConsole } from '@storybook/addon-console';
 
-import { Layout } from '~/components/base/Layout';
+import { Layout } from '~/components/template/Layout';
 
 import { theme } from './theme';
 
