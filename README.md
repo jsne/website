@@ -2,7 +2,7 @@
   <a href="https://jsne.co.uk" target="_blank">
     <img alt="JSNE logo" src="./src/assets/images/logo.svg" width="124px" />
   </a>
-  <h1>The JavaScript North East Website</h1>
+  <h1>The (WIP) JavaScript North East Website</h1>
   <a href="https://jsne.co.uk" target="_blank">https://jsne.co.uk</a>
 
   <br />
