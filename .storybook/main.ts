@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const {
+  customSvgRegex,
   webpackConfigPluginDefineOptions,
   webpackConfigResolveAlias,
 } = require('../config/webpack.config');
@@ -30,18 +31,25 @@ module.exports = {
       exclude: [],
     },
   },
-  webpackFinal: async (config: any) => ({
-    ...config,
-    plugins: [
-      ...config.plugins,
-      new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
-    ],
-    resolve: {
-      ...config.resolve,
-      alias: {
-        ...config.alias,
-        ...webpackConfigResolveAlias,
+  webpackFinal: async (config: any) => {
+    config.module.rules.unshift({
+      test: customSvgRegex,
+      use: ['@svgr/webpack'],
+    });
+
+    return {
+      ...config,
+      plugins: [
+        ...config.plugins,
+        new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
+      ],
+      resolve: {
+        ...config.resolve,
+        alias: {
+          ...config.alias,
+          ...webpackConfigResolveAlias,
+        },
       },
-    },
-  }),
+    };
+  },
 };
