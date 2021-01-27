@@ -8,9 +8,9 @@ export default {
 
 export const All = () => (
   <div style={{ display: 'inline-grid', gridAutoFlow: 'row', gap: '.25rem' }}>
-    <LinkPrimary {...LinkPrimary.args} />
-    <LinkSecondary {...LinkSecondary.args} />
-    <LinkTertiary {...LinkTertiary.args} />
+    <Primary {...Primary.args} />
+    <Secondary {...Secondary.args} />
+    <Tertiary {...Tertiary.args} />
   </div>
 );
 
@@ -18,22 +18,22 @@ All.argTypes = {
   linkAppearance: { control: { disable: true }, table: { disable: true } },
 };
 
-export const LinkPrimary = (args) => (
+export const Primary = (args) => (
   <div style={{ display: 'inline-flex', background: '#000' }}>
     <Link {...args} style={{ backgroundColor: 'black' }} />
   </div>
 );
-LinkPrimary.args = { children: 'This is h1 Text', href: '#', linkAppearance: 'primary' };
+Primary.args = { children: 'This is h1 Text', href: '#', linkAppearance: 'primary' };
 
-export const LinkSecondary = (args) => <Link {...args} />;
-LinkSecondary.args = {
+export const Secondary = (args) => <Link {...args} />;
+Secondary.args = {
   children: 'This is h1 Text',
   href: '#',
   linkAppearance: 'secondary',
 };
 
-export const LinkTertiary = (args) => <Link {...args} />;
-LinkTertiary.args = {
+export const Tertiary = (args) => <Link {...args} />;
+Tertiary.args = {
   children: 'This is h1 Text',
   href: '#',
   linkAppearance: 'tertiary',

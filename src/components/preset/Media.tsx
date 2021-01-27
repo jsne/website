@@ -36,6 +36,10 @@ export const Media: React.FC<MediaProps> = ({
       <Card.CardImg cardLayout={layout} {...media} />
     </Card.CardMedia>
 
+    <Card.CardLinkOverlay aria-hidden href={ctaPrimary.href}>
+      {heading}
+    </Card.CardLinkOverlay>
+
     <Card.CardBody cardLayout={layout}>
       <Card.CardPreheading>{preHeading}</Card.CardPreheading>
       <Card.CardHeading>{heading}</Card.CardHeading>

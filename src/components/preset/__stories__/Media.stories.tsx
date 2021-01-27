@@ -18,11 +18,9 @@ Default.args = {
     </>
   ),
   ctaPrimary: { children: 'So do', href: '#' },
-  // ctaSecondary,
   heading: 'Chrundle the Great',
-  // layout,
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Guest Speaker',
+  preHeading: 'Speakers',
 };
 
 export const SecondaryCta = (args) => <Media {...args} />;
@@ -39,7 +37,7 @@ SecondaryCta.args = {
   ctaSecondary: { children: 'Yeah?!', href: '#' },
   heading: 'Chrundle the Great',
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Guest Speaker',
+  preHeading: 'Speakers',
 };
 
 export const HorizontalLayout = (args) => <Media {...args} />;
@@ -57,7 +55,7 @@ HorizontalLayout.args = {
   heading: 'Chrundle the Great',
   layout: 'horizontal',
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Guest Speaker',
+  preHeading: 'Speakers',
 };
 
 export const ResponsiveLayout = (args) => <Media {...args} />;
@@ -75,5 +73,5 @@ ResponsiveLayout.args = {
   heading: 'Chrundle the Great',
   layout: { bpsm: 'horizontal' },
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Guest Speaker',
+  preHeading: 'Speakers',
 };

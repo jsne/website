@@ -1,3 +1,5 @@
+import { StitchesProps } from '@stitches/react';
+
 import { styled } from '~/styles/stitches.config';
 
 /** Generic variant-controlled button. */
@@ -69,3 +71,5 @@ export const Button = styled('button', {
     },
   },
 });
+
+export type ButtonProps = StitchesProps<typeof Button>;
