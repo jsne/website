@@ -71,6 +71,7 @@ export const CardImg = styled('img', {
 
 export const CardBody = styled('div', {
   display: 'grid',
+  alignContent: 'center',
   gap: '$4',
   padding: '$5',
 
