@@ -34,7 +34,7 @@ const colors = {
   $body1: '#3C3562',
   $body2: '#2C264E',
   $body3: '#150E3D',
-  $bodyContrast: '#FFFFFF',
+  $bodyContrast1: '#FFFFFF',
 
   $page: '#FFFFFF',
   $pageContrast1: '#A5A3B7',
@@ -44,17 +44,19 @@ const colors = {
   $primary1: '#FFE358',
   $primary2: '#F9CC2F',
   $primary3: '#FFC01E',
-  $primaryContrast: '#2C264E',
+  $primaryContrast1: '#2C264E',
+  $primaryContrast2: '#150E3D',
+  $primaryContrast3: 'rgba(21, 14, 61, .65)',
 
   $secondary1: '#A26BFC',
   $secondary2: '#682EC6',
   $secondary3: '#4220A3',
-  $secondaryContrast: '#F6F5FC',
+  $secondaryContrast1: '#F6F5FC',
 
   $tertiary1: '#56CCF2',
   $tertiary2: '#2D9CDB',
   $tertiary3: '#2F59ED',
-  $tertiaryContrast: '#F6F5FC',
+  $tertiaryContrast1: '#F6F5FC',
 
   $shadow1: 'rgba(0, 0, 0, .085)',
   $shadow2: 'rgba(0, 0, 0, .035)',
@@ -90,6 +92,10 @@ export const tokens = {
   lineHeights,
   radii: { $1: '.25rem', $2: '.5rem' },
   shadows: {},
+  sizes: {
+    $wrapper1: remify(520),
+    $wrapper2: remify(1040),
+  },
   space: {
     $1: '.25rem',
     $2: '.5rem',
@@ -99,6 +105,7 @@ export const tokens = {
     $6: '1.5rem',
     $7: '1.75rem',
     $8: '2rem',
+    $section: '4rem',
   },
   transitions: {
     $timingFunction: 'cubic-bezier(.56, -0.93, .47, 1.92)',
