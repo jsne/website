@@ -1,19 +1,30 @@
 import React from 'react';
 
-import { Button } from '~/components/base/Button';
-import { Text } from '~/components/base/Text';
+import { ReactComponent as LogoSvg } from '~/assets/images/logo.svg';
 import { Layout } from '~/components/template/Layout';
+import { styled } from '~/styles/stitches.config';
+
+const Root = styled('div', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+  withLinearGradient: 'primary',
+});
+
+const Logo = styled(LogoSvg, {
+  width: '100%',
+  maxWidth: '16rem',
+});
 
 const IndexPage: React.FC = () => {
   return (
     <Layout head={{ title: 'JavaScript North East' }}>
-      <header>
-        <Text as="h1">Hello</Text>
-      </header>
-      <Button as="a" href="/test" buttonAppearance="primary">
-        Hello
-      </Button>
-      <main>Main</main>
+      <Root>
+        <header>
+          <Logo />
+        </header>
+      </Root>
     </Layout>
   );
 };
