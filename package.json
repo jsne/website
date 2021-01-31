@@ -47,6 +47,9 @@
       "pretty-quick --staged",
       "yarn lint -- --cache --fix",
       "yarn test --bail --findRelatedTests"
+    ],
+    "**/*.{css}": [
+      "pretty-quick --staged"
     ]
   },
   "prettier": {
