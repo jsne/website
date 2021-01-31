@@ -3,8 +3,6 @@
 
 require('dotenv').config();
 
-const { customSvgRegex } = require('./config/webpack.config');
-
 module.exports = {
   siteMetadata: {
     title: 'JavaScript North East',
@@ -37,14 +35,6 @@ module.exports = {
       options: {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
         spaceId: process.env.CONTENTFUL_SPACE_ID,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        rule: {
-          include: customSvgRegex,
-        },
       },
     },
     // Only want offline plugin in live deployments.
