@@ -9,6 +9,8 @@
 :root {
   font-family: 'inter', system-ui, sans-serif;
   font-size: 12px;
+  background-color: var(--colors-body3);
+  color: var(--colors-bodyContrast1);
 }
 
 @media (min-width: 600px) {
@@ -21,4 +23,12 @@
   :root {
     font-size: 18px;
   }
+}
+
+html,
+body,
+/* Gatsby doesn't provide classes for these 🤮 */
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }
