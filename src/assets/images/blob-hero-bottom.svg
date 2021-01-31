@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1525 262" fill="none" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+  <path opacity="0.3" fill-rule="evenodd" clip-rule="evenodd" d="M0 158.534V0H1525V203.904C1424.65 274.618 1278.09 291.502 1093.27 190.544C866.986 66.933 625.053 121.555 416.871 168.557L416.866 168.558C279.108 199.66 156.129 227.425 62.243 198C39.1573 190.765 18.3213 176.99 0 158.534Z" fill="url(#__blob-primary-bottom-combo-shadow)"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M0 4.23638V0H1525V192.454C1425.46 252.818 1285.42 262.171 1111.5 167.164C879.169 40.2513 630.344 52.9342 418.489 63.7327C287.457 70.4115 170.568 76.3695 80.4716 48.1326C55.2162 40.2174 27.6324 24.818 0 4.23638Z" fill="url(#__blob-primary-bottom-combo-main)"/>
+  <defs>
+  <linearGradient id="__blob-primary-bottom-combo-main" x1=".418" y1="373.607" x2="1729.06" y2="-138.105" gradientUnits="userSpaceOnUse">
+        <stop stop-color="var(--colors-primary1)"/>
+        <stop offset=".516" stop-color="var(--colors-primary2)"/>
+        <stop offset="1" stop-color="var(--colors-primary3)"/>
+      </linearGradient>
+      <linearGradient id="__blob-primary-bottom-combo-shadow" x1="-145.732" y1="228.607" x2="1570.38" y2="-275.016" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#534B7E"/>
+        <stop offset="0.516" stop-color="#3C3565"/>
+        <stop offset="1" stop-color="#150E3D"/>
+      </linearGradient>
+  </defs>
+</svg>
