@@ -1,5 +1,5 @@
 /** Base keys used for text variants (without `$`) for utils. */
-export const tokenTextBaseKeys = ['h1', 'h2', 'h3', 'preHeading', 'p'] as const;
+export const tokenTextBaseKeys = ['hero', 'h1', 'h2', 'h3', 'preHeading', 'p'] as const;
 
 /** Text keys *without* `$` prefix. */
 export type TokenTextBaseKey = typeof tokenTextBaseKeys[number];

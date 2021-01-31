@@ -23,6 +23,9 @@ All.argTypes = {
   textSize: { control: { disable: true }, table: { disable: true } },
 };
 
+export const Hero = (args) => <Text {...args} />;
+Hero.args = { as: 'h1', children: 'There goes my hero', textSize: 'hero' };
+
 export const H1 = (args) => <Text {...args} />;
 H1.args = { as: 'h1', children: 'This is h1 Text', textSize: 'h1' };
 

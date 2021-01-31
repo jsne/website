@@ -22,7 +22,7 @@ export const { styled, css } = createStyled({
     }),
 
     /** Get linear-gradient `background-image` with accessible `color`. */
-    withLinearGradient: (variant: 'primary' | 'secondary' | 'tertiary') => {
+    withLinearGradient: (variant: 'body' | 'primary' | 'secondary' | 'tertiary') => {
       // Lil' hack to dynamically map color variant values.
       const tokenColors = tokens.colors as Record<string, string>;
 
@@ -33,8 +33,8 @@ export const { styled, css } = createStyled({
       ];
 
       return {
-        backgroundImage: `linear-gradient(-270deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
-        color: tokenColors[`$${variant}Contrast`],
+        backgroundImage: `linear-gradient(87.06deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
+        color: tokenColors[`$${variant}Contrast1`],
       };
     },
 
