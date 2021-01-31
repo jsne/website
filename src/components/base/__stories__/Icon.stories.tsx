@@ -8,5 +8,5 @@ export default {
   component: Icon,
 };
 
-export const Body = () => <Icon as={Calendar} iconAppearance="body" />;
-export const Page = () => <Icon as={Calendar} iconAppearance="page" />;
+export const Body = () => <Icon as={Calendar} width="48" iconAppearance="body" />;
+export const Page = () => <Icon as={Calendar} width="48" iconAppearance="page" />;
