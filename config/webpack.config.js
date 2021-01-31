@@ -4,7 +4,7 @@
 const path = require('path');
 
 /** Custom regex to capture inline SVGs. */
-module.exports.customSvgRegex = /assets\/images\/inline\/[A-Za-z0-9]+.svg$/;
+module.exports.customSvgRegex = /assets\/images\/inline\/.+\.svg$/;
 
 module.exports.webpackConfigPluginDefineOptions = (stage = 'develop') => ({
   __DEVELOPMENT__: stage === `develop` || stage === `develop-html`,

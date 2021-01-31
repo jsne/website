@@ -1,3 +1,5 @@
+const path = require('path');
+
 const webpack = require('webpack');
 const {
   customSvgRegex,
@@ -34,6 +36,7 @@ module.exports = {
   webpackFinal: async (config: any) => {
     config.module.rules.unshift({
       test: customSvgRegex,
+      include: [path.resolve(__dirname, '../src/assets/images/inline')],
       use: ['@svgr/webpack'],
     });
 
