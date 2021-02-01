@@ -89,6 +89,7 @@
     "gatsby-source-contentful": "^4.4.0",
     "gatsby-source-filesystem": "^2.9.0",
     "gatsby-transformer-sharp": "^2.10.0",
+    "modern-normalize": "^1.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet-async": "^1.0.7",
