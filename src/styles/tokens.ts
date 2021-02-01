@@ -4,7 +4,7 @@ import { TokenTextDictionary } from './types';
 export const remify = (px: number): string => `${px / 16}rem`;
 
 const fontSizes: TokenTextDictionary = {
-  $hero: remify(72),
+  $hero: remify(64),
   $h1: remify(52),
   $h2: remify(44),
   $h3: remify(40),

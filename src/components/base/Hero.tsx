@@ -42,6 +42,6 @@ export const HeroTitle = styled(Text, {
 
 /** Body text. */
 export const HeroBody = styled(Text, {
-  maxWidth: '$wrapper1',
+  maxWidth: '$wrapperWidth1',
   color: '$primaryContrast3',
 });
