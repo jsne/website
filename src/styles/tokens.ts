@@ -93,8 +93,8 @@ export const tokens = {
   radii: { $1: '.25rem', $2: '.5rem' },
   shadows: {},
   sizes: {
-    $wrapper1: remify(520),
-    $wrapper2: remify(1040),
+    $wrapperWidth1: remify(520),
+    $wrapperWidth2: remify(1040),
   },
   space: {
     $1: '.25rem',

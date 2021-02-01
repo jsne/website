@@ -1,4 +1,4 @@
-import React from 'react';
+import { StitchesProps } from '@stitches/react';
 
 import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
 import { Text } from '~/components/base/Text';
@@ -16,7 +16,18 @@ export const HeroMain = styled(Wrapper, {
   gap: '$5',
   paddingTop: '$section',
   paddingBottom: '$section',
+
+  variants: {
+    heroLayout: {
+      center: {
+        justifyContent: 'center',
+        textAlign: 'center',
+      },
+    },
+  },
 });
+
+export type HeroMainProps = StitchesProps<typeof HeroMain>;
 
 export const HeroBottom = styled(Blob1, {
   width: '100%',
@@ -34,12 +45,3 @@ export const HeroBody = styled(Text, {
   maxWidth: '$wrapper1',
   color: '$primaryContrast3',
 });
-
-export const Hero: React.FC = ({ children, ...props }) => (
-  <>
-    <HeroRoot {...props}>
-      <HeroMain>{children}</HeroMain>
-    </HeroRoot>
-    <HeroBottom aria-hidden />
-  </>
-);

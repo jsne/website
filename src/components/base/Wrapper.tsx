@@ -5,14 +5,25 @@ import { styled } from '~/styles/stitches.config';
 /** Generic wrapper for any content. */
 export const Wrapper = styled('div', {
   width: '100%',
-  maxWidth: '$wrapper2',
+  maxWidth: '$wrapperWidth2',
   marginRight: 'auto',
   marginLeft: 'auto',
 
   variants: {
+    wrapperPadding: {
+      x4: {
+        paddingRight: '$4',
+        paddingLeft: '$4',
+      },
+      x8: {
+        paddingRight: '$8',
+        paddingLeft: '$8',
+      },
+    },
+
     wrapperWidth: {
       small: {
-        maxWidth: '$wrapper1',
+        maxWidth: '$wrapperWidth1',
       },
     },
   },
