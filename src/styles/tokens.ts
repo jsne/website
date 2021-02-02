@@ -25,7 +25,7 @@ const fontWeights = {
   $regular: '500',
   $medium: '600',
   $bold: '700',
-  $heavy: '900',
+  $heavy: '800',
 };
 
 const colors = {
@@ -89,7 +89,13 @@ export const tokens = {
   },
   fontSizes,
   fontWeights,
-  lineHeights,
+  letterSpacings: {
+    $spaced: '0.05ex',
+  },
+  lineHeights: {
+    ...lineHeights,
+    $spaced: '1.675',
+  },
   radii: { $1: '.25rem', $2: '.5rem' },
   shadows: {},
   sizes: {

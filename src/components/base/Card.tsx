@@ -6,7 +6,7 @@ import { CssPropHack } from '~/styles/types';
 
 import { Text, TextProps } from './Text';
 
-export const CardRoot = styled('section', {
+export const CardRoot = styled('article', {
   position: 'relative',
   backgroundColor: '$page',
   color: '$pageContrast2',
@@ -92,6 +92,7 @@ export const CardPreheading: React.FC<CardTextProps> = ({ css, ...props }) => (
     as="h1"
     css={{
       position: 'relative',
+      letterSpacing: '$spaced',
       color: '$pageContrast1',
       textTransform: 'uppercase',
       ...(css as CssPropHack),

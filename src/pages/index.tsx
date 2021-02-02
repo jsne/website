@@ -23,6 +23,7 @@ const IndexPage: React.FC = () => {
       <Root>
         <header>
           <Logo />
+          <noscript>I can&apos;t believe you&apos;ve done this</noscript>
         </header>
       </Root>
     </Layout>
