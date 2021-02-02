@@ -72,6 +72,7 @@ export const CardImg = styled('img', {
 export const CardBody = styled('div', {
   display: 'grid',
   alignContent: 'center',
+  justifyItems: 'start',
   gap: '$4',
   padding: '$5',
 
@@ -131,6 +132,7 @@ export const CardCtas = styled('div', {
   justifyContent: 'start',
   gridTemplateColumns: 'repeat(auto-fit, minmax(min(12rem, 100%), auto))',
   gap: '$5',
+  width: '100%',
 
   variants: {
     cardLayout: {
