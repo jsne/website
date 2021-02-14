@@ -9,7 +9,7 @@ export const Text = styled('p', {
 
   variants: {
     textSize: Object.fromEntries(
-      tokenTextBaseKeys.map((baseKey) => [baseKey, { withTextSize: baseKey }]),
+      tokenTextBaseKeys.map((baseKey) => [baseKey, { withTextSize: `$${baseKey}` }]),
     ),
   },
 });

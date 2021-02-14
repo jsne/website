@@ -1,5 +1,3 @@
-import { StitchesProps } from '@stitches/react';
-
 import { styled } from '~/styles/stitches.config';
 
 /** Generic variant-controlled button. */
@@ -18,7 +16,7 @@ export const Button = styled('button', {
   withBoxShadow: '$shadow1',
   withTransition: 'box-shadow, filter, transform',
 
-  '::before': {
+  '&::before': {
     content: '""',
     position: 'absolute',
     top: 0,
@@ -33,18 +31,18 @@ export const Button = styled('button', {
     withTransition: 'box-shadow, filter, opacity',
   },
 
-  ':hover:not([disabled])': {
+  '&:hover:not([disabled])': {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
     withBoxShadow: '$shadow2',
 
-    '::before': {
+    '&::before': {
       filter: 'blur(.5rem)',
       opacity: 1,
     },
   },
 
-  ':active:not([disabled])': {
+  '&:active:not([disabled])': {
     transform: 'scale(1.05) translateY(.15rem)',
   },
 
@@ -71,5 +69,3 @@ export const Button = styled('button', {
     },
   },
 });
-
-export type ButtonProps = StitchesProps<typeof Button>;

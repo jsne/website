@@ -1,10 +1,10 @@
 import { themes } from '@storybook/theming';
 
-import { tokens } from '../src/styles/tokens';
+import { theme as rootTheme } from '../src/styles/theme';
 
 export const theme = {
   ...themes.light,
   appBorderRadius: 3,
-  colorSecondary: tokens.colors.$secondary1,
-  barSelectedColor: tokens.colors.$secondary2,
+  colorSecondary: rootTheme.colors.secondary1,
+  barSelectedColor: rootTheme.colors.secondary2,
 };

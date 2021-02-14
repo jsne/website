@@ -14,7 +14,7 @@ export const HeroRoot = styled('header', {
 export const HeroMain = styled(Wrapper, {
   display: 'grid',
   gap: '$5',
-  paddingTop: '$section',
+  paddingTop: '$6',
   paddingBottom: '$section',
 
   variants: {

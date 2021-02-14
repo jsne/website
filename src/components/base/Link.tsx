@@ -1,5 +1,3 @@
-import { StitchesProps } from '@stitches/react';
-
 import { styled } from '~/styles/stitches.config';
 
 export const Link = styled('a', {
@@ -11,7 +9,7 @@ export const Link = styled('a', {
   withTransition: 'box-shadow',
 
   /** @NOTE Using psuedo-element to avoid box size issues. */
-  '::after': {
+  '&::after': {
     content: '""',
     position: 'absolute',
     bottom: '-.125rem',
@@ -23,8 +21,8 @@ export const Link = styled('a', {
     withTransition: 'opacity',
   },
 
-  ':hover': {
-    '::after': {
+  '&:hover': {
+    '&::after': {
       opacity: 1,
     },
   },
@@ -52,5 +50,3 @@ export const Link = styled('a', {
     },
   },
 });
-
-export type LinkProps = StitchesProps<typeof Link>;
