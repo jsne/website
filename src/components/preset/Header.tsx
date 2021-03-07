@@ -1,9 +1,8 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import { ReactComponent as Logo } from '~/assets/images/logo.svg';
-import { styled } from '~/styles/stitches.config';
 import { Wrapper } from '~/components/base/Wrapper';
+import { styled } from '~/styles/stitches.config';
 
 export const HeaderRoot = styled(Wrapper, {
   display: 'flex',
@@ -11,18 +10,18 @@ export const HeaderRoot = styled(Wrapper, {
   padding: '$4',
 });
 
-export const HeaderLink = styled(Link, {
+export const HeaderLink = styled('a', {
   display: 'block',
-  withTransition: 'filter transition',
+  withTransition: 'filter transform',
 
   '&:hover': {
     transform: `scale(1.05)`,
-    filter: `saturate(1.5) drop-shadow(0 0 .25rem $$colors.$secondary1) drop-shadow(0 0 .5rem $$colors.$secondary1)`,
+    filter: `saturate(1.5) drop-shadow(0 0 .25rem var(--colors-secondary1)) drop-shadow(0 0 .5rem var(--colors-secondary1))`,
   },
 
   '&:focus': {
     outline: 0,
-    filter: `saturate(1.5) drop-shadow(0 2px 0 $$colors.$secondary1) drop-shadow(2px 0 0 $$colors.$secondary1) drop-shadow(0 -2px 0 $$colors.$secondary1) drop-shadow(-2px 0 0 $$colors.$secondary1) drop-shadow(0 0 .25rem $$colors.$secondary2) drop-shadow(0 0 .5rem $$colors.$secondary1)`,
+    filter: `saturate(1.5) drop-shadow(0 2px 0 var(--colors-secondary1)) drop-shadow(2px 0 0 var(--colors-secondary1)) drop-shadow(0 -2px 0 var(--colors-secondary1)) drop-shadow(-2px 0 0 var(--colors-secondary1)) drop-shadow(0 0 .25rem var(--colors-secondary2)) drop-shadow(0 0 .5rem var(--colors-secondary1))`,
   },
 });
 
@@ -38,7 +37,7 @@ interface HeaderProps {
 /** Main website header. */
 export const Header: React.FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
   <HeaderRoot as="header" wrapperPadding="x4" {...props}>
-    <HeaderLink to={logoSlug}>
+    <HeaderLink href={logoSlug}>
       <HeaderLogo />
     </HeaderLink>
   </HeaderRoot>
