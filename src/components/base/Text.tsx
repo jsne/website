@@ -1,17 +1,27 @@
-import { StitchesProps } from '@stitches/react';
+import { StitchesVariants, styled } from '~/styles/stitches.config';
+import {
+  themeTextStylesKeys,
+  ThemeTextStylesKey,
+  ThemeTextStylesTokenKey,
+} from '~/styles/theme';
 
-import { styled } from '~/styles/stitches.config';
-import { tokenTextBaseKeys } from '~/styles/types';
+import { Box, BoxProps } from './Box';
 
-export const Text = styled('p', {
+type TextStyle = {
+  [K in ThemeTextStylesKey]: {
+    withTextStyle: ThemeTextStylesTokenKey;
+  };
+};
+
+export const Text = styled(Box, {
   marginTop: 0,
   marginBottom: 0,
 
   variants: {
-    textSize: Object.fromEntries(
-      tokenTextBaseKeys.map((baseKey) => [baseKey, { withTextSize: `$${baseKey}` }]),
-    ),
+    textStyle: Object.fromEntries(
+      themeTextStylesKeys.map((baseKey) => [baseKey, { withTextStyle: `$${baseKey}` }]),
+    ) as TextStyle,
   },
 });
 
-export type TextProps = StitchesProps<typeof Text>;
+export type TextProps = BoxProps<StitchesVariants<typeof Text>>;

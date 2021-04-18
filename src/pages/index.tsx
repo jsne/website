@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Layout } from '~/components/template/Layout';
 import * as Hero from '~/components/base/Hero';
 import { Header } from '~/components/preset/Header';
+import { Layout } from '~/components/template/Layout';
 
 const IndexPage: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const IndexPage: React.FC = () => {
       <Hero.HeroRoot>
         <Header />
         <Hero.HeroMain heroLayout={{ bpsm: 'center' }} wrapperPadding="x4">
-          <Hero.HeroTitle as="h1" textSize="hero">
+          <Hero.HeroTitle as="h1" textStyle="hero">
             Hi
           </Hero.HeroTitle>
           <Hero.HeroBody>

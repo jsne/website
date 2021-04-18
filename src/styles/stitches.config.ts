@@ -1,32 +1,37 @@
-import createStyled from '@stitches/react';
+import { createCss, StitchesCss } from '@stitches/react';
 
-import { theme, Theme } from './theme';
-import { TokenTextKey } from './types';
+import {
+  theme,
+  ThemeColorsTokenKey,
+  ThemeTextStylesTokenKey,
+  ThemeFontWeightsTokenKey,
+} from './theme';
 
-export const { styled, css } = createStyled({
+export const stitchesConfig = createCss({
   prefix: 'jsne',
   theme,
-  conditions: {
-    bpxxs: `@media (min-width: 480px)`,
-    bpxs: `@media (min-width: 640px)`,
-    bpsm: `@media (min-width: 768px)`,
-    bpmd: `@media (min-width: 1024px)`,
-    bplg: `@media (min-width: 1280px)`,
-    bpxl: `@media (min-width: 1440px)`,
-    bpxxl: `@media (min-width: 1920px)`,
+  media: {
+    bpxxs: `(min-width: 480px)`,
+    bpxs: `(min-width: 640px)`,
+    bpsm: `(min-width: 768px)`,
+    bpmd: `(min-width: 1024px)`,
+    bplg: `(min-width: 1280px)`,
+    bpxl: `(min-width: 1440px)`,
+    bpxxl: `(min-width: 1920px)`,
   },
   utils: {
     /** Apply preset box-shadow with custom color. */
-    withBoxShadow: () => (value: keyof Theme['colors'] = 'shadow1') => ({
-      boxShadow: `0 .175rem .5rem ${value}, .16rem .25rem .175rem ${value}`,
+    withBoxShadow: () => (color: ThemeColorsTokenKey = '$shadow1') => ({
+      $$shadowColor: `$colors${color}`,
+      boxShadow: `0 .175rem .5rem $$shadowColor, .16rem .25rem .175rem $$shadowColor`,
     }),
 
     /** Get linear-gradient `background-image` with accessible `color`. */
-    withLinearGradient: () => (
+    withLinearGradient: (config) => (
       variant: 'body' | 'primary' | 'secondary' | 'tertiary',
     ) => {
       // Lil' hack to dynamically map color variant values.
-      const tokenColors = theme.colors as Record<string, string>;
+      const tokenColors = config.theme.colors as Record<string, string>;
 
       const colors = [
         tokenColors[`${variant}1`],
@@ -41,35 +46,40 @@ export const { styled, css } = createStyled({
     },
 
     /** Apply 'outline' styles (really uses `box-shadow`). */
-    withOutline: () => (value: keyof Theme['colors'] = 'secondary1') => ({
+    withOutline: () => (color: ThemeColorsTokenKey = '$secondary1') => ({
+      $$shadowColor: `$colors${color}`,
       outline: 0,
-      boxShadow: `0 0 0 0.2rem ${value}`,
+      boxShadow: `0 0 0 0.2rem $$shadowColor`,
     }),
 
     /** Apply preset font styles. */
-    withTextSize: () => (value: TokenTextKey) => {
-      let fontWeight: `$${keyof Theme['fontWeights']}` = '$heavy';
+    withTextStyle: () => (fontSize: ThemeTextStylesTokenKey) => {
+      let fontWeight: ThemeFontWeightsTokenKey = '$heavy';
 
-      if (value === '$p') {
+      if (fontSize === '$p') {
         fontWeight = '$regular';
-      } else if (value === '$preHeading') {
+      } else if (fontSize === '$preHeading') {
         fontWeight = '$medium';
-      } else if (value === '$h3') {
+      } else if (fontSize === '$h3') {
         fontWeight = '$bold';
       }
 
       return {
-        fontSize: value,
-        lineHeight: value,
+        fontSize,
+        lineHeight: fontSize,
         fontWeight,
       };
     },
 
     /** Apply tokenised transition targeting specific CSS properties. */
-    withTransition: () => (transitionProperty: string) => ({
-      transitionDuration: theme.transitions.duration,
-      transitionTimingFunction: theme.transitions.timingFunction,
+    withTransition: (config) => (transitionProperty: string) => ({
+      transitionDuration: config.theme.transitions.duration,
+      transitionTimingFunction: config.theme.transitions.timingFunction,
       transitionProperty,
     }),
   },
 });
+
+export const { css, styled, theme: tokens } = stitchesConfig;
+export type { StitchesVariants } from '@stitches/react';
+export type CSS = StitchesCss<typeof stitchesConfig>;

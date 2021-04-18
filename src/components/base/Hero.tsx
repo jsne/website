@@ -1,6 +1,5 @@
-import { StitchesProps } from '@stitches/react';
-
 import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
+import { BoxProps } from '~/components/base/Box';
 import { Text } from '~/components/base/Text';
 import { Wrapper } from '~/components/base/Wrapper';
 import { styled } from '~/styles/stitches.config';
@@ -27,7 +26,7 @@ export const HeroMain = styled(Wrapper, {
   },
 });
 
-export type HeroMainProps = StitchesProps<typeof HeroMain>;
+export type HeroMainProps = BoxProps<typeof HeroMain>;
 
 export const HeroBottom = styled(Blob1, {
   width: '100%',

@@ -1,10 +1,33 @@
 /** Convert pixel to rem. */
 export const remify = (px: number): string => `${px / 16}rem`;
 
+/** Base key for font styles. */
+export const themeTextStylesKeys = ['h1', 'h2', 'h3', 'hero', 'p', 'preHeading'] as const;
+export type ThemeTextStylesKey = typeof themeTextStylesKeys[number];
+type ThemeTextStyle = Record<ThemeTextStylesKey, string>;
+
+const fontSizes: ThemeTextStyle = {
+  hero: remify(64),
+  h1: remify(52),
+  h2: remify(44),
+  h3: remify(40),
+  p: remify(16),
+  preHeading: remify(16),
+};
+
+const lineHeights: ThemeTextStyle = {
+  hero: '1.2',
+  h1: '1.2',
+  h2: '1.2',
+  h3: '1.2',
+  p: '1.55',
+  preHeading: '1.55',
+};
+
 /** Main theme definition. */
 export const theme = {
   borderStyles: { base: 'solid' },
-  borderWidths: { 1: '0.0625rem', $2: '0.125rem' },
+  borderWidths: { '1': '0.0625rem', '2': '0.125rem' },
   colors: {
     // Direct colour definitions.
 
@@ -58,16 +81,9 @@ export const theme = {
     shadow2: 'rgba(0, 0, 0, .035)',
   },
   fonts: {
-    $base: '"inter", serif',
+    base: '"inter", serif',
   },
-  fontSizes: {
-    hero: remify(64),
-    h1: remify(52),
-    h2: remify(44),
-    h3: remify(40),
-    p: remify(16),
-    preHeading: remify(16),
-  },
+  fontSizes,
   fontWeights: {
     regular: '500',
     medium: '600',
@@ -78,12 +94,7 @@ export const theme = {
     spaced: '0.05ex',
   },
   lineHeights: {
-    hero: '1.2',
-    h1: '1.2',
-    h2: '1.2',
-    h3: '1.2',
-    p: '1.55',
-    preHeading: '1.55',
+    ...lineHeights,
     spaced: '1.675',
   },
   radii: { '1': '.25rem', '2': '.5rem' },
@@ -110,3 +121,9 @@ export const theme = {
 };
 
 export type Theme = typeof theme;
+/** Tokenised `colors` keys (prefixed with `$`). */
+export type ThemeColorsTokenKey = `$${keyof Theme['colors']}`;
+/** Tokenised `fontWeights` keys (prefixed with `$`). */
+export type ThemeFontWeightsTokenKey = `$${keyof Theme['fontWeights']}`;
+/** Tokenised text style keys (prefixed with `$`). */
+export type ThemeTextStylesTokenKey = `$${ThemeTextStylesKey}`;

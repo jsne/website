@@ -13,6 +13,7 @@ export const Button = styled('button', {
   textDecoration: 'none',
   appearance: 'none',
   cursor: 'pointer',
+  outline: 0,
   withBoxShadow: '$shadow1',
   withTransition: 'box-shadow, filter, transform',
 
@@ -55,14 +56,14 @@ export const Button = styled('button', {
     buttonAppearance: {
       primary: {
         withLinearGradient: 'primary',
-        ':focus': {
+        '&:focus-within': {
           withOutline: '$secondary1',
         },
       },
 
       secondary: {
         withLinearGradient: 'secondary',
-        ':focus': {
+        '&:focus-within': {
           withOutline: '$tertiary1',
         },
       },

@@ -4,13 +4,14 @@ export const Link = styled('a', {
   position: 'relative',
   fontWeight: '$medium',
   borderRadius: '$1',
+  outline: 0,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   withTransition: 'box-shadow',
 
   /** @NOTE Using psuedo-element to avoid box size issues. */
   '&::after': {
-    content: '""',
+    content: '',
     position: 'absolute',
     bottom: '-.125rem',
     left: 0,
@@ -31,19 +32,19 @@ export const Link = styled('a', {
     linkAppearance: {
       primary: {
         withLinearGradient: 'primary',
-        ':focus': {
+        '&:focus-within': {
           withOutline: '$primary1',
         },
       },
       secondary: {
         withLinearGradient: 'secondary',
-        ':focus': {
+        '&:focus-within': {
           withOutline: '$secondary1',
         },
       },
       tertiary: {
         withLinearGradient: 'tertiary',
-        ':focus': {
+        '&:focus-within': {
           withOutline: '$tertiary1',
         },
       },

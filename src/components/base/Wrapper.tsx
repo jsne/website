@@ -1,5 +1,4 @@
-import { StitchesProps } from '@stitches/react';
-
+import { BoxProps } from '~/components/base/Box';
 import { styled } from '~/styles/stitches.config';
 
 /** Generic wrapper for any content. */
@@ -29,4 +28,4 @@ export const Wrapper = styled('div', {
   },
 });
 
-export type WrapperProps = StitchesProps<typeof Wrapper>;
+export type WrapperProps = BoxProps<typeof Wrapper>;

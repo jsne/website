@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from '../Text';
 
-import { tokenTextBaseKeys } from '~/styles/types';
+import { themeTextStylesKeys } from '../../../styles/theme';
+import { Text } from '../Text';
 
 export default {
   title: 'Base/Text',
@@ -10,8 +10,8 @@ export default {
 
 export const All = () => (
   <>
-    {tokenTextBaseKeys.map((baseKey) => (
-      <Text key={baseKey} textSize={baseKey}>
+    {themeTextStylesKeys.map((baseKey) => (
+      <Text key={baseKey} textStyle={baseKey}>
         {baseKey} example text
       </Text>
     ))}
@@ -20,14 +20,14 @@ export const All = () => (
 
 All.argTypes = {
   textAppearance: { control: { disable: true }, table: { disable: true } },
-  textSize: { control: { disable: true }, table: { disable: true } },
+  textStyle: { control: { disable: true }, table: { disable: true } },
 };
 
 export const Hero = (args) => <Text {...args} />;
 Hero.args = { as: 'h1', children: 'There goes my hero', textSize: 'hero' };
 
 export const H1 = (args) => <Text {...args} />;
-H1.args = { as: 'h1', children: 'This is h1 Text', textSize: 'h1' };
+H1.args = { as: 'h1', children: 'This is h1 Text', textStyle: 'h1' };
 
 export const H2 = (args) => <Text {...args} />;
 H2.args = { as: 'h2', children: 'This is h2 Text', textSize: 'h2' };

@@ -3,9 +3,9 @@
   <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0C5.96973 2.3606 12.1133 4.53491 18.4248 6.51294C108.522 34.75 225.411 28.7917 356.443 22.1128C568.297 11.3142 817.122 -1.3689 1049.45 125.544C1312.32 269.133 1497.77 174.345 1583 25.3459V0H0Z" fill="url(#__blob-primary-bottom-combo-main)"/>
   <defs>
     <linearGradient id="__blob-primary-bottom-combo-main" x1=".418" y1="373.607" x2="1729.06" y2="-138.105" gradientUnits="userSpaceOnUse">
-      <stop stop-color="var(--colors-primary1)"/>
-      <stop offset=".516" stop-color="var(--colors-primary2)"/>
-      <stop offset="1" stop-color="var(--colors-primary3)"/>
+      <stop stop-color="var(--jsne-colors-primary1)"/>
+      <stop offset=".516" stop-color="var(--jsne-colors-primary2)"/>
+      <stop offset="1" stop-color="var(--jsne-colors-primary3)"/>
     </linearGradient>
     <linearGradient id="__blob-primary-bottom-combo-shadow" x1="-145.732" y1="228.607" x2="1570.38" y2="-275.016" gradientUnits="userSpaceOnUse">
       <stop stop-color="#534B7E"/>

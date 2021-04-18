@@ -22,6 +22,7 @@ export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
 
 /** Media Object. */
 export const Media: React.FC<MediaProps> = ({
+  as = 'article',
   body,
   ctaPrimary,
   ctaSecondary,
@@ -31,7 +32,7 @@ export const Media: React.FC<MediaProps> = ({
   preHeading,
   ...props
 }) => (
-  <Card.CardRoot cardLayout={layout} {...props}>
+  <Card.CardRoot cardLayout={layout} as={as} {...props}>
     <Card.CardMedia cardLayout={layout}>
       <Card.CardImg cardLayout={layout} {...media} />
     </Card.CardMedia>

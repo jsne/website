@@ -71,7 +71,7 @@ ResponsiveLayout.args = {
   ctaPrimary: { children: 'So do', href: '#' },
   ctaSecondary: { children: 'Yeah?!', href: '#' },
   heading: 'Chrundle the Great',
-  layout: { bpsm: 'horizontal' },
+  layout: { '@initial': 'vertical', '@bpsm': 'horizontal' },
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
   preHeading: 'Speakers',
 };

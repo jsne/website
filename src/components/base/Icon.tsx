@@ -1,4 +1,4 @@
-import { StitchesProps } from '@stitches/react';
+import { BoxProps } from '~/components/base/Box';
 import { styled } from '~/styles/stitches.config';
 
 export const Icon = styled('svg', {
@@ -34,4 +34,4 @@ export const Icon = styled('svg', {
   },
 });
 
-export type IconProps = StitchesProps<typeof Icon>;
+export type IconProps = BoxProps<typeof Icon>;
