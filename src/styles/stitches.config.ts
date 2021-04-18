@@ -80,6 +80,6 @@ export const stitchesConfig = createCss({
   },
 });
 
-export const { css, styled, theme: tokens } = stitchesConfig;
+export const { css, getCssString, global, keyframes, styled } = stitchesConfig;
 export type { StitchesVariants } from '@stitches/react';
 export type CSS = StitchesCss<typeof stitchesConfig>;
