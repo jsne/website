@@ -1,9 +1,8 @@
 import { graphql } from 'gatsby';
 
-export const speakerFragment = graphql`
-  fragment speakerFragment on ContentfulSpeaker {
-    id
-    name
+/** Base fields for Speakers. */
+export const SpeakerFragment = graphql`
+  fragment SpeakerFragment on ContentfulSpeaker {
     avatar {
       file {
         url
@@ -11,5 +10,7 @@ export const speakerFragment = graphql`
       }
       title
     }
+    id
+    name
   }
 `;

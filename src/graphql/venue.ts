@@ -1,10 +1,8 @@
 import { graphql } from 'gatsby';
 
-/**
- * Fragment for essential venue data
- */
-export const venueFragment = graphql`
-  fragment venueFragment on ContentfulVenue {
+/** Base fields for all Venues. */
+export const VenueFragment = graphql`
+  fragment VenueFragment on ContentfulVenue {
     id
     location {
       lat
