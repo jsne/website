@@ -3,7 +3,7 @@ import React from 'react';
 import { HeroRoot, HeroBottom, HeroMain, HeroBody, HeroTitle } from '../Hero';
 
 export default {
-  title: 'Base/Hero',
+  title: 'Atoms/Hero',
   parameters: { layout: 'fullscreen' },
 };
 

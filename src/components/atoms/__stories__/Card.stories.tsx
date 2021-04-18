@@ -13,7 +13,7 @@ import {
 } from '../Card';
 
 export default {
-  title: 'Base/Card',
+  title: 'Atoms/Card',
 };
 
 export const All = () => (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ReactComponent as Logo } from '~/assets/images/logo.svg';
-import { Wrapper } from '~/components/base/Wrapper';
+import { Wrapper } from '~/components/atoms/Wrapper';
 import { styled } from '~/styles/stitches.config';
 
 export const HeaderRoot = styled(Wrapper, {

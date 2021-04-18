@@ -3,7 +3,7 @@ import React from 'react';
 import { Media } from '../Media';
 
 export default {
-  title: 'Preset/Media',
+  title: 'Compositions/Media',
   component: Media,
 };
 

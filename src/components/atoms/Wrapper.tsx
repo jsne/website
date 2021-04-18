@@ -1,5 +1,6 @@
-import { BoxProps } from '~/components/base/Box';
 import { styled } from '~/styles/stitches.config';
+
+import { BoxProps } from './Box';
 
 /** Generic wrapper for any content. */
 export const Wrapper = styled('div', {

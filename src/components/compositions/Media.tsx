@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Button } from '~/components/base/Button';
-import * as Card from '~/components/base/Card';
+import { Button } from '~/components/atoms/Button';
+import * as Card from '~/components/atoms/Card';
 
 export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
   /** Paragraph content. */

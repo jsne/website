@@ -1,8 +1,9 @@
 import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
-import { BoxProps } from '~/components/base/Box';
-import { Text } from '~/components/base/Text';
-import { Wrapper } from '~/components/base/Wrapper';
 import { styled } from '~/styles/stitches.config';
+
+import { BoxProps } from './Box';
+import { Text } from './Text';
+import { Wrapper } from './Wrapper';
 
 /** Root element. */
 export const HeroRoot = styled('header', {

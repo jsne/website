@@ -4,7 +4,7 @@ import { themeTextStylesKeys } from '../../../styles/theme';
 import { Text } from '../Text';
 
 export default {
-  title: 'Base/Text',
+  title: 'Atoms/Text',
   component: Text,
 };
 

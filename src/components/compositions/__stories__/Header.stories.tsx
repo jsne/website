@@ -3,7 +3,7 @@ import React from 'react';
 import { Header } from '../Header';
 
 export default {
-  title: 'Preset/Header',
+  title: 'Compositions/Header',
   component: Header,
   parameters: { layout: 'fullscreen' },
 };

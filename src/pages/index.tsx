@@ -1,7 +1,7 @@
 import React from 'react';
 
-import * as Hero from '~/components/base/Hero';
-import { Header } from '~/components/preset/Header';
+import * as Hero from '~/components/atoms/Hero';
+import { Header } from '~/components/compositions/Header';
 import { Layout } from '~/components/template/Layout';
 
 const IndexPage: React.FC = () => {
