@@ -11,12 +11,12 @@ export const AllIntro = () => (
   <>
     <HeroRoot>
       <HeroMain heroLayout="center" wrapperWidth="small">
-        <HeroTitle as="h1" textSize="hero">
+        <HeroTitle as="h1">
           JavaScript
           <br />
           North East
         </HeroTitle>
-        <HeroBody textSize="p">
+        <HeroBody>
           Okay, Mr. Mayor. Feast your ears on that Spin Doctors mix. Any amount of cheese
           before a date is too much cheese. Well, I don’t know how many years on this
           Earth I got left. I’m gonna get real weird with it.
@@ -31,7 +31,7 @@ export const AllPageTitle = () => (
   <>
     <HeroRoot>
       <HeroMain wrapperPadding="x8">
-        <HeroTitle as="h1" textSize="h1">
+        <HeroTitle as="h1" textStyle="h1">
           JavaScript North East
         </HeroTitle>
       </HeroMain>
@@ -54,14 +54,14 @@ export const Bottom = () => <HeroBottom />;
 
 export const Title = (args) => (
   <HeroRoot>
-    <HeroTitle as="h1" textSize="hero" {...args} />
+    <HeroTitle as="h1" {...args} />
   </HeroRoot>
 );
 Title.args = { children: 'There goes my hero' };
 
 export const Body = (args) => (
   <HeroRoot>
-    <HeroBody as="p" textSize="p" {...args} />
+    <HeroBody as="p" {...args} />
   </HeroRoot>
 );
 Body.args = {

@@ -40,9 +40,13 @@ export const HeroTitle = styled(Text, {
   color: '$primaryContrast2',
 });
 
+HeroTitle.defaultProps = { textStyle: 'hero' };
+
 /** Body text. */
 export const HeroBody = styled(Text, {
   lineHeight: '$spaced',
   maxWidth: '$wrapperWidth1',
   color: '$primaryContrast3',
 });
+
+HeroBody.defaultProps = { textStyle: 'p' };

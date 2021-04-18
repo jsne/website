@@ -16,7 +16,7 @@ const fontSizes: ThemeTextStyle = {
 };
 
 const lineHeights: ThemeTextStyle = {
-  hero: '1.2',
+  hero: '1.165',
   h1: '1.2',
   h2: '1.2',
   h3: '1.2',
