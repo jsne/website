@@ -20,6 +20,8 @@ export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
   preHeading?: React.ReactNode | string;
 }
 
+const defaultLayout = { '@initial': 'vertical' } as const;
+
 /** Media Object. */
 export const Media: React.FC<MediaProps> = ({
   as = 'article',
@@ -27,7 +29,7 @@ export const Media: React.FC<MediaProps> = ({
   ctaPrimary,
   ctaSecondary,
   heading,
-  layout,
+  layout = defaultLayout,
   media,
   preHeading,
   ...props
