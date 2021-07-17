@@ -42,7 +42,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'lines-around-comment': 0,
     'no-confusing-arrow': 0,
-    'no-console': ['warn', { allow: ['warn'] }],
+    'no-console': ['warn', { allow: ['error', 'warn'] }],
     'no-debugger': 0,
     'no-shadow': 'warn',
     'object-shorthand': 'warn',
