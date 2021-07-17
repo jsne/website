@@ -2,10 +2,10 @@ import { styled } from '~/styles/stitches.config';
 
 /** Generic variant-controlled button. */
 export const Button = styled('button', {
-  fontWeight: '$medium',
-  fontSize: '$p',
   display: 'inline-flex',
   justifyContent: 'center',
+  fontWeight: '$medium',
+  fontSize: '$p',
   minWidth: '9.5rem',
   padding: '$5 $6',
   border: 0,
@@ -18,7 +18,7 @@ export const Button = styled('button', {
   withTransition: 'box-shadow, filter, transform',
 
   '&::before': {
-    content: '""',
+    content: '',
     position: 'absolute',
     top: 0,
     left: 0,

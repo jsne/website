@@ -1,26 +1,26 @@
 import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
+import { BoxProps } from '~/components/atoms/Box';
+import { Text } from '~/components/atoms/Text';
+import { Wrapper } from '~/components/atoms/Wrapper';
 import { styled } from '~/styles/stitches.config';
 
-import { BoxProps } from './Box';
-import { Text } from './Text';
-import { Wrapper } from './Wrapper';
-
 /** Root element. */
-export const HeroRoot = styled('header', {
+export const HeroRoot = styled('section', {
+  position: 'relative',
   withLinearGradient: 'primary',
 });
 
 /** Main wrapper for content. */
 export const HeroMain = styled(Wrapper, {
   display: 'grid',
-  gap: '$5',
+  gap: '$4',
   paddingTop: '$6',
   paddingBottom: '$section',
 
   variants: {
     heroLayout: {
       center: {
-        justifyContent: 'center',
+        justifyItems: 'center',
         textAlign: 'center',
       },
     },
@@ -29,10 +29,12 @@ export const HeroMain = styled(Wrapper, {
 
 export type HeroMainProps = BoxProps<typeof HeroMain>;
 
+export const HERO_BOTTOM_HEIGHT = 'clamp(4rem, 13vw, 12rem)';
+
 export const HeroBottom = styled(Blob1, {
+  position: 'absolute',
   width: '100%',
-  height: '13vw',
-  maxHeight: '10rem',
+  height: HERO_BOTTOM_HEIGHT,
 });
 
 /** Title text. */
@@ -47,6 +49,5 @@ export const HeroBody = styled(Text, {
   lineHeight: '$spaced',
   maxWidth: '$wrapperWidth1',
   color: '$primaryContrast3',
+  withTextStyle: '$p',
 });
-
-HeroBody.defaultProps = { textStyle: 'p' };

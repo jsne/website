@@ -13,6 +13,7 @@ type TextStyle = {
   };
 };
 
+/** Generic text component with preset styles for each `text` preset available. */
 export const Text = styled(Box, {
   marginTop: 0,
   marginBottom: 0,
@@ -21,6 +22,10 @@ export const Text = styled(Box, {
     textStyle: Object.fromEntries(
       themeTextStylesKeys.map((baseKey) => [baseKey, { withTextStyle: `$${baseKey}` }]),
     ) as TextStyle,
+  },
+
+  defaultVariants: {
+    textStyle: 'p',
   },
 });
 

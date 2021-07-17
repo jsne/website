@@ -4,17 +4,16 @@ export const PageFragment = graphql`
   fragment PageFragment on ContentfulPage {
     body {
       childrenMdx {
-        rawBody
+        body
       }
     }
     id
-    navigationLabel
     navigationLabel
     slug
     title
     titleBody {
       childrenMdx {
-        rawBody
+        body
       }
     }
   }
