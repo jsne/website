@@ -81,7 +81,7 @@ export const theme = {
     shadow2: 'rgba(0, 0, 0, .035)',
   },
   fonts: {
-    base: '"inter", serif',
+    base: '"inter", system-ui, sans-serif',
   },
   fontSizes,
   fontWeights: {
@@ -101,7 +101,7 @@ export const theme = {
   shadows: {},
   sizes: {
     wrapperWidth1: remify(520),
-    wrapperWidth2: remify(1040),
+    wrapperWidth2: remify(1140),
   },
   space: {
     '1': '.25rem',
