@@ -6,7 +6,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const {
   webpackConfigPluginDefineOptions,
   webpackConfigResolveAlias,
-} = require('./config/webpack.config');
+} = require('./.config/webpack.config');
 
 exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({

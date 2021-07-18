@@ -1,11 +1,9 @@
-const path = require('path');
-
 const webpack = require('webpack');
+
 const {
   webpackConfigModuleRulesSvg,
-  webpackConfigPluginDefineOptions,
   webpackConfigResolveAlias,
-} = require('../config/webpack.config');
+} = require('../.config/webpack.config');
 
 module.exports = {
   addons: [
@@ -38,10 +36,7 @@ module.exports = {
 
     return {
       ...config,
-      plugins: [
-        ...config.plugins,
-        new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
-      ],
+      plugins: [...config.plugins],
       resolve: {
         ...config.resolve,
         alias: {
