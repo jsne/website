@@ -10,7 +10,7 @@
 
 :root {
   font-family: 'inter', system-ui, sans-serif;
-  font-size: clamp(14px, calc(14px + (22 - 14) * ((100vw - 360px) / 1368)), 22px);
+  font-size: clamp(14px, calc(14px + (20 - 14) * ((100vw - 360px) / 1368)), 20px);
   background-color: var(--colors-body3);
   color: var(--colors-bodyContrast1);
   box-sizing: border-box;
