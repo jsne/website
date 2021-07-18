@@ -10,7 +10,18 @@ module.exports.webpackConfigPluginDefineOptions = (stage = 'develop') => ({
 
 module.exports.webpackConfigModuleRulesSvg = {
   test: /\.svg$/,
-  use: ['@svgr/webpack', 'url-loader'],
+  use: [
+    {
+      loader: '@svgr/webpack',
+    },
+    {
+      loader: 'file-loader',
+    },
+  ],
+  type: 'javascript/auto',
+  issuer: {
+    and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
+  },
 };
 
 module.exports.webpackConfigResolveAlias = {

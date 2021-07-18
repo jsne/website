@@ -2,6 +2,7 @@ const webpack = require('webpack');
 
 const {
   webpackConfigModuleRulesSvg,
+  webpackConfigPluginDefineOptions,
   webpackConfigResolveAlias,
 } = require('../.config/webpack.config');
 
@@ -12,6 +13,12 @@ module.exports = {
     '@storybook/addon-a11y',
     '@storybook/addon-storysource',
   ],
+  core: {
+    builder: 'webpack5',
+  },
+  features: {
+    postcss: false,
+  },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
   typescript: {
     reactDocgen: 'react-docgen-typescript',
@@ -32,11 +39,14 @@ module.exports = {
     },
   },
   webpackFinal: async (config: any) => {
-    config.module.rules.unshift(webpackConfigModuleRulesSvg);
+    config.module.rules.push(webpackConfigModuleRulesSvg);
 
     return {
       ...config,
-      plugins: [...config.plugins],
+      plugins: [
+        ...config.plugins,
+        new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
+      ],
       resolve: {
         ...config.resolve,
         alias: {

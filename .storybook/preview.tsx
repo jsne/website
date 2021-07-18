@@ -1,7 +1,7 @@
-import React from 'react';
-import { addDecorator, addParameters } from '@storybook/react';
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { withConsole } from '@storybook/addon-console';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { addDecorator, addParameters } from '@storybook/react';
+import React from 'react';
 
 import { Layout } from '~/components/template/Layout';
 
@@ -21,6 +21,8 @@ addDecorator((storyFn, context) => withConsole()(storyFn)(context));
 
 addParameters({
   controls: {
+    color: /(background|color)$/i,
+    date: /Date$/,
     hideNoControlsWarning: true,
   },
   docs: {
