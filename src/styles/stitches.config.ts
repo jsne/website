@@ -21,53 +21,61 @@ export const stitchesConfig = createCss({
   },
   utils: {
     /** Apply preset box-shadow with custom color. */
-    withBoxShadow: () => (color: ThemeColorsTokenKey = '$shadow1') => ({
-      $$shadowColor: `$colors${color}`,
-      boxShadow: `0 .175rem .5rem $$shadowColor, .16rem .25rem .175rem $$shadowColor`,
-    }),
+    withBoxShadow:
+      () =>
+      (color: ThemeColorsTokenKey = '$shadow1') => ({
+        $$shadowColor: `$colors${color}`,
+        boxShadow: `0 .175rem .5rem $$shadowColor, .16rem .25rem .175rem $$shadowColor`,
+      }),
 
     /** Get linear-gradient `background-image` with accessible `color`. */
-    withLinearGradient: (config) => (
-      variant: 'body' | 'primary' | 'secondary' | 'tertiary',
-    ) => {
-      // Lil' hack to dynamically map color variant values.
-      const tokenColors = config.theme.colors as Record<string, string>;
+    withLinearGradient:
+      (config) => (variant: 'body' | 'primary' | 'secondary' | 'tertiary') => {
+        // Lil' hack to dynamically map color variant values.
+        const tokenColors = config.theme.colors as Record<string, string>;
 
-      const colors = [
-        tokenColors[`${variant}1`],
-        tokenColors[`${variant}2`],
-        tokenColors[`${variant}3`],
-      ];
+        const colors = [
+          tokenColors[`${variant}1`],
+          tokenColors[`${variant}2`],
+          tokenColors[`${variant}3`],
+        ];
 
-      return {
-        backgroundImage: `linear-gradient(87.06deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
-        color: tokenColors[`${variant}Contrast1`],
-      };
-    },
+        return {
+          backgroundImage: `linear-gradient(87.06deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
+          color: tokenColors[`${variant}Contrast1`],
+        };
+      },
 
     /** Apply 'outline' styles (really uses `box-shadow`). */
-    withOutline: () => (color: ThemeColorsTokenKey = '$secondary1') => ({
-      $$shadowColor: `$colors${color}`,
-      outline: 0,
-      boxShadow: `0 0 0 0.2rem $$shadowColor`,
-    }),
+    withOutline:
+      () =>
+      (color: ThemeColorsTokenKey = '$secondary1') => ({
+        $$shadowColor: `$colors${color}`,
+        outline: 0,
+        boxShadow: `0 0 0 0.2rem $$shadowColor`,
+      }),
 
     /** Apply preset font styles. */
     withTextStyle: () => (fontSize: ThemeTextStylesTokenKey) => {
-      let fontWeight: ThemeFontWeightsTokenKey = '$heavy';
+      const styles: Record<string, string> = {
+        fontWeight: '$heavy',
+        letterSpacing: '0',
+      };
 
       if (fontSize === '$p') {
-        fontWeight = '$regular';
+        styles.fontWeight = '$regular';
       } else if (fontSize === '$preHeading') {
-        fontWeight = '$medium';
+        styles.letterSpacing = '$spaced';
+        styles.textTransform = 'uppercase';
+        styles.fontWeight = '$medium';
       } else if (fontSize === '$h3') {
-        fontWeight = '$bold';
+        styles.fontWeight = '$bold';
       }
 
       return {
         fontSize,
         lineHeight: fontSize,
-        fontWeight,
+        ...styles,
       };
     },
 

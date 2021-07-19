@@ -50,7 +50,7 @@ export const theme = {
     red2: '#FF4D4D',
     red3: '#F32E2E',
     white1: '#FFFFFF',
-    white2: '#F6F5FC',
+    white2: '#E5E5E5',
     white3: '#A5A3B7',
 
     // Abstracted colour definitions.
@@ -59,6 +59,8 @@ export const theme = {
     body2: '$black2',
     body3: '$black3',
     bodyContrast1: '$white1',
+    bodyContrast2: '$white2',
+    bodyContrast3: '$white3',
     page: '$white1',
     pageContrast1: '$white3',
     pageContrast2: '$black2',
@@ -91,7 +93,7 @@ export const theme = {
     heavy: '800',
   },
   letterSpacings: {
-    spaced: '0.05ex',
+    spaced: '.2ex',
   },
   lineHeights: {
     ...lineHeights,
