@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ReactComponent as Logo } from '~/assets/images/logo.svg';
 import { Wrapper } from '~/components/atoms/Wrapper';
-import { styled } from '~/styles/stitches.config';
+import { keyframes, styled } from '~/styles/stitches.config';
 
 export const HeaderRoot = styled(Wrapper, {
   display: 'flex',
@@ -16,17 +16,33 @@ export const HeaderLink = styled('a', {
 
   '&:hover': {
     transform: `scale(1.05)`,
-    filter: `saturate(1.5) drop-shadow(0 0 .25rem var(--colors-secondary1)) drop-shadow(0 0 .5rem var(--colors-secondary1))`,
+    filter: `saturate(1.5) drop-shadow(0 0 .25rem $colors$secondary1) drop-shadow(0 0 .5rem $colors$secondary1)`,
   },
 
   '&:focus': {
     outline: 0,
-    filter: `saturate(1.5) drop-shadow(0 2px 0 var(--colors-secondary1)) drop-shadow(2px 0 0 var(--colors-secondary1)) drop-shadow(0 -2px 0 var(--colors-secondary1)) drop-shadow(-2px 0 0 var(--colors-secondary1)) drop-shadow(0 0 .25rem var(--colors-secondary2)) drop-shadow(0 0 .5rem var(--colors-secondary1))`,
+    filter: `saturate(1.5) drop-shadow(0 2px 0 $colors$seondary1 drop-shadow(2px 0 0 $colors$secondary1) drop-shadow(0 -2px 0 $colors$secondary1)) drop-shadow(-2px 0 0 $colors$secondary1) drop-shadow(0 0 .25rem $colors$secondary2) drop-shadow(0 0 .5rem $colors$secondary1)`,
   },
+});
+
+const lilJiggle = keyframes({
+  '0%': { transform: 'rotate(0deg)' },
+  '25%': { transform: 'rotate(-7deg)' },
+  '50%': { transform: 'rotate(0deg)' },
+  '75%': { transform: 'rotate(3.5deg)' },
+  '100%': { transform: 'rotate(0deg)' },
 });
 
 export const HeaderLogo = styled(Logo, {
   width: '6rem',
+  animationDelay: '150ms',
+  animationDuration: '450ms',
+  animationFillMode: 'both',
+  animationTimingFunction: 'ease-in-out',
+
+  '&:hover': {
+    animationName: `${lilJiggle}`,
+  },
 });
 
 interface HeaderProps {
