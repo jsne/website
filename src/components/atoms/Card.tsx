@@ -85,7 +85,6 @@ export const CardPreheading: React.FC<CardTextProps> = ({ css, ...props }) => (
     as="h1"
     css={{
       position: 'relative',
-      letterSpacing: '$spaced',
       color: '$pageContrast1',
       textTransform: 'uppercase',
       ...(css as any),

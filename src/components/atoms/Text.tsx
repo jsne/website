@@ -15,8 +15,8 @@ type TextStyle = {
 
 /** Generic text component with preset styles for each `text` preset available. */
 export const Text = styled(Box, {
-  marginTop: 0,
-  marginBottom: 0,
+  marginBlockStart: 0,
+  marginBlockEnd: 0,
 
   variants: {
     textStyle: Object.fromEntries(
