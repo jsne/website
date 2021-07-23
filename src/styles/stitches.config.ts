@@ -1,11 +1,6 @@
 import { createCss, StitchesCss } from '@stitches/react';
 
-import {
-  theme,
-  ThemeColorsTokenKey,
-  ThemeTextStylesTokenKey,
-  ThemeFontWeightsTokenKey,
-} from './theme';
+import { theme, ThemeColorsTokenKey, ThemeTextStylesTokenKey } from './theme';
 
 export const stitchesConfig = createCss({
   prefix: 'jsne',
@@ -30,7 +25,14 @@ export const stitchesConfig = createCss({
 
     /** Get linear-gradient `background-image` with accessible `color`. */
     withLinearGradient:
-      (config) => (variant: 'body' | 'primary' | 'secondary' | 'tertiary') => {
+      (config) =>
+      ({
+        angle = 87.06,
+        variant,
+      }: {
+        angle?: number;
+        variant: 'body' | 'primary' | 'secondary' | 'tertiary';
+      }) => {
         // Lil' hack to dynamically map color variant values.
         const tokenColors = config.theme.colors as Record<string, string>;
 
@@ -41,7 +43,7 @@ export const stitchesConfig = createCss({
         ];
 
         return {
-          backgroundImage: `linear-gradient(87.06deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
+          backgroundImage: `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
           color: tokenColors[`${variant}Contrast1`],
         };
       },

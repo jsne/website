@@ -9,8 +9,9 @@
   ],
   "scripts": {
     "bootstrap": "cp ./.env.example .env && yarn install --frozen-lockfile && husky install",
-    "build": "gatsby build",
-    "clean": "gatsby clean && rm -r src/generated",
+    "build": "babel gatsby-ssr.tsx -d . -x .tsx",
+    "prepack": "yarn build",
+    "clean": "gatsby clean && rm -rf src/generated",
     "develop": "gatsby develop",
     "lint": "eslint --rule \"'no-alert': 'error', 'no-console': 'error', 'no-debugger': 'error', '@typescript-eslint/no-unused-vars': ['error', { args: 'all', argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true }]\"",
     "preload-fonts": "gatsby-preload-fonts",

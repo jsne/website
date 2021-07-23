@@ -17,8 +17,7 @@ export const CardRoot = styled(Box, {
     cardLayout: {
       vertical: {},
       horizontal: {
-        display: 'grid',
-        gridTemplateColumns: '32% auto',
+        display: 'flex',
       },
     },
   },
@@ -44,7 +43,7 @@ export const CardMedia = styled('div', {
   variants: {
     cardLayout: {
       vertical: { paddingTop: '56.25%' },
-      horizontal: { paddingTop: 0 },
+      horizontal: { width: '32%', paddingTop: 0 },
     },
   },
 });
@@ -73,7 +72,12 @@ export const CardBody = styled('div', {
   variants: {
     cardLayout: {
       vertical: { gap: '$4', padding: '$5' },
-      horizontal: { gap: '$5', padding: '$7' },
+      horizontal: {
+        width: '100%',
+        maxWidth: '38rem',
+        gap: '$5',
+        padding: '$7',
+      },
     },
   },
 });
@@ -110,7 +114,12 @@ export const CardHeading: React.FC<CardTextProps> = ({ css, ...props }) => (
 
 export const CardParagraph: React.FC<CardTextProps> = ({ css, ...props }) => (
   <Text
-    css={{ position: 'relative', color: '$pageContrast2', ...(css as any) }}
+    css={{
+      position: 'relative',
+      marginBottom: '$2',
+      color: '$pageContrast2',
+      ...(css as any),
+    }}
     textStyle="p"
     {...props}
   />
@@ -130,14 +139,4 @@ export const CardCtas = styled('div', {
       horizontal: { gap: '$7' },
     },
   },
-});
-
-export const Button = styled('button', {
-  display: 'flex',
-  appearance: 'none',
-  backgroundColor: 'transparent',
-  border: 0,
-
-  '@bpsm': { color: '$primary1', transform: 'scale(2)' },
-  '@bplg': { color: '$primary2', transform: 'scale(4)' },
 });

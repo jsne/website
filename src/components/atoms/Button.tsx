@@ -7,7 +7,7 @@ export const Button = styled('button', {
   fontWeight: '$medium',
   fontSize: '$p',
   minWidth: '9.5rem',
-  padding: '$5 $6',
+  padding: '$5 $7',
   border: 0,
   borderRadius: '$1',
   textDecoration: 'none',
@@ -55,14 +55,14 @@ export const Button = styled('button', {
   variants: {
     buttonAppearance: {
       primary: {
-        withLinearGradient: 'primary',
+        withLinearGradient: { variant: 'primary' },
         '&:focus-within': {
           withOutline: '$secondary1',
         },
       },
 
       secondary: {
-        withLinearGradient: 'secondary',
+        withLinearGradient: { variant: 'secondary' },
         '&:focus-within': {
           withOutline: '$tertiary1',
         },

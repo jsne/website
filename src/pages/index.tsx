@@ -1,7 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import { Upsells, UpsellsProps } from '~/blocks/Upsell';
 import { Box } from '~/components/atoms/Box';
+import { Button } from '~/components/atoms/Button';
 import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { Header } from '~/components/compositions/Header';
@@ -13,6 +15,7 @@ import {
   HeroBody,
   HeroTitle,
 } from '~/components/compositions/Hero';
+import { ScrollAnchor } from '~/components/primitives/ScrollAnchor';
 import { Layout } from '~/components/template/Layout';
 import { Mdx } from '~/components/template/Mdx';
 
@@ -37,6 +40,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 
   const eventPreHeading = nextEventHasExpired ? 'Event Update' : 'Next Event';
   const event = nextEventHasExpired ? placeholderEvent : nextEvent;
+  const mailingListId = 'mailing-list';
+
+  const primaryCta = {
+    as: nextEventHasExpired ? ScrollAnchor : undefined,
+    children: nextEventHasExpired ? 'Join Our Mailing List' : 'Get Tickets',
+    href: nextEventHasExpired ? `#${mailingListId}` : nextEvent.slug,
+  };
 
   return (
     <Layout head={{ title: page.title }}>
@@ -89,13 +99,22 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             css={{
               display: 'grid',
               gridGap: '$2',
+              marginBottom: '$7',
               color: '$bodyContrast2',
+              '& > *': {
+                lineHeight: '$spaced',
+              },
             }}
           >
             <Mdx>{event.description?.childMdx?.body!}</Mdx>
           </Box>
+          <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
+            <Button as="a" buttonAppearance="primary" {...primaryCta} />
+          </Box>
         </Wrapper>
       </Box>
+
+      {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
       <noscript>I can&apos;t believe you&apos;ve done this.</noscript>
     </Layout>

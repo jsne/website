@@ -12,7 +12,7 @@ exports.onCreateWebpackConfig = ({ stage, plugins, actions }) => {
   actions.setWebpackConfig({
     plugins: [
       plugins.define(webpackConfigPluginDefineOptions(stage)),
-      new ForkTsCheckerWebpackPlugin(),
+      new ForkTsCheckerWebpackPlugin({ async: true }),
     ],
     resolve: { alias: webpackConfigResolveAlias },
   });

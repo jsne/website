@@ -16,5 +16,8 @@ export const PageFragment = graphql`
         body
       }
     }
+    upsells {
+      ...UpsellFragment
+    }
   }
 `;

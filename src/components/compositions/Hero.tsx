@@ -7,7 +7,7 @@ import { styled } from '~/styles/stitches.config';
 /** Root element. */
 export const HeroRoot = styled('section', {
   position: 'relative',
-  withLinearGradient: 'primary',
+  withLinearGradient: { variant: 'primary' },
 });
 
 /** Main wrapper for content. */

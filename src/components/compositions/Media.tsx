@@ -7,7 +7,7 @@ export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
   /** Paragraph content. */
   body: React.ReactNode | string;
   /** Primary call to action. */
-  ctaPrimary: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  ctaPrimary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
   /** Secondary call to action. */
   ctaSecondary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
   /** Main heading. */
@@ -37,9 +37,11 @@ export const Media: React.FC<MediaProps> = ({
   <Card.CardRoot cardLayout={layout} as={as} {...props}>
     <Card.CardMedia cardLayout={layout}>
       <Card.CardImg cardLayout={layout} {...media} />
-      <Card.CardLinkOverlay aria-hidden href={ctaPrimary.href}>
-        {heading}
-      </Card.CardLinkOverlay>
+      {ctaPrimary && (
+        <Card.CardLinkOverlay aria-hidden href={ctaPrimary.href}>
+          {heading}
+        </Card.CardLinkOverlay>
+      )}
     </Card.CardMedia>
 
     <Card.CardBody cardLayout={layout}>

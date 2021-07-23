@@ -31,19 +31,19 @@ export const Link = styled('a', {
   variants: {
     linkAppearance: {
       primary: {
-        withLinearGradient: 'primary',
+        withLinearGradient: { variant: 'primary' },
         '&:focus-within': {
           withOutline: '$primary1',
         },
       },
       secondary: {
-        withLinearGradient: 'secondary',
+        withLinearGradient: { variant: 'secondary' },
         '&:focus-within': {
           withOutline: '$secondary1',
         },
       },
       tertiary: {
-        withLinearGradient: 'tertiary',
+        withLinearGradient: { variant: 'tertiary' },
         '&:focus-within': {
           withOutline: '$tertiary1',
         },

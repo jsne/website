@@ -74,11 +74,11 @@ export const theme = {
     secondary1: '#A26BFC',
     secondary2: '#682EC6',
     secondary3: '#4220A3',
-    secondaryContrast1: '$white2',
+    secondaryContrast1: '$white1',
     tertiary1: '#56CCF2',
     tertiary2: '#2D9CDB',
     tertiary3: '#2F59ED',
-    tertiaryContrast1: '$white2',
+    tertiaryContrast1: '$white1',
     shadow1: 'rgba(0, 0, 0, .085)',
     shadow2: 'rgba(0, 0, 0, .035)',
   },
@@ -103,7 +103,7 @@ export const theme = {
   shadows: {},
   sizes: {
     wrapperWidth1: remify(520),
-    wrapperWidth2: remify(1140),
+    wrapperWidth2: remify(1024),
   },
   space: {
     '1': '.25rem',
@@ -125,7 +125,5 @@ export const theme = {
 export type Theme = typeof theme;
 /** Tokenised `colors` keys (prefixed with `$`). */
 export type ThemeColorsTokenKey = `$${keyof Theme['colors']}`;
-/** Tokenised `fontWeights` keys (prefixed with `$`). */
-export type ThemeFontWeightsTokenKey = `$${keyof Theme['fontWeights']}`;
 /** Tokenised text style keys (prefixed with `$`). */
 export type ThemeTextStylesTokenKey = `$${ThemeTextStylesKey}`;
