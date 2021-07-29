@@ -4173,15 +4173,15 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stitches/core@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.npmjs.org/@stitches/core/-/core-0.2.2.tgz#820928f7120365909afd09d83a5f61fe8a77ccfe"
-  integrity sha512-+k4PcQxaxsJJoDhkglDk1wxXpPCJDsTsXXH6XNPLJcvjNOCTwb5ln7sr5KPkYZ/wDsL7rGnmWgIuXgy0lVgT3w==
+"@stitches/core@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.npmjs.org/@stitches/core/-/core-0.2.3.tgz#dcacd629e586ec2c0736776a8a76e0c6f8afbe87"
+  integrity sha512-Slw1qpezKA0j+AQls3c0cKG8k0OFw0mhWDV8ovFeS3dh6ps9KHWsuz0LLkAcM5mxDOc/7BBvJrFsgo79xzZ12Q==
 
-"@stitches/react@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.npmjs.org/@stitches/react/-/react-0.2.2.tgz#8a2f8256835510c265ab20820f54a5bb0376bac6"
-  integrity sha512-/qRSX+ANPJg/0eLNr5bEywjkdvIfLbsaG2d8p83wPlI0MA7Yi9FzaRLk2H6DMAdJHuyu6ThY4HfHQIL35buY9g==
+"@stitches/react@0.2.3":
+  version "0.2.3"
+  resolved "https://registry.npmjs.org/@stitches/react/-/react-0.2.3.tgz#b6c791783eb563bccf366ee75ab30dee2470393f"
+  integrity sha512-x8sho2hGD+G58RW/Di4xhd2K5IONLtzHbz3JFx3res6Tc1sWFJsfT+3qZgMVnAgPrFhjEkHkDyvNVVTp5M0BbQ==
 
 "@storybook/addon-a11y@^6.3.4":
   version "6.3.4"
