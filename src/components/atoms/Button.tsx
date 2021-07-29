@@ -6,7 +6,7 @@ export const Button = styled('button', {
   justifyContent: 'center',
   fontWeight: '$medium',
   fontSize: '$p',
-  minWidth: '9.5rem',
+  minWidth: '13rem',
   padding: '$5 $7',
   border: 0,
   borderRadius: '$1',

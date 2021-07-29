@@ -130,7 +130,7 @@ export const CardCtas = styled('div', {
   display: 'grid',
   alignContent: 'start',
   justifyContent: 'start',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(min(12rem, 100%), auto))',
+  gridTemplateColumns: 'repeat(auto-fit, minmax(min(13rem, 100%), auto))',
   width: '100%',
 
   variants: {
