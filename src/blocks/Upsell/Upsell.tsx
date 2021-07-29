@@ -36,7 +36,7 @@ export const Upsell: React.FC<UpsellProps> = ({
         },
       }}
       layout={{ '@initial': 'vertical', '@bpsm': 'horizontal' }}
-      media={{ ...targetMedia?.fluid, alt: props.heading }}
+      media={{ ...targetMedia?.fluid, alt: targetMedia?.description }}
       {...props}
     />
   );
