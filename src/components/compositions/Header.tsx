@@ -23,6 +23,11 @@ export const HeaderLink = styled('a', {
     outline: 0,
     filter: `saturate(1.5) drop-shadow(0 2px 0 $colors$seondary1 drop-shadow(2px 0 0 $colors$secondary1) drop-shadow(0 -2px 0 $colors$secondary1)) drop-shadow(-2px 0 0 $colors$secondary1) drop-shadow(0 0 .25rem $colors$secondary2) drop-shadow(0 0 .5rem $colors$secondary1)`,
   },
+
+  '&:focus-visible': {
+    transform: `scale(1.05)`,
+    filter: `saturate(1.5) drop-shadow(0 0 .25rem $colors$secondary1) drop-shadow(0 0 .5rem $colors$secondary1)`,
+  },
 });
 
 const lilJiggle = keyframes({
@@ -53,8 +58,8 @@ interface HeaderProps {
 /** Main website header. */
 export const Header: React.FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
   <HeaderRoot as="header" role="banner" wrapperPadding="x4" {...props}>
-    <HeaderLink href={logoSlug}>
-      <HeaderLogo />
+    <HeaderLink href={logoSlug} title="Go to Homepage">
+      <HeaderLogo aria-hidden />
     </HeaderLink>
   </HeaderRoot>
 );
