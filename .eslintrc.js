@@ -16,6 +16,7 @@ module.exports = {
     'testing-library',
     '@typescript-eslint',
     'react',
+    'react-hooks',
     'jest',
     'jest-dom',
     'graphql',
@@ -27,7 +28,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:testing-library/recommended',
+    'plugin:testing-library/dom',
     'plugin:jest-dom/recommended',
   ],
   env: {
@@ -60,6 +61,9 @@ module.exports = {
     'react/jsx-indent-props': 0,
     'react/prop-types': 0,
     'react/self-closing-comp': 'warn',
+
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
 
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
