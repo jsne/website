@@ -12,7 +12,7 @@ export const VenueCardRoot = styled(Box, {
   justifyItems: 'start',
   gap: '$4',
   width: '100%',
-  maxWidth: '28rem',
+  maxWidth: '27rem',
   padding: '$6',
   borderRadius: '$1',
   withLinearGradient: { variant: 'body' },

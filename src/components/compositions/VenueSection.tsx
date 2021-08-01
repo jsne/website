@@ -46,14 +46,18 @@ export const VenueSection: React.FC<VenueSectionProps> = ({
       <VenueSectionTop aria-hidden />
 
       <Wrapper
+        wrapperPadding="x4"
         css={{
           position: 'relative',
           display: 'flex',
-          justifyContent: 'flex-end',
+          justifyContent: 'center',
           paddingTop: '$section',
           paddingBottom: '$section',
           zIndex: 1,
           pointerEvents: 'none',
+          '@bpsm': {
+            justifyContent: 'flex-end',
+          },
         }}
       >
         <VenueCard
