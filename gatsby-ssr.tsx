@@ -5,6 +5,10 @@ import { getCssString } from './src/styles/stitches.config';
 
 export const onRenderBody = ({ setHeadComponents }: RenderBodyArgs) => {
   setHeadComponents([
-    <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssString() }} />,
+    <style
+      key="stitches"
+      id="stitches"
+      dangerouslySetInnerHTML={{ __html: getCssString() }}
+    />,
   ]);
 };
