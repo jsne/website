@@ -49,8 +49,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     href: nextEventHasExpired ? `#${mailingListId}` : nextEvent.slug,
   };
 
-  console.error(`!!!!!\n\n\n\n\n\n${process.env.GATSBY_IS_LIVE}\n\n\n\n\n\n!!!!!`);
-
   return (
     <Layout head={{ title: page.title }}>
       <HeroRoot>
