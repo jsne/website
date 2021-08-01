@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "bootstrap": "cp ./.env.example .env && yarn install --frozen-lockfile && husky install",
-    "build": "gatsby build",
+    "build": "env NODE_ENV=production gatsby build",
     "clean": "gatsby clean && rm -rf src/generated",
     "develop": "gatsby develop",
     "lint": "eslint --rule \"'no-alert': 'error', 'no-console': 'error', 'no-debugger': 'error', '@typescript-eslint/no-unused-vars': ['error', { args: 'all', argsIgnorePattern: '^_', varsIgnorePattern: '^_', ignoreRestSiblings: true }]\"",
