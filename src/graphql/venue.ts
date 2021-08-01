@@ -4,14 +4,18 @@ import { graphql } from 'gatsby';
 export const VenueFragment = graphql`
   fragment VenueFragment on ContentfulVenue {
     id
+    name
+    body {
+      childMdx {
+        body
+      }
+    }
+    address
     location {
       lat
       lon
     }
-    name
     mapsLink
-    postcode
     slug
-    street
   }
 `;

@@ -26,7 +26,6 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
-    'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:testing-library/dom',
     'plugin:jest-dom/recommended',
@@ -65,6 +64,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 
+    '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
       'warn',

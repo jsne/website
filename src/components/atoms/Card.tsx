@@ -3,6 +3,7 @@ import React from 'react';
 import { StitchesVariants, styled } from '~/styles/stitches.config';
 
 import { Box, BoxProps } from './Box';
+import { BUTTON_MAX_WIDTH } from './Button';
 import { Text, TextProps } from './Text';
 
 export const CardRoot = styled(Box, {
@@ -130,7 +131,7 @@ export const CardCtas = styled('div', {
   display: 'grid',
   alignContent: 'start',
   justifyContent: 'start',
-  gridTemplateColumns: 'repeat(auto-fit, minmax(min(13rem, 100%), auto))',
+  gridTemplateColumns: `repeat(auto-fit, minmax(min(${BUTTON_MAX_WIDTH}, 100%), auto))`,
   width: '100%',
 
   variants: {

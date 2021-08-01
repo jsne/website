@@ -2,6 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 
 import { Upsells, UpsellsProps } from '~/blocks/Upsell';
+import { Venue } from '~/blocks/Venue';
 import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';
 import { Text } from '~/components/atoms/Text';
@@ -47,6 +48,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
     children: nextEventHasExpired ? 'Join Our Mailing List' : 'Get Tickets',
     href: nextEventHasExpired ? `#${mailingListId}` : nextEvent.slug,
   };
+
+  console.error(`!!!!!\n\n\n\n\n\n${process.env.GATSBY_IS_LIVE}\n\n\n\n\n\n!!!!!`);
 
   return (
     <Layout head={{ title: page.title }}>
@@ -115,6 +118,8 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       </Box>
 
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
+
+      {event.venue && <Venue venue={event.venue} />}
 
       <noscript>I can&apos;t believe you&apos;ve done this.</noscript>
     </Layout>

@@ -52,6 +52,7 @@ export const theme = {
     white1: '#FFFFFF',
     white2: '#E5E5E5',
     white3: '#A5A3B7',
+    white3Alpha: 'rgba(165, 163, 183, 0.15)',
 
     // Abstracted colour definitions.
 
@@ -61,6 +62,7 @@ export const theme = {
     bodyContrast1: '$white1',
     bodyContrast2: '$white2',
     bodyContrast3: '$white3',
+    bodyContrast4: '$white3Alpha',
     page: '$white1',
     pageContrast1: '$white3',
     pageContrast2: '$black2',

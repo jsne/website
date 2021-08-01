@@ -1,12 +1,14 @@
 import { styled } from '~/styles/stitches.config';
 
+export const BUTTON_MAX_WIDTH = '13rem';
+
 /** Generic variant-controlled button. */
 export const Button = styled('button', {
   display: 'inline-flex',
   justifyContent: 'center',
-  fontWeight: '$medium',
+  fontWeight: '$bold',
   fontSize: '$p',
-  minWidth: '13rem',
+  minWidth: BUTTON_MAX_WIDTH,
   padding: '$5 $7',
   border: 0,
   borderRadius: '$1',
@@ -14,6 +16,7 @@ export const Button = styled('button', {
   appearance: 'none',
   cursor: 'pointer',
   outline: 0,
+  textTransform: 'uppercase',
   withBoxShadow: '$shadow1',
   withTransition: 'box-shadow, filter, transform',
 
@@ -56,14 +59,14 @@ export const Button = styled('button', {
     buttonAppearance: {
       primary: {
         withLinearGradient: { variant: 'primary' },
-        '&:focus-within': {
+        '&:focus-visible': {
           withOutline: '$secondary1',
         },
       },
 
       secondary: {
         withLinearGradient: { variant: 'secondary' },
-        '&:focus-within': {
+        '&:focus-visible': {
           withOutline: '$tertiary1',
         },
       },

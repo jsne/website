@@ -9,7 +9,7 @@ export interface MdxProps extends MDXRendererProps {
   components: MDXProviderComponentsProp;
 }
 
-const mdxDefaultComponents = {
+export const mdxDefaultComponents = {
   p: (props: TextProps) => <Text as="p" {...props} />,
 };
 

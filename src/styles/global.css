@@ -11,8 +11,8 @@
 :root {
   font-family: 'inter', system-ui, sans-serif;
   font-size: clamp(14px, calc(14px + (20 - 14) * ((100vw - 360px) / 1368)), 20px);
-  background-color: var(--colors-body3);
-  color: var(--colors-bodyContrast1);
+  background-color: var(--jsne-colors-body3);
+  color: var(--jsne-colors-bodyContrast1);
   box-sizing: border-box;
 }
 
@@ -20,6 +20,18 @@
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+::-moz-selection {
+  background-color: var(--jsne-colors-tertiary2);
+  text-shadow: 0 0 0.25rem var(--jsne-colors-teriary3);
+  color: var(--jsne-colors-tertiaryContrast1);
+}
+
+::selection {
+  background-color: var(--jsne-colors-tertiary2);
+  text-shadow: 0 0 0.25rem var(--jsne-colors-teriary3);
+  color: var(--jsne-colors-tertiaryContrast1);
 }
 
 html,

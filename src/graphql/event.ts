@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 /** Fields for lists of events. */
 export const EventListingFragment = graphql`
   fragment EventListingFragment on ContentfulEvent {
+    title
     description {
       childMdx {
         body
@@ -20,6 +21,8 @@ export const EventListingFragment = graphql`
     speaker {
       ...SpeakerFragment
     }
-    title
+    venue {
+      ...VenueFragment
+    }
   }
 `;
