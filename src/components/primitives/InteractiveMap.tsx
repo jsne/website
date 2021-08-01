@@ -1,5 +1,6 @@
 import mapboxgl, {
   LngLatLike,
+  Marker,
   Map as MapboxMap,
   MapboxOptions,
   MarkerOptions,
@@ -31,24 +32,30 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const map = useRef<MapboxMap>();
 
   useEffect(() => {
-    map.current = new mapboxgl.Map({
-      container: id,
-      style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy',
-      ...mapOptions,
-      center: [mapOptions.center.lon || 0, mapOptions.center.lat || 0],
-    });
+    let marker: Marker;
 
-    map.current.scrollZoom.disable();
+    try {
+      map.current = new mapboxgl.Map({
+        container: id,
+        style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy',
+        ...mapOptions,
+        center: [mapOptions.center.lon || 0, mapOptions.center.lat || 0],
+      });
 
-    const marker = new mapboxgl.Marker({
-      color: 'var(--jsne-colors-primary2)',
-      draggable: true,
-    })
-      .setLngLat(markerOptions.center as LngLatLike)
-      .addTo(map.current);
+      map.current.scrollZoom.disable();
+
+      marker = new mapboxgl.Marker({
+        color: 'var(--jsne-colors-primary2)',
+        draggable: true,
+      })
+        .setLngLat(markerOptions.center as LngLatLike)
+        .addTo(map.current);
+    } catch (err) {
+      console.error('[InteractiveMap] Unable to create map', err);
+    }
 
     return () => {
-      marker.remove();
+      if (marker) marker.remove();
     };
   }, [id, mapOptions, markerOptions]);
 
