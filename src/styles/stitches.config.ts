@@ -19,9 +19,7 @@ export const stitchesConfig = createCss({
     withBoxShadow:
       () =>
       (color: ThemeColorsTokenKey = '$shadow1') => ({
-        // @TODO updaten this to use the reference format
-        $$shadowColor: `$colors${color}`,
-        boxShadow: `0 .175rem .5rem $$shadowColor, .16rem .25rem .175rem $$shadowColor`,
+        boxShadow: `0 .175rem .5rem $colors${color}, .16rem .25rem .175rem $colors${color}`,
       }),
 
     /** Get linear-gradient `background-image` with accessible `color`. */
