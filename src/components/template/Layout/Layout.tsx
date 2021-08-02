@@ -8,7 +8,6 @@ import '~/styles/global.css';
 const LayoutHead: React.FC<HelmetProps> = ({ htmlAttributes, ...props }) => (
   <Helmet htmlAttributes={{ lang: 'en', ...htmlAttributes } as HtmlProps} {...props}>
     <link
-      crossOrigin="anonymous"
       href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
       rel="stylesheet"
     />

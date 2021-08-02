@@ -37,7 +37,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     try {
       map.current = new mapboxgl.Map({
         container: id,
-        style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy',
+        style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy?optimize=true',
         ...mapOptions,
         center: [mapOptions.center.lon || 0, mapOptions.center.lat || 0],
       });

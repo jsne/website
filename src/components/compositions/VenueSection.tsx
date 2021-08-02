@@ -10,6 +10,8 @@ import { InteractiveMap, InteractiveMapProps } from '../primitives/InteractiveMa
 
 const VenueSectionRoot = styled('section', {
   position: 'relative',
+  backgroundColor: '$secondary2',
+  color: '$secondaryContrast1',
 });
 
 const VenueSectionTop = styled(Top, {
