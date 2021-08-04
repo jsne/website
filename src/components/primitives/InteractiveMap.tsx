@@ -4,7 +4,7 @@ import mapboxgl, {
   Map as MapboxMap,
   MapboxOptions,
   MarkerOptions,
-} from 'mapbox-gl';
+} from '!mapbox-gl';
 import React, { useEffect, useRef } from 'react';
 
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_KEY;
