@@ -3,7 +3,7 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { addDecorator, addParameters } from '@storybook/react';
 import React from 'react';
 
-import { Layout } from '~/components/template/Layout';
+import { Layout } from '~/components/primitives/Layout';
 
 import { theme } from './theme';
 
