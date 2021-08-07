@@ -2,6 +2,11 @@ import { createCss, StitchesCss } from '@stitches/react';
 
 import { theme, ThemeColorsTokenKey, ThemeTextStylesTokenKey } from './theme';
 
+interface WithBoxShadowProps {
+  color?: ThemeColorsTokenKey;
+  variant?: 'short' | 'long';
+}
+
 export const stitchesConfig = createCss({
   prefix: 'jsne',
   theme,
@@ -18,9 +23,29 @@ export const stitchesConfig = createCss({
     /** Apply preset box-shadow with custom color. */
     withBoxShadow:
       () =>
-      (color: ThemeColorsTokenKey = '$shadow1') => ({
-        boxShadow: `0 .175rem .5rem $colors${color}, .16rem .25rem .175rem $colors${color}`,
-      }),
+      ({ color = '$shadow1', variant = 'short' }: WithBoxShadowProps) => {
+        if (variant === 'short') {
+          return {
+            /** @NOTE Using scoped variable to avoid overly complex type unions. */
+            $$thisColor: `$colors${color}`,
+            boxShadow: `0 0.1rem 0.1rem $$thisColor,
+                        0 0.15rem 0.15rem $$thisColor,
+                        0 0.25rem 0.25rem $$thisColor,
+                        0 0.375rem 0.5rem $$thisColor,
+                        0 0.5rem 1rem $$thisColor`,
+          };
+        }
+
+        return {
+          $$thisColor: `$colors${color}`,
+          boxShadow: `0 1px 2px $$thisColor,
+                      0 2px 4px $$thisColor,
+                      0 4px 8px $$thisColor,
+                      0 8px 16px $$thisColor,
+                      0 16px 32px $$thisColor,
+                      0 32px 64px $$thisColor`,
+        };
+      },
 
     /** Get linear-gradient `background-image` with accessible `color`. */
     withLinearGradient:
@@ -51,9 +76,8 @@ export const stitchesConfig = createCss({
     withOutline:
       () =>
       (color: ThemeColorsTokenKey = '$secondary1') => ({
-        $$shadowColor: `$colors${color}`,
         outline: 0,
-        boxShadow: `0 0 0 0.2rem $$shadowColor`,
+        boxShadow: `0 0 0 0.2rem $colors${color}`,
       }),
 
     /** Apply preset font styles. */

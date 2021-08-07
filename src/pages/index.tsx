@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import { Upsells, UpsellsProps } from '~/blocks/Upsell';
+import { Upsells, UpsellsProps } from '~/blocks/Upsells';
 import { Venue } from '~/blocks/Venue';
 import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';

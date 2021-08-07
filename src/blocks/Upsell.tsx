@@ -27,7 +27,7 @@ export const Upsell: React.FC<UpsellProps> = ({
       }}
       ctaSecondary={{
         children: ctaSecondaryLabel,
-        href: ctaPrimaryItem?.slug,
+        href: ctaSecondaryItem?.slug,
       }}
       css={{
         '&:nth-of-type(even)': {

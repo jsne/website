@@ -17,7 +17,7 @@ export const Button = styled('button', {
   cursor: 'pointer',
   outline: 0,
   textTransform: 'uppercase',
-  withBoxShadow: '$shadow1',
+  withBoxShadow: { variant: 'short' },
   withTransition: 'box-shadow, filter, transform',
 
   '&::before': {
@@ -38,7 +38,6 @@ export const Button = styled('button', {
   '&:hover:not([disabled])': {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
-    withBoxShadow: '$shadow2',
 
     '&::before': {
       filter: 'blur(.5rem)',

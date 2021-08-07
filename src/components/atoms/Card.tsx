@@ -12,7 +12,7 @@ export const CardRoot = styled(Box, {
   color: '$pageContrast2',
   borderRadius: '$2',
   overflow: 'hidden',
-  withBoxShadow: '$shadow1',
+  withBoxShadow: { variant: 'long', color: '$shadow2' },
 
   variants: {
     cardLayout: {
