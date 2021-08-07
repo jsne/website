@@ -16,9 +16,9 @@ import {
   HeroBody,
   HeroTitle,
 } from '~/components/compositions/Hero';
+import { Layout } from '~/components/primitives/Layout';
+import { Mdx } from '~/components/primitives/Mdx';
 import { ScrollAnchor } from '~/components/primitives/ScrollAnchor';
-import { Layout } from '~/components/template/Layout';
-import { Mdx } from '~/components/template/Mdx';
 
 interface IndexPageProps {
   data: GatsbyTypes.HomeQueryQuery;
@@ -107,7 +107,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
               },
             }}
           >
-            <Mdx>{event.description?.childMdx?.body!}</Mdx>
+            <Mdx>{event.description?.childMdx?.body}</Mdx>
           </Box>
           <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
             <Button as="a" buttonAppearance="primary" {...primaryCta} />

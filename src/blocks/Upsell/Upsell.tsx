@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Media, MediaProps } from '~/components/compositions/Media';
-import { Mdx } from '~/components/template/Mdx';
+import { Mdx } from '~/components/primitives/Mdx';
 
 export type UpsellProps = Partial<Pick<MediaProps, 'css'>> &
   GatsbyTypes.UpsellFragmentFragment;
@@ -20,7 +20,7 @@ export const Upsell: React.FC<UpsellProps> = ({
 
   return (
     <Media
-      body={<Mdx>{body?.childMdx?.body!}</Mdx>}
+      body={<Mdx>{body?.childMdx?.body}</Mdx>}
       ctaPrimary={{
         children: ctaPrimaryLabel,
         href: ctaPrimaryItem?.slug,

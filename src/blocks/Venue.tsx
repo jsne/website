@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { VenueSection, VenueSectionProps } from '~/components/compositions/VenueSection';
-import { Mdx } from '~/components/template/Mdx';
+import { Mdx } from '~/components/primitives/Mdx';
 
 interface VenueProps {
   venue: Required<GatsbyTypes.VenueFragmentFragment>;
