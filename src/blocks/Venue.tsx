@@ -9,13 +9,7 @@ interface VenueProps {
 
 /** Venue section with map, accepts and converts the venue fragment type. */
 export const Venue: React.FC<VenueProps> = ({ venue, ...props }) => {
-  if (
-    !venue.body?.childMdx?.body ||
-    !venue.name ||
-    !venue.address ||
-    !venue.mapsLink ||
-    !venue.location
-  ) {
+  if (!venue.name || !venue.address || !venue.mapsLink || !venue.location) {
     console.error('[Venue] Some properties were missing', venue);
     throw new Error('[Venue] Invalid venue provided');
   }
@@ -24,7 +18,7 @@ export const Venue: React.FC<VenueProps> = ({ venue, ...props }) => {
     preHeading: 'Venue',
     heading: venue.name,
     postHeading: venue.address,
-    body: <Mdx>{venue.body.childMdx.body}</Mdx>,
+    body: <Mdx>{venue.body?.childMdx?.body}</Mdx>,
     cta: venue.mapsLink,
   };
 
@@ -34,7 +28,7 @@ export const Venue: React.FC<VenueProps> = ({ venue, ...props }) => {
       venue={parsedVenue}
       mapOptions={{
         center: venue.location,
-        pitch: 30,
+        pitch: 35,
         bearing: -10,
         minZoom: 11,
         maxZoom: 17,

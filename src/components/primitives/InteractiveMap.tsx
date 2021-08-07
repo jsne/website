@@ -7,6 +7,22 @@ import mapboxgl, {
 } from '!mapbox-gl';
 import React, { useEffect, useRef } from 'react';
 
+import mapMarker from '~/assets/images/map-marker.svg';
+import { styled } from '~/styles/stitches.config';
+
+const InteractiveMapRoot = styled('div', {
+  '.mapboxgl-marker': {
+    backgroundImage: `url('${mapMarker}')`,
+    backgroundSize: 'auto 138%',
+    backgroundPosition: 'center',
+  },
+  '.mapboxgl-marker svg': {
+    width: '2.25rem',
+    height: '3.25rem',
+    opacity: 0,
+  },
+});
+
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_KEY;
 
 interface MapBaseOptions {
@@ -59,5 +75,5 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     };
   }, [id, mapOptions, markerOptions]);
 
-  return <div id={id} {...props} />;
+  return <InteractiveMapRoot id={id} {...props} />;
 };

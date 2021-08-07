@@ -40,7 +40,7 @@ export const Button = styled('button', {
     transform: 'scale(1.05)',
 
     '&::before': {
-      filter: 'blur(.5rem)',
+      filter: 'blur(.55rem)',
       opacity: 1,
     },
   },
