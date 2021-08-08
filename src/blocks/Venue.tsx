@@ -32,7 +32,7 @@ export const Venue: React.FC<VenueProps> = ({ venue, ...props }) => {
         bearing: -10,
         minZoom: 11,
         maxZoom: 17,
-        zoom: typeof window !== 'undefined' && window.innerWidth > 1280 ? 15.4 : 17,
+        zoom: 15.75,
       }}
       markerOptions={{
         center: venue.location,

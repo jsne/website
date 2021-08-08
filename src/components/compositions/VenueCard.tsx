@@ -15,6 +15,7 @@ export const VenueCardRoot = styled(Box, {
   maxWidth: '27rem',
   padding: '$6',
   borderRadius: '$1',
+  withBoxShadow: { variant: 'long' },
   withLinearGradient: { variant: 'body' },
 });
 
