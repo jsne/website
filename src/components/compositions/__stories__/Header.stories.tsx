@@ -1,6 +1,7 @@
+import { Story } from '@storybook/react';
 import React from 'react';
 
-import { Header } from '../Header';
+import { Header, HeaderProps } from '../Header';
 
 export default {
   title: 'Compositions/Header',
@@ -8,5 +9,5 @@ export default {
   parameters: { layout: 'fullscreen' },
 };
 
-export const Default = (args) => <Header {...args} />;
+export const Default: Story<HeaderProps> = (args) => <Header {...args} />;
 Default.args = { logoSlug: '/' };

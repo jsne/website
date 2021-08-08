@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react';
 import React from 'react';
 
 import { Link } from '../Link';
@@ -19,21 +20,21 @@ All.argTypes = {
   linkAppearance: { control: { disable: true }, table: { disable: true } },
 };
 
-export const Primary = (args) => (
+export const Primary: Story = (args) => (
   <div style={{ display: 'inline-flex', background: '#000' }}>
     <Link {...args} style={{ backgroundColor: 'black' }} />
   </div>
 );
 Primary.args = { children: 'This is h1 Text', href: '#', linkAppearance: 'primary' };
 
-export const Secondary = (args) => <Link {...args} />;
+export const Secondary: Story = (args) => <Link {...args} />;
 Secondary.args = {
   children: 'This is h1 Text',
   href: '#',
   linkAppearance: 'secondary',
 };
 
-export const Tertiary = (args) => <Link {...args} />;
+export const Tertiary: Story = (args) => <Link {...args} />;
 Tertiary.args = {
   children: 'This is h1 Text',
   href: '#',

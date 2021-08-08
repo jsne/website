@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react';
 import React from 'react';
 
 import { HeroRoot, HeroBottom, HeroMain, HeroBody, HeroTitle } from '../Hero';
@@ -40,26 +41,26 @@ export const AllPageTitle = () => (
   </>
 );
 
-export const Root = (args) => <HeroRoot {...args} />;
+export const Root: Story = (args) => <HeroRoot {...args} />;
 Root.args = { children: 'Root' };
 
-export const Main = (args) => (
+export const Main: Story = (args) => (
   <HeroRoot>
     <HeroMain {...args} />
   </HeroRoot>
 );
 Main.args = { children: 'Main' };
 
-export const Bottom = () => <HeroBottom />;
+export const Bottom: Story = () => <HeroBottom />;
 
-export const Title = (args) => (
+export const Title: Story = (args) => (
   <HeroRoot>
     <HeroTitle as="h1" {...args} />
   </HeroRoot>
 );
 Title.args = { children: 'There goes my hero' };
 
-export const Body = (args) => (
+export const Body: Story = (args) => (
   <HeroRoot>
     <HeroBody as="p" {...args} />
   </HeroRoot>

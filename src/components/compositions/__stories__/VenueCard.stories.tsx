@@ -1,3 +1,4 @@
+import { Story } from '@storybook/react';
 import React from 'react';
 
 import { VenueCard, VenueCardProps } from '../VenueCard';
@@ -8,7 +9,7 @@ export default {
   parameters: { layout: 'fullscreen' },
 };
 
-export const Default = (args) => <VenueCard {...args} />;
+export const Default: Story<VenueCardProps> = (args) => <VenueCard {...args} />;
 
 Default.args = {
   venue: {

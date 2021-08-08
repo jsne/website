@@ -1,15 +1,16 @@
+import { Story } from '@storybook/react';
 import React from 'react';
 
-import { Media } from '../Media';
+import { Media, MediaProps } from '../Media';
 
 export default {
   title: 'Compositions/Media',
   component: Media,
 };
 
-export const Default = (args) => <Media {...args} />;
+const Template: Story<MediaProps> = (args) => <Media {...args} />;
 
-Default.args = {
+const templateArgs = {
   body: (
     <>
       Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
@@ -23,55 +24,19 @@ Default.args = {
   preHeading: 'Speakers',
 };
 
-export const SecondaryCta = (args) => <Media {...args} />;
+export const Default = Template.bind(templateArgs);
 
-SecondaryCta.args = {
-  body: (
-    <>
-      Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
-      you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The
-      democratic vote for me is right thing to do Philadelphia.
-    </>
-  ),
-  ctaPrimary: { children: 'So do', href: '#' },
+export const SecondaryCta = Template.bind({
+  ...templateArgs,
   ctaSecondary: { children: 'Yeah?!', href: '#' },
-  heading: 'Chrundle the Great',
-  media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Speakers',
-};
+});
 
-export const HorizontalLayout = (args) => <Media {...args} />;
-
-HorizontalLayout.args = {
-  body: (
-    <>
-      Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
-      you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The
-      democratic vote for me is right thing to do Philadelphia.
-    </>
-  ),
-  ctaPrimary: { children: 'So do', href: '#' },
-  ctaSecondary: { children: 'Yeah?!', href: '#' },
-  heading: 'Chrundle the Great',
+export const HorizontalLayout = Template.bind({
+  ...templateArgs,
   layout: 'horizontal',
-  media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Speakers',
-};
+});
 
-export const ResponsiveLayout = (args) => <Media {...args} />;
-
-ResponsiveLayout.args = {
-  body: (
-    <>
-      Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
-      you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The
-      democratic vote for me is right thing to do Philadelphia.
-    </>
-  ),
-  ctaPrimary: { children: 'So do', href: '#' },
-  ctaSecondary: { children: 'Yeah?!', href: '#' },
-  heading: 'Chrundle the Great',
+export const ResponsiveLayout = Template.bind({
+  ...templateArgs,
   layout: { '@initial': 'vertical', '@bpsm': 'horizontal' },
-  media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
-  preHeading: 'Speakers',
-};
+});

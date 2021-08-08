@@ -50,7 +50,7 @@ export const HeaderLogo = styled(Logo, {
   },
 });
 
-interface HeaderProps {
+export interface HeaderProps {
   /** URL applied to logo. */
   logoSlug?: string;
 }
