@@ -12,6 +12,7 @@ import { styled } from '~/styles/stitches.config';
 
 const InteractiveMapRoot = styled('div', {
   '.mapboxgl-marker': {
+    filter: 'drop-shadow(0 0 0.65rem $colors$shadow2)',
     backgroundImage: `url('${mapMarker}')`,
     backgroundSize: 'auto 121%',
     backgroundPosition: 'bottom',
