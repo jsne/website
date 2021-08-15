@@ -50,7 +50,7 @@ export const Media: React.FC<MediaProps> = ({
       <Card.CardParagraph>{body}</Card.CardParagraph>
 
       <Card.CardCtas cardLayout={layout}>
-        <Button as="a" buttonAppearance="primary" {...ctaPrimary} />
+        {ctaPrimary && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}
         {ctaSecondary && <Button as="a" buttonAppearance="secondary" {...ctaSecondary} />}
       </Card.CardCtas>
     </Card.CardBody>

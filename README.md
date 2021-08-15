@@ -32,4 +32,3 @@
 - [Gatsby](https://www.gatsbyjs.com/)
 - [Contentful](https://www.contentful.com/)
 - [Stitches](https://stitches.dev/)
-- [Radix-ui](https://radix-ui.com/primitives/docs/overview/introduction)

@@ -35,7 +35,7 @@ export const Button = styled('button', {
     withTransition: 'box-shadow, filter, opacity',
   },
 
-  '&:hover:not([disabled])': {
+  '&:hover:not(:disabled)': {
     filter: 'saturate(1.5)',
     transform: 'scale(1.05)',
 
@@ -45,11 +45,11 @@ export const Button = styled('button', {
     },
   },
 
-  '&:active:not([disabled])': {
+  '&:active:not(:disabled)': {
     transform: 'scale(1.05) translateY(.15rem)',
   },
 
-  '&[disabled]': {
+  '&:disabled': {
     cursor: 'not-allowed',
     filter: 'grayscale(.75)',
   },

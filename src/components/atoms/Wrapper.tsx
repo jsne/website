@@ -5,7 +5,7 @@ import { BoxProps } from './Box';
 /** Generic wrapper for any content. */
 export const Wrapper = styled('div', {
   width: '100%',
-  maxWidth: '$wrapperWidth2',
+  maxWidth: '$wrapperWidth3',
   marginRight: 'auto',
   marginLeft: 'auto',
 

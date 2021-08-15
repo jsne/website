@@ -27,7 +27,7 @@ const lineHeights: ThemeTextStyle = {
 /** Main theme definition. */
 export const theme = {
   borderStyles: { base: 'solid' },
-  borderWidths: { '1': '0.0625rem', '2': '0.125rem' },
+  borderWidths: { '1': '0.0625rem', '2': '0.125rem', '3': '0.1875rem' },
   colors: {
     // Direct colour definitions.
 
@@ -51,8 +51,9 @@ export const theme = {
     red3: '#F32E2E',
     white1: '#FFFFFF',
     white2: '#E5E5E5',
+    white2Alpha: 'rgba(229, 229, 229, 0.75)',
     white3: '#A5A3B7',
-    white3Alpha: 'rgba(165, 163, 183, 0.15)',
+    white3Alpha: 'rgba(165, 163, 183, 0.35)',
 
     // Abstracted colour definitions.
 
@@ -63,24 +64,36 @@ export const theme = {
     bodyContrast2: '$white2',
     bodyContrast3: '$white3',
     bodyContrast4: '$white3Alpha',
-    page: '$white1',
+    page1: '$white1',
     pageContrast1: '$white3',
     pageContrast2: '$black2',
     pageContrast3: '$black3',
+
     primary1: '#FFE358',
     primary2: '#F9CC2F',
     primary3: '#FFC01E',
     primaryContrast1: '$black2',
     primaryContrast2: '$black3',
     primaryContrast3: '$black3Alpha',
+
     secondary1: '#A26BFC',
     secondary2: '#682EC6',
     secondary3: '#4220A3',
     secondaryContrast1: '$white1',
+    secondaryContrast2: '$white2',
+    secondaryContrast2Alpha: '$white2Alpha',
+    secondaryContrast3: '$whiteAlpha3',
+    secondaryContrast3Alpha: '$white3Alpha',
+
     tertiary1: '#56CCF2',
     tertiary2: '#2D9CDB',
     tertiary3: '#2F59ED',
     tertiaryContrast1: '$white1',
+
+    error1: '$red1',
+    error2: '$red2',
+    error3: '$red3',
+
     shadow1: 'rgba(0, 0, 0, .085)',
     shadow2: 'rgba(0, 0, 0, .035)',
   },
@@ -105,7 +118,8 @@ export const theme = {
   shadows: {},
   sizes: {
     wrapperWidth1: remify(520),
-    wrapperWidth2: remify(1024),
+    wrapperWidth2: remify(800),
+    wrapperWidth3: remify(1024),
   },
   space: {
     '1': '.25rem',

@@ -10,7 +10,7 @@ export const Icon = styled('svg', {
           fill: '$pageContrast1',
         },
         '.__secondary': {
-          fill: '$page',
+          fill: '$page1',
         },
       },
       page: {
@@ -27,8 +27,8 @@ export const Icon = styled('svg', {
           opacity: 0.25,
         },
         '.__secondary': {
-          fill: '$page',
-          opacity: 0.5,
+          fill: '$page1',
+          opacity: 0.425,
         },
       },
     },

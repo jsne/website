@@ -8,7 +8,7 @@ import { Text, TextProps } from './Text';
 
 export const CardRoot = styled(Box, {
   position: 'relative',
-  backgroundColor: '$page',
+  backgroundColor: '$page1',
   color: '$pageContrast2',
   borderRadius: '$2',
   overflow: 'hidden',

@@ -1,4 +1,5 @@
 import { styled } from '~/styles/stitches.config';
+
 import { Icon } from './Icon';
 
 export const IconGroupRoot = styled('div', {

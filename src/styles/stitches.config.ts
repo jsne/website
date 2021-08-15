@@ -52,10 +52,12 @@ export const stitchesConfig = createCss({
       (config) =>
       ({
         angle = 87.06,
+        property = 'background-image',
         variant,
       }: {
         angle?: number;
-        variant: 'body' | 'primary' | 'secondary' | 'tertiary';
+        property?: string;
+        variant: 'body' | 'primary' | 'secondary' | 'tertiary' | 'error';
       }) => {
         // Lil' hack to dynamically map color variant values.
         const tokenColors = config.theme.colors as Record<string, string>;
@@ -67,7 +69,7 @@ export const stitchesConfig = createCss({
         ];
 
         return {
-          backgroundImage: `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
+          [property]: `linear-gradient(${angle}deg, ${colors[0]} 0%, ${colors[1]} 50%, ${colors[2]} 100%)`,
           color: tokenColors[`${variant}Contrast1`],
         };
       },
