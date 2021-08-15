@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
+import { MailingList } from '~/blocks/MailingList';
 import { Upsells, UpsellsProps } from '~/blocks/Upsells';
 import { Venue } from '~/blocks/Venue';
 import { Box } from '~/components/atoms/Box';
@@ -116,6 +117,10 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       </Box>
 
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
+
+      <Wrapper wrapperWidth="medium">
+        <MailingList css={{ paddingTop: '$section', paddingBottom: '$section' }} />
+      </Wrapper>
 
       {event.venue && <Venue venue={event.venue} />}
 

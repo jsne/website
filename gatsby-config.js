@@ -37,8 +37,6 @@ module.exports = {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
       },
     },
-    // Only want offline plugin in live deployments.
-    // process.env.IS_LIVE && 'gatsby-plugin-offline',
     'gatsby-plugin-preload-fonts',
     'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-sharp',

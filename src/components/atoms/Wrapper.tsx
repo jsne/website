@@ -25,6 +25,9 @@ export const Wrapper = styled('div', {
       small: {
         maxWidth: '$wrapperWidth1',
       },
+      medium: {
+        maxWidth: '$wrapperWidth2',
+      },
     },
   },
 });

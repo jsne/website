@@ -24,13 +24,15 @@ const MailingListCardRoot = styled(CardRoot, {
     top: 0,
     left: 0,
     zIndex: -1,
-    filter: `blur(2rem)`,
+    opacity: 0.75,
+    filter: `blur(1.5rem)`,
     withLinearGradient: { variant: 'secondary' },
-    withTransition: 'filter',
+    withTransition: 'filter, opacity',
   },
 
   '&:focus-within&::before': {
-    filter: `blur(3rem)`,
+    opacity: 1,
+    filter: `blur(2rem)`,
   },
 
   '@bpxs': {
@@ -67,7 +69,7 @@ const MailingListIcon = styled(Icon, {
   },
 
   '@bpsm': {
-    maxWidth: '12rem',
+    maxWidth: '11rem',
   },
 });
 
@@ -97,8 +99,11 @@ export const MailingListCard: React.FC<MailingListCardProps> = ({
       <CardPreheading css={{ color: '$secondaryContrast2Alpha' }}>
         {preHeading}
       </CardPreheading>
+
       <CardHeading css={{ color: '$secondaryContrast1' }}>{heading}</CardHeading>
+
       <CardBody css={{ lineHeight: '$p', color: '$secondaryContrast2' }}>{body}</CardBody>
+
       <Box css={{ marginTop: '$2' }}>
         <SignUpForm {...formProps} />
       </Box>
