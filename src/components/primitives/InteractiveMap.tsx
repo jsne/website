@@ -1,11 +1,12 @@
-import mapboxgl, {
+import type {
+  default as Mapboxgl,
   LngLatLike,
-  Marker,
   Map as MapboxMap,
   MapboxOptions,
+  Marker,
   MarkerOptions,
 } from '!mapbox-gl';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import mapMarker from '~/assets/images/map-marker.svg';
 import { styled } from '~/styles/stitches.config';
@@ -24,8 +25,6 @@ const InteractiveMapRoot = styled('div', {
     cursor: 'pointer',
   },
 });
-
-mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_KEY;
 
 interface MapBaseOptions {
   center: GatsbyTypes.ContentfulVenueLocation;
@@ -52,13 +51,25 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   markerOptions,
   ...props
 }) => {
+  const [didInit, setDidInit] = useState(false);
+  const mapboxgl = useRef<typeof Mapboxgl | undefined>(undefined);
   const map = useRef<MapboxMap>();
 
   useEffect(() => {
+    import('!mapbox-gl').then((mapbox) => {
+      mapboxgl.current = mapbox.default;
+      mapboxgl.current.accessToken = process.env.GATSBY_MAPBOX_API_KEY;
+      setDidInit(true);
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!didInit) return;
+
     let marker: Marker;
 
     try {
-      map.current = new mapboxgl.Map({
+      map.current = new mapboxgl.current!.Map({
         container: id,
         style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy?optimize=true',
         ...mapOptions,
@@ -68,9 +79,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         },
       });
 
-      map.current.scrollZoom.disable();
+      map.current!.scrollZoom.disable();
 
-      marker = new mapboxgl.Marker({
+      marker = new mapboxgl.current!.Marker({
         color: 'var(--jsne-colors-primary2)',
       })
         .setLngLat(markerOptions.center as LngLatLike)
@@ -91,7 +102,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     return () => {
       if (marker) marker.remove();
     };
-  }, [id, mapOptions, markerOptions]);
+  }, [didInit, lonOffset, id, mapOptions, markerOptions]);
 
   return <InteractiveMapRoot id={id} {...props} />;
 };

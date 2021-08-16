@@ -35,13 +35,9 @@ const MailingListCardRoot = styled(CardRoot, {
     filter: `blur(2rem)`,
   },
 
-  '@bpxs': {
-    display: 'flex',
-    gap: '$8',
-    flexDirection: 'row-reverse',
-  },
-
   '@bpsm': {
+    display: 'flex',
+    flexDirection: 'row-reverse',
     gap: '$section',
   },
 });
@@ -57,7 +53,7 @@ const MailingListIcon = styled(Icon, {
   opacity: 0.45,
   pointerEvents: 'none',
 
-  '@bpxs': {
+  '@bpsm': {
     position: 'static',
     width: '100%',
     height: 'auto',
@@ -66,10 +62,6 @@ const MailingListIcon = styled(Icon, {
     transform: 'none',
     opacity: 1,
     pointerEvents: 'auto',
-  },
-
-  '@bpsm': {
-    maxWidth: '11rem',
   },
 });
 

@@ -118,7 +118,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
-      <Wrapper wrapperWidth="medium">
+      <Wrapper wrapperPadding="x4" wrapperWidth="medium">
         <MailingList css={{ paddingTop: '$section', paddingBottom: '$section' }} />
       </Wrapper>
 

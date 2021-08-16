@@ -41,12 +41,19 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({ css, ...props }) => (
       css={{
         flexGrow: 1,
         borderRadius: '$1 0 0 $1',
+
+        // Prevent rightmost outline being covered by button when focused.
+        '&:focus': {
+          position: 'relative',
+          zIndex: 1,
+        },
       }}
     />
     <Button
       buttonAppearance="primary"
       type="submit"
       css={{
+        minWidth: '9rem',
         borderRadius: '0 $1 $1 0',
         boxShadow: 'none',
         '&:active:not(:disabled), &:hover:not(:disabled)': {
