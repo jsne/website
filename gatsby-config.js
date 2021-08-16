@@ -66,5 +66,6 @@ module.exports = {
       },
       __key: 'pages',
     },
+    process.env.DEBUG_BUILD === 'true' && 'gatsby-plugin-webpack-bundle-analyser-v2',
   ].filter(Boolean),
 };
