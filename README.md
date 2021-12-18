@@ -3,7 +3,7 @@
     <img alt="JSNE logo" src="./src/assets/images/logo.svg" width="124px" />
   </a>
   <h1>The (WIP) JavaScript North East Website</h1>
-  <a href="https://jsne.co.uk" target="_blank">https://jsne.co.uk</a>
+  <a href="http://jsne.vercel.app/" target="_blank">http://jsne.vercel.app/</a>
 
   <br />
   <br />
