@@ -1,7 +1,5 @@
 import { styled } from '~/styles/stitches.config';
 
-import { BoxProps } from './Box';
-
 export const Icon = styled('svg', {
   variants: {
     iconAppearance: {
@@ -34,5 +32,3 @@ export const Icon = styled('svg', {
     },
   },
 });
-
-export type IconProps = BoxProps<typeof Icon>;

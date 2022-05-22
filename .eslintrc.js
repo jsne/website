@@ -12,28 +12,17 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: [
-    'testing-library',
-    '@typescript-eslint',
-    'react',
-    'react-hooks',
-    'jest',
-    'jest-dom',
-    'graphql',
-  ],
+  plugins: ['@typescript-eslint', 'react', 'react-hooks', 'graphql'],
   extends: [
     'eslint:recommended',
-    'plugin:jest/recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:eslint-comments/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:testing-library/dom',
-    'plugin:jest-dom/recommended',
   ],
   env: {
     browser: true,
     es6: true,
-    'jest/globals': true,
   },
   settings: {
     react: { version: 'detect' },
@@ -64,6 +53,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 
+    '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [

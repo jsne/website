@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { BoxProps } from '~/components/atoms/Box';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { WavySection } from '~/components/compositions/WavySection';
+import { styled } from '~/styles/stitches.config';
 
 import { Upsell, UpsellProps } from './Upsell';
 
-export interface UpsellsProps extends BoxProps {
+export interface UpsellsProps {
+  children?: React.ReactNode;
   upsells: UpsellProps[];
 }
 
-/** A list of upesells with alternating directions. */
-export const Upsells: React.FC<UpsellsProps> = ({ children, upsells, ...props }) => (
+const UpsellsUnstyled: React.FC<UpsellsProps> = ({ children, upsells, ...props }) => (
   <WavySection {...props}>
     <Wrapper wrapperPadding="x4" css={{ display: 'grid', gap: '$8' }}>
       {children}
@@ -21,3 +21,6 @@ export const Upsells: React.FC<UpsellsProps> = ({ children, upsells, ...props })
     </Wrapper>
   </WavySection>
 );
+
+/** A list of upesells with alternating directions. */
+export const Upsells = styled(UpsellsUnstyled, {});

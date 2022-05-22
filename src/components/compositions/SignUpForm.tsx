@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Box, BoxProps } from '../atoms/Box';
+import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
 import { Input } from '../atoms/Input';
 import { VisuallyHidden } from '../atoms/VisuallyHidden';
 
-export type SignUpFormProps = BoxProps & React.ComponentProps<'form'>;
+export type SignUpFormProps = React.ComponentProps<'form'>;
 
-export const SignUpForm: React.FC<SignUpFormProps> = ({ css, ...props }) => (
+export const SignUpForm: React.FC = (props) => (
   <Box
     as="form"
     css={{
@@ -23,8 +23,6 @@ export const SignUpForm: React.FC<SignUpFormProps> = ({ css, ...props }) => (
       '&:focus-within': {
         withOutline: '$secondaryContrast3Alpha',
       },
-
-      ...(css as Record<string, unknown>),
     }}
     {...props}
   >

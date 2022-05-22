@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 
 const {
-  webpackConfigModuleRulesSvg,
-  webpackConfigPluginDefineOptions,
-  webpackConfigResolveAlias,
+  moduleRulesSvg,
+  pluginDefineOptions,
+  resolveAlias,
 } = require('../.config/webpack.config');
 
 module.exports = {
@@ -11,7 +11,7 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
-    '@storybook/addon-storysource',
+    // '@storybook/addon-storysource',
   ],
   core: {
     builder: 'webpack5',
@@ -39,19 +39,16 @@ module.exports = {
     },
   },
   webpackFinal: async (config: any) => {
-    config.module.rules.push(webpackConfigModuleRulesSvg);
+    config.module.rules.push(moduleRulesSvg);
 
     return {
       ...config,
-      plugins: [
-        ...config.plugins,
-        new webpack.DefinePlugin(webpackConfigPluginDefineOptions()),
-      ],
+      plugins: [...config.plugins, new webpack.DefinePlugin(pluginDefineOptions())],
       resolve: {
         ...config.resolve,
         alias: {
           ...config.alias,
-          ...webpackConfigResolveAlias,
+          ...resolveAlias,
         },
       },
     };

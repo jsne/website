@@ -3,7 +3,7 @@ import React from 'react';
 import wavySectionBottomShadow from '~/assets/images/wavy-section-bottom-shadow.svg';
 import wavySectionBottom from '~/assets/images/wavy-section-bottom.svg';
 import wavySectionTop from '~/assets/images/wavy-section-top.svg';
-import { Box, BoxProps } from '~/components/atoms/Box';
+import { Box } from '~/components/atoms/Box';
 import { styled } from '~/styles/stitches.config';
 
 // @NOTE need to use flat angle so top, middle and bottom seamlessly blend.
@@ -48,7 +48,10 @@ export const WavySectionRoot = styled(Box, {
   },
 });
 
-export const WavySection: React.FC<BoxProps> = ({ children, ...props }) => (
+export const WavySection: React.FC<{ children?: React.ReactNode }> = ({
+  children,
+  ...props
+}) => (
   <WavySectionRoot as="section" {...props}>
     <Box
       css={{

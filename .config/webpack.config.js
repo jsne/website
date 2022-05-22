@@ -3,12 +3,12 @@
 
 const path = require('path');
 
-module.exports.webpackConfigPluginDefineOptions = (stage = 'develop') => ({
+module.exports.defineOptions = (stage = 'develop') => ({
   __DEVELOPMENT__: stage === `develop` || stage === `develop-html`,
   __IS_LIVE__: process.env.IS_LIVE === 'true',
 });
 
-module.exports.webpackConfigModuleRulesSvg = {
+module.exports.moduleRulesSvg = {
   test: /\.svg$/,
   use: [
     {
@@ -24,6 +24,6 @@ module.exports.webpackConfigModuleRulesSvg = {
   },
 };
 
-module.exports.webpackConfigResolveAlias = {
+module.exports.resolveAlias = {
   '~': path.resolve(__dirname, '..', 'src'),
 };

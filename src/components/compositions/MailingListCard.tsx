@@ -4,7 +4,7 @@ import { ReactComponent as Mail } from '~/assets/images/icon-mail.svg';
 import { styled } from '~/styles/stitches.config';
 
 import { Box } from '../atoms/Box';
-import { CardRoot, CardPreheading, CardHeading, CardBody } from '../atoms/Card';
+import { CardBody, CardHeading, CardPreheading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
 import { MediaProps } from './Media';
 import { SignUpForm, SignUpFormProps } from './SignUpForm';
@@ -71,7 +71,7 @@ export interface MailingListCardProps
   formProps: SignUpFormProps;
 }
 
-export const MailingListCard: React.FC<MailingListCardProps> = ({
+const MailingListCardUnstyled: React.FC<MailingListCardProps> = ({
   preHeading,
   heading,
   body,
@@ -102,3 +102,5 @@ export const MailingListCard: React.FC<MailingListCardProps> = ({
     </Box>
   </MailingListCardRoot>
 );
+
+export const MailingListCard = styled(MailingListCardUnstyled, {});

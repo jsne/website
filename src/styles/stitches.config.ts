@@ -1,13 +1,24 @@
-import { createCss, StitchesCss } from '@stitches/react';
+import { createStitches } from '@stitches/react';
+import type { CSS as StitchesCSS } from '@stitches/react';
 
-import { theme, ThemeColorsTokenKey, ThemeTextStylesTokenKey } from './theme';
+import { ThemeColorsTokenKey, ThemeTextStylesTokenKey, theme } from './theme';
 
 interface WithBoxShadowProps {
   color?: ThemeColorsTokenKey;
   variant?: 'short' | 'long';
 }
 
-export const stitchesConfig = createCss({
+export const {
+  createTheme,
+  css,
+  getCssText,
+  globalCss,
+  keyframes,
+  styled,
+  config,
+  prefix,
+  reset,
+} = createStitches({
   prefix: 'jsne',
   theme,
   media: {
@@ -49,7 +60,7 @@ export const stitchesConfig = createCss({
 
     /** Get linear-gradient `background-image` with accessible `color`. */
     withLinearGradient:
-      (config) =>
+      () =>
       ({
         angle = 87.06,
         property = 'background-image',
@@ -60,7 +71,7 @@ export const stitchesConfig = createCss({
         variant: 'body' | 'primary' | 'secondary' | 'tertiary' | 'error';
       }) => {
         // Lil' hack to dynamically map color variant values.
-        const tokenColors = config.theme.colors as Record<string, string>;
+        const tokenColors = theme.colors as Record<string, string>;
 
         const colors = [
           tokenColors[`${variant}1`],
@@ -107,14 +118,12 @@ export const stitchesConfig = createCss({
     },
 
     /** Apply tokenised transition targeting specific CSS properties. */
-    withTransition: (config) => (transitionProperty: string) => ({
-      transitionDuration: config.theme.transitions.duration,
-      transitionTimingFunction: config.theme.transitions.timingFunction,
+    withTransition: () => (transitionProperty: string) => ({
+      transitionDuration: theme.transitions.duration,
+      transitionTimingFunction: theme.transitions.timingFunction,
       transitionProperty,
     }),
   },
 });
 
-export const { css, getCssString, global, keyframes, styled } = stitchesConfig;
-export type { StitchesVariants } from '@stitches/react';
-export type CSS = StitchesCss<typeof stitchesConfig>;
+export type CSS = StitchesCSS<typeof config>;

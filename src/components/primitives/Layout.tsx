@@ -1,25 +1,29 @@
-import React from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import { Helmet, HelmetProps, HtmlProps } from 'react-helmet-async';
+import React, { PropsWithChildren } from 'react';
+import { Helmet, HelmetProps, HelmetProvider } from 'react-helmet-async';
 
 import '~/styles/global.css';
-import { getCssString } from '~/styles/stitches.config';
+import { getCssText } from '~/styles/stitches.config';
 
 /** `head` element with default global styles. */
-const LayoutHead: React.FC<HelmetProps> = ({ htmlAttributes, children, ...props }) => (
-  <Helmet htmlAttributes={{ lang: 'en', ...htmlAttributes } as HtmlProps} {...props}>
+const LayoutHead: React.FC<PropsWithChildren<HelmetProps>> = ({
+  htmlAttributes,
+  children,
+  ...props
+}) => (
+  <Helmet
+    htmlAttributes={{ lang: 'en', ...htmlAttributes } as HelmetProps['htmlAttributes']}
+    {...props}
+  >
     {children}
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
       rel="stylesheet"
     />
-    {process.env.GATSBY_IS_LIVE !== 'true' && (
-      <meta name="robots" content="noindex, nofollow" />
-    )}
+
     <style
       key="stitches"
       id="stitches"
-      dangerouslySetInnerHTML={{ __html: getCssString() }}
+      dangerouslySetInnerHTML={{ __html: getCssText() }}
     />
   </Helmet>
 );
@@ -30,7 +34,7 @@ export interface LayoutProps {
 }
 
 /** Root component for all page layouts. */
-export const Layout: React.FC<LayoutProps> = ({ children, head }) => (
+export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, head }) => (
   <HelmetProvider>
     <LayoutHead {...head} />
     {children}

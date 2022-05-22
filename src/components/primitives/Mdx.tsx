@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { MDXRenderer, MDXRendererProps } from 'gatsby-plugin-mdx';
 import React from 'react';

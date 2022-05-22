@@ -39,5 +39,5 @@ body,
 /* Gatsby doesn't provide classes for these 🤮 */
 #___gatsby,
 #gatsby-focus-wrapper {
-  height: 100%;
+  min-height: 100%;
 }

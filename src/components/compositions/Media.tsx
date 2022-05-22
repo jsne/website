@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Button } from '~/components/atoms/Button';
 import * as Card from '~/components/atoms/Card';
+import { styled } from '~/styles/stitches.config';
 
 export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
   /** Paragraph content. */
@@ -22,9 +23,7 @@ export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
 
 const defaultLayout = { '@initial': 'vertical' } as const;
 
-/** Media Object. */
-export const Media: React.FC<MediaProps> = ({
-  as = 'article',
+const MediaUnstyled: React.FC<MediaProps> = ({
   body,
   ctaPrimary,
   ctaSecondary,
@@ -34,7 +33,7 @@ export const Media: React.FC<MediaProps> = ({
   preHeading,
   ...props
 }) => (
-  <Card.CardRoot cardLayout={layout} as={as} {...props}>
+  <Card.CardRoot cardLayout={layout} {...props}>
     <Card.CardMedia cardLayout={layout}>
       <Card.CardImg cardLayout={layout} {...media} />
       {ctaPrimary && (
@@ -56,3 +55,5 @@ export const Media: React.FC<MediaProps> = ({
     </Card.CardBody>
   </Card.CardRoot>
 );
+
+export const Media = styled(MediaUnstyled, {});

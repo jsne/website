@@ -1,0 +1,10 @@
+.modules-cache
+node_modules
+coverage
+dist
+out
+storybook-static
+.cache
+build
+*.ignore
+src/generated

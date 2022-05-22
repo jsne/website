@@ -1,3 +1,0 @@
-# shellcheck disable=SC1072,2148
-# vim: set filetype=bash
-yarn lint-staged

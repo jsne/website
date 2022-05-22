@@ -1,27 +1,27 @@
-import { StitchesVariants, styled } from '~/styles/stitches.config';
+import type { ComponentProps } from 'react';
+
+import { styled } from '~/styles/stitches.config';
 import {
-  themeTextStylesKeys,
   ThemeTextStylesKey,
   ThemeTextStylesTokenKey,
+  themeTextStylesKeys,
 } from '~/styles/theme';
 
-import { Box, BoxProps } from './Box';
-
-type TextStyle = {
+type TextStyleProps = {
   [K in ThemeTextStylesKey]: {
     withTextStyle: ThemeTextStylesTokenKey;
   };
 };
 
 /** Generic text component with preset styles for each `text` preset available. */
-export const Text = styled(Box, {
+export const Text = styled('div', {
   marginBlockStart: 0,
   marginBlockEnd: 0,
 
   variants: {
     textStyle: Object.fromEntries(
       themeTextStylesKeys.map((baseKey) => [baseKey, { withTextStyle: `$${baseKey}` }]),
-    ) as TextStyle,
+    ) as TextStyleProps,
   },
 
   defaultVariants: {
@@ -29,4 +29,4 @@ export const Text = styled(Box, {
   },
 });
 
-export type TextProps = BoxProps<StitchesVariants<typeof Text>>;
+export type TextProps = ComponentProps<typeof Text>;
