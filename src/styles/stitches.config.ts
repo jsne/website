@@ -1,7 +1,7 @@
 import { createStitches } from '@stitches/react';
 import type { CSS as StitchesCSS } from '@stitches/react';
 
-import { ThemeColorsTokenKey, ThemeTextStylesTokenKey, theme } from './theme';
+import { ThemeColorsTokenKey, theme } from './theme';
 
 interface WithBoxShadowProps {
   color?: ThemeColorsTokenKey;
