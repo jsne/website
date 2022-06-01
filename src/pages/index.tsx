@@ -11,10 +11,10 @@ import { Wrapper } from '~/components/atoms/Wrapper';
 import { Header } from '~/components/compositions/Header';
 import {
   HERO_BOTTOM_HEIGHT,
-  HeroBottom,
-  HeroRoot,
-  HeroMain,
   HeroBody,
+  HeroBottom,
+  HeroMain,
+  HeroRoot,
   HeroTitle,
 } from '~/components/compositions/Hero';
 import { Layout } from '~/components/primitives/Layout';
@@ -55,7 +55,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="center" wrapperPadding="x4">
-          <HeroTitle as="h1" textStyle="hero">
+          <HeroTitle as="h1" textPreset="hero">
             {page.title}
           </HeroTitle>
           <HeroBody>
@@ -87,14 +87,14 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
           }}
         >
           <Text
-            textStyle="preHeading"
+            textPreset="preHeading"
             css={{
               color: '$bodyContrast3',
             }}
           >
             {eventPreHeading}
           </Text>
-          <Text textStyle="h1" css={{ marginBottom: '$2' }}>
+          <Text textPreset="h1" css={{ marginBottom: '$2' }}>
             {event.title}
           </Text>
           <Box
@@ -111,7 +111,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <Mdx>{event.description?.childMdx?.body}</Mdx>
           </Box>
           <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
-            <Button as="a" buttonAppearance="primary" {...primaryCta} />
+            <Button buttonAppearance="primary" {...primaryCta} as="a" />
           </Box>
         </Wrapper>
       </Box>
@@ -132,15 +132,15 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 export const pageQuery = graphql`
   query HomeQuery {
     contentfulPage(slug: { eq: "home" }) {
-      ...PageFragment
+      ...Page
     }
     placeholderEvent: contentfulEvent(uid: { eq: "placeholder" }) {
-      ...EventListingFragment
+      ...EventListing
     }
     nextEvent: allContentfulEvent(limit: 1, sort: { fields: [eventDate], order: DESC }) {
       edges {
         node {
-          ...EventListingFragment
+          ...EventListing
         }
       }
     }

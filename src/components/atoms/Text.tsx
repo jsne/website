@@ -1,32 +1,54 @@
-import { StitchesVariants, styled } from '~/styles/stitches.config';
-import {
-  themeTextStylesKeys,
-  ThemeTextStylesKey,
-  ThemeTextStylesTokenKey,
-} from '~/styles/theme';
+import type { ComponentProps } from 'react';
+import { Box } from 'react-polymorphic-box';
 
-import { Box, BoxProps } from './Box';
+import { styled } from '~/styles/stitches.config';
 
-type TextStyle = {
-  [K in ThemeTextStylesKey]: {
-    withTextStyle: ThemeTextStylesTokenKey;
-  };
-};
-
-/** Generic text component with preset styles for each `text` preset available. */
+/**
+ * Generic text component with preset styles for each text preset available as a prop.
+ */
 export const Text = styled(Box, {
   marginBlockStart: 0,
   marginBlockEnd: 0,
 
   variants: {
-    textStyle: Object.fromEntries(
-      themeTextStylesKeys.map((baseKey) => [baseKey, { withTextStyle: `$${baseKey}` }]),
-    ) as TextStyle,
+    textPreset: {
+      hero: {
+        fontSize: '$hero',
+        lineHeight: '$hero',
+        fontWeight: '$heavy',
+      },
+      h1: {
+        fontSize: '$h1',
+        lineHeight: '$h1',
+        fontWeight: '$heavy',
+      },
+      h2: {
+        fontSize: '$h2',
+        lineHeight: '$h2',
+        fontWeight: '$heavy',
+      },
+      h3: {
+        fontSize: '$h3',
+        lineHeight: '$h3',
+        fontWeight: '$bold',
+      },
+      preHeading: {
+        fontSize: '$preHeading',
+        lineHeight: '$preHeading',
+        letterSpacing: '$spaced',
+        textTransform: 'uppercase',
+      },
+      p: {
+        fontSize: '$p',
+        lineHeight: '$p',
+        fontWeight: '$regular',
+      },
+    },
   },
 
   defaultVariants: {
-    textStyle: 'p',
+    textPreset: 'p',
   },
 });
 
-export type TextProps = BoxProps<StitchesVariants<typeof Text>>;
+export type TextProps = ComponentProps<typeof Text>;

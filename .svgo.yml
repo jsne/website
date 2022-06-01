@@ -1,5 +1,7 @@
 multipass: true
 
 plugins:
-  - cleanupIDs: true
-  - prefixIds: false
+  - name: cleanupIDs
+    active: true
+  - name: prefixIds
+    active: false

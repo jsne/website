@@ -2,7 +2,7 @@
 export const remify = (px: number): string => `${px / 16}rem`;
 
 /** Base key for font styles. */
-export const themeTextStylesKeys = ['h1', 'h2', 'h3', 'hero', 'p', 'preHeading'] as const;
+export const themeTextStylesKeys = ['hero', 'h1', 'h2', 'h3', 'p', 'preHeading'] as const;
 export type ThemeTextStylesKey = typeof themeTextStylesKeys[number];
 type ThemeTextStyle = Record<ThemeTextStylesKey, string>;
 
@@ -31,28 +31,28 @@ export const theme = {
   colors: {
     // Direct colour definitions.
 
-    black1: '#3C3562',
-    black2: '#2C264E',
-    black3: '#150E3D',
+    black1: 'rgb(60, 53, 98)',
+    black2: 'rgb(44, 38, 78)',
+    black3: 'rgb(21, 14, 61)',
     black3Alpha: 'rgba(21, 14, 61, .65)',
 
-    green1: '#6FCF97',
-    green2: '#27AE60',
-    green3: '#219653',
+    green1: 'rgb(111, 207, 151)',
+    green2: 'rgb(39, 174, 96)',
+    green3: 'rgb(33, 150, 83)',
 
-    pink1: '#FF867E',
-    pink2: '#F4545E',
-    pink3: '#FF426F',
-    orange1: '#FFB879',
-    orange2: '#FF9C44',
-    orange3: '#F47C11',
-    red1: '#FF6767',
-    red2: '#FF4D4D',
-    red3: '#F32E2E',
-    white1: '#FFFFFF',
-    white2: '#E5E5E5',
+    pink1: 'rgb(255, 134, 126)',
+    pink2: 'rgb(244, 84, 94)',
+    pink3: 'rgb(255, 66, 111)',
+    orange1: 'rgb(255, 184, 121)',
+    orange2: 'rgb(255, 156, 68)',
+    orange3: 'rgb(244, 124, 17)',
+    red1: 'rgb(255, 103, 103)',
+    red2: 'rgb(255, 77, 77)',
+    red3: 'rgb(243, 46, 46)',
+    white1: 'rgb(255, 255, 255)',
+    white2: 'rgb(229, 229, 229)',
     white2Alpha: 'rgba(229, 229, 229, 0.75)',
-    white3: '#A5A3B7',
+    white3: 'rgb(165, 163, 183)',
     white3Alpha: 'rgba(165, 163, 183, 0.35)',
 
     // Abstracted colour definitions.
@@ -69,25 +69,25 @@ export const theme = {
     pageContrast2: '$black2',
     pageContrast3: '$black3',
 
-    primary1: '#FFE358',
-    primary2: '#F9CC2F',
-    primary3: '#FFC01E',
+    primary1: 'rgb(255, 227, 88)',
+    primary2: 'rgb(249, 204, 47)',
+    primary3: 'rgb(255, 192, 30)',
     primaryContrast1: '$black2',
     primaryContrast2: '$black3',
     primaryContrast3: '$black3Alpha',
 
-    secondary1: '#A26BFC',
-    secondary2: '#682EC6',
-    secondary3: '#4220A3',
+    secondary1: 'rgb(162, 107, 252)',
+    secondary2: 'rgb(104, 46, 198)',
+    secondary3: 'rgb(66, 32, 163)',
     secondaryContrast1: '$white1',
     secondaryContrast2: '$white2',
     secondaryContrast2Alpha: '$white2Alpha',
     secondaryContrast3: '$whiteAlpha3',
     secondaryContrast3Alpha: '$white3Alpha',
 
-    tertiary1: '#56CCF2',
-    tertiary2: '#2D9CDB',
-    tertiary3: '#2F59ED',
+    tertiary1: 'rgb(86, 204, 242)',
+    tertiary2: 'rgb(45, 156, 219)',
+    tertiary3: 'rgb(47, 89, 237)',
     tertiaryContrast1: '$white1',
 
     error1: '$red1',

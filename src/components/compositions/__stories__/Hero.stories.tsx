@@ -1,7 +1,7 @@
 import { Story } from '@storybook/react';
 import React from 'react';
 
-import { HeroRoot, HeroBottom, HeroMain, HeroBody, HeroTitle } from '../Hero';
+import { HeroBody, HeroBottom, HeroMain, HeroRoot, HeroTitle } from '../Hero';
 
 export default {
   title: 'Atoms/Hero',
@@ -19,8 +19,8 @@ export const AllIntro = () => (
         </HeroTitle>
         <HeroBody>
           Okay, Mr. Mayor. Feast your ears on that Spin Doctors mix. Any amount of cheese
-          before a date is too much cheese. Well, I don’t know how many years on this
-          Earth I got left. I’m gonna get real weird with it.
+          before a date is too much cheese. Well, I don&apos;t know how many years on this
+          Earth I got left. I&apos;m gonna get real weird with it.
         </HeroBody>
       </HeroMain>
     </HeroRoot>
@@ -32,7 +32,7 @@ export const AllPageTitle = () => (
   <>
     <HeroRoot>
       <HeroMain wrapperPadding="x8">
-        <HeroTitle as="h1" textStyle="h1">
+        <HeroTitle as="h1" textPreset="h1">
           JavaScript North East
         </HeroTitle>
       </HeroMain>
@@ -42,6 +42,7 @@ export const AllPageTitle = () => (
 );
 
 export const Root: Story = (args) => <HeroRoot {...args} />;
+
 Root.args = { children: 'Root' };
 
 export const Main: Story = (args) => (
@@ -58,6 +59,7 @@ export const Title: Story = (args) => (
     <HeroTitle as="h1" {...args} />
   </HeroRoot>
 );
+
 Title.args = { children: 'There goes my hero' };
 
 export const Body: Story = (args) => (
@@ -65,6 +67,7 @@ export const Body: Story = (args) => (
     <HeroBody as="p" {...args} />
   </HeroRoot>
 );
+
 Body.args = {
   children:
     'Okay, Mr. Mayor. Feast your ears on that Spin Doctors mix. Any amount of cheese before a date is too much cheese. Well, I don’t know how many years on this Earth I got left. I’m gonna get real weird with it.',

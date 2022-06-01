@@ -1,5 +1,4 @@
 import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
-import { BoxProps } from '~/components/atoms/Box';
 import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { styled } from '~/styles/stitches.config';
@@ -27,8 +26,6 @@ export const HeroMain = styled(Wrapper, {
   },
 });
 
-export type HeroMainProps = BoxProps<typeof HeroMain>;
-
 export const HERO_BOTTOM_HEIGHT = 'clamp(4rem, 13vw, 12rem)';
 
 export const HeroBottom = styled(Blob1, {
@@ -42,12 +39,12 @@ export const HeroTitle = styled(Text, {
   color: '$primaryContrast2',
 });
 
-HeroTitle.defaultProps = { textStyle: 'hero' };
+HeroTitle.defaultProps = { textPreset: 'hero' };
 
 /** Body text. */
 export const HeroBody = styled(Text, {
   lineHeight: '$spaced',
   maxWidth: '$wrapperWidth1',
   color: '$primaryContrast3',
-  withTextStyle: '$p',
+  withtextPreset: 'p',
 });

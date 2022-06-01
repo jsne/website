@@ -2,7 +2,7 @@ import React from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
-import { Box, BoxProps } from '../atoms/Box';
+import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
 import { Text } from '../atoms/Text';
 
@@ -27,23 +27,23 @@ interface VenueCardVenue {
   cta: string;
 }
 
-export interface VenueCardProps extends BoxProps {
+export interface VenueCardProps {
   venue: VenueCardVenue;
 }
 
-export const VenueCard: React.FC<VenueCardProps> = ({ venue, ...props }) => (
+const VenueCardUnstyled: React.FC<VenueCardProps> = ({ venue, ...props }) => (
   <VenueCardRoot {...props} as="section">
     <Text as="h1" css={{ display: 'grid', gap: '$2' }}>
-      <Text textStyle="preHeading" css={{ color: '$bodyContrast3' }}>
+      <Text textPreset="preHeading" css={{ color: '$bodyContrast3' }}>
         {venue.preHeading}
       </Text>
 
-      <Text textStyle="h2">{venue.heading}</Text>
+      <Text textPreset="h2">{venue.heading}</Text>
     </Text>
 
     <Text
       as="address"
-      textStyle="p"
+      textPreset="p"
       css={{
         fontStyle: 'normal',
         width: '100%',
@@ -55,7 +55,7 @@ export const VenueCard: React.FC<VenueCardProps> = ({ venue, ...props }) => (
       {venue.postHeading}
     </Text>
 
-    <Text textStyle="p">{venue.body}</Text>
+    <Text textPreset="p">{venue.body}</Text>
 
     <Button
       as="a"
@@ -69,3 +69,5 @@ export const VenueCard: React.FC<VenueCardProps> = ({ venue, ...props }) => (
     </Button>
   </VenueCardRoot>
 );
+
+export const VenueCard = styled(VenueCardUnstyled, {});

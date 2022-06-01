@@ -1,10 +1,10 @@
-import React from 'react';
+import type { ComponentProps } from 'react';
 
-import { StitchesVariants, styled } from '~/styles/stitches.config';
+import { styled } from '~/styles/stitches.config';
 
-import { Box, BoxProps } from './Box';
+import { Box } from './Box';
 import { BUTTON_MAX_WIDTH } from './Button';
-import { Text, TextProps } from './Text';
+import { Text } from './Text';
 
 export const CardRoot = styled(Box, {
   position: 'relative',
@@ -24,7 +24,7 @@ export const CardRoot = styled(Box, {
   },
 });
 
-export type CardRootProps = BoxProps<StitchesVariants<typeof CardRoot>>;
+export type CardRootProps = ComponentProps<typeof CardRoot>;
 
 /** Overlaying component to make entire card act as single link. */
 export const CardLinkOverlay = styled('a', {
@@ -83,48 +83,28 @@ export const CardBody = styled('div', {
   },
 });
 
-export type CardTextProps = Omit<TextProps, 'textStyle'>;
+export const CardPreHeading = styled(Text, {
+  position: 'relative',
+  color: '$pageContrast1',
+});
 
-export const CardPreheading: React.FC<CardTextProps> = ({ css, ...props }) => (
-  <Text
-    as="h1"
-    css={{
-      position: 'relative',
-      color: '$pageContrast1',
-      textTransform: 'uppercase',
-      ...(css as any),
-    }}
-    textStyle="preHeading"
-    {...props}
-  />
-);
+CardPreHeading.defaultProps = { as: 'h1', textPreset: 'preHeading' };
 
-export const CardHeading: React.FC<CardTextProps> = ({ css, ...props }) => (
-  <Text
-    as="h2"
-    css={{
-      position: 'relative',
-      color: '$pageContrast3',
-      wordBreak: 'break-word',
-      ...(css as any),
-    }}
-    textStyle="h2"
-    {...props}
-  />
-);
+export const CardHeading = styled(Text, {
+  position: 'relative',
+  color: '$pageContrast3',
+  wordBreak: 'break-word',
+});
 
-export const CardParagraph: React.FC<CardTextProps> = ({ css, ...props }) => (
-  <Text
-    css={{
-      position: 'relative',
-      marginBottom: '$2',
-      color: '$pageContrast2',
-      ...(css as any),
-    }}
-    textStyle="p"
-    {...props}
-  />
-);
+CardHeading.defaultProps = { as: 'h2', textPreset: 'h2' };
+
+export const CardParagraph = styled(Text, {
+  position: 'relative',
+  marginBottom: '$2',
+  color: '$pageContrast2',
+});
+
+CardParagraph.defaultProps = { as: 'p', textPreset: 'p' };
 
 export const CardCtas = styled('div', {
   position: 'relative',

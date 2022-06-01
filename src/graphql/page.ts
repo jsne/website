@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 
 export const PageFragment = graphql`
-  fragment PageFragment on ContentfulPage {
+  fragment Page on ContentfulPage {
     body {
       childrenMdx {
         body
@@ -17,7 +17,7 @@ export const PageFragment = graphql`
       }
     }
     upsells {
-      ...UpsellFragment
+      ...Upsell
     }
   }
 `;

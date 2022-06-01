@@ -1,9 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 
-import { Box, BoxProps } from '~/components/atoms/Box';
+import { Box } from '~/components/atoms/Box';
 import { MailingListCard } from '~/components/compositions/MailingListCard';
 import { Mdx } from '~/components/primitives/Mdx';
+import { styled } from '~/styles/stitches.config';
 
 export const mailingListQuery = graphql`
   query mailingList {
@@ -19,7 +20,7 @@ export const mailingListQuery = graphql`
   }
 `;
 
-export const MailingList: React.FC<BoxProps> = (props) => {
+const MailingListRoot: React.FC = (props) => {
   const { contentfulUpsell } =
     useStaticQuery<GatsbyTypes.mailingListQuery>(mailingListQuery);
 
@@ -44,3 +45,5 @@ export const MailingList: React.FC<BoxProps> = (props) => {
     </Box>
   );
 };
+
+export const MailingList = styled(MailingListRoot, {});
