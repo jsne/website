@@ -1,10 +1,21 @@
 import React from 'react';
 
 import { Button } from '~/components/atoms/Button';
-import * as Card from '~/components/atoms/Card';
+import {
+  CardBody,
+  CardCtas,
+  CardHeading,
+  CardImg,
+  CardLinkOverlay,
+  CardMedia,
+  CardParagraph,
+  CardPreHeading,
+  CardRoot,
+  CardRootProps,
+} from '~/components/atoms/Card';
 import { styled } from '~/styles/stitches.config';
 
-export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
+export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
   /** Paragraph content. */
   body: React.ReactNode | string;
   /** Primary call to action. */
@@ -14,7 +25,7 @@ export interface MediaProps extends Omit<Card.CardRootProps, 'cardLayout'> {
   /** Main heading. */
   heading: React.ReactNode | string;
   /** Layout variant. */
-  layout?: Card.CardRootProps['cardLayout'];
+  layout?: CardRootProps['cardLayout'];
   /** Main image. */
   media: React.ImgHTMLAttributes<HTMLImageElement>;
   /** Heading shown before main heading. */
@@ -33,27 +44,27 @@ const MediaUnstyled: React.FC<MediaProps> = ({
   preHeading,
   ...props
 }) => (
-  <Card.CardRoot cardLayout={layout} {...props}>
-    <Card.CardMedia cardLayout={layout}>
-      <Card.CardImg cardLayout={layout} {...media} />
+  <CardRoot cardLayout={layout} {...props}>
+    <CardMedia cardLayout={layout}>
+      <CardImg cardLayout={layout} {...media} />
       {ctaPrimary && (
-        <Card.CardLinkOverlay aria-hidden href={ctaPrimary.href}>
+        <CardLinkOverlay aria-hidden href={ctaPrimary.href}>
           {heading}
-        </Card.CardLinkOverlay>
+        </CardLinkOverlay>
       )}
-    </Card.CardMedia>
+    </CardMedia>
 
-    <Card.CardBody cardLayout={layout}>
-      <Card.CardPreHeading>{preHeading}</Card.CardPreHeading>
-      <Card.CardHeading>{heading}</Card.CardHeading>
-      <Card.CardParagraph>{body}</Card.CardParagraph>
+    <CardBody cardLayout={layout}>
+      <CardPreHeading>{preHeading}</CardPreHeading>
+      <CardHeading>{heading}</CardHeading>
+      <CardParagraph>{body}</CardParagraph>
 
-      <Card.CardCtas cardLayout={layout}>
+      <CardCtas cardLayout={layout}>
         {ctaPrimary && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}
         {ctaSecondary && <Button as="a" buttonAppearance="secondary" {...ctaSecondary} />}
-      </Card.CardCtas>
-    </Card.CardBody>
-  </Card.CardRoot>
+      </CardCtas>
+    </CardBody>
+  </CardRoot>
 );
 
 export const Media = styled(MediaUnstyled, {});

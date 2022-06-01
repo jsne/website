@@ -16,7 +16,8 @@ export const VenueCardRoot = styled(Box, {
   padding: '$6',
   borderRadius: '$1',
   withBoxShadow: { variant: 'long' },
-  withLinearGradient: { variant: 'body' },
+  backgroundColor: '$page1',
+  color: '$pageContrast2',
 });
 
 interface VenueCardVenue {
@@ -34,11 +35,13 @@ export interface VenueCardProps {
 const VenueCardUnstyled: React.FC<VenueCardProps> = ({ venue, ...props }) => (
   <VenueCardRoot {...props} as="section">
     <Text as="h1" css={{ display: 'grid', gap: '$2' }}>
-      <Text textPreset="preHeading" css={{ color: '$bodyContrast3' }}>
+      <Text textPreset="preHeading" css={{ color: '$pageContrast1' }}>
         {venue.preHeading}
       </Text>
 
-      <Text textPreset="h2">{venue.heading}</Text>
+      <Text textPreset="h2" css={{ color: '$pageContrast3' }}>
+        {venue.heading}
+      </Text>
     </Text>
 
     <Text
@@ -49,7 +52,7 @@ const VenueCardUnstyled: React.FC<VenueCardProps> = ({ venue, ...props }) => (
         width: '100%',
         borderBottom: '$borderWidths$2 solid $bodyContrast4',
         paddingBottom: '$4',
-        color: '$bodyContrast2',
+        color: '$pageContrast1',
       }}
     >
       {venue.postHeading}
