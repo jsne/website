@@ -44,7 +44,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
     </Card.CardMedia>
 
     <Card.CardBody cardLayout={layout}>
-      <Card.CardPreheading>{preHeading}</Card.CardPreheading>
+      <Card.CardPreHeading>{preHeading}</Card.CardPreHeading>
       <Card.CardHeading>{heading}</Card.CardHeading>
       <Card.CardParagraph>{body}</Card.CardParagraph>
 

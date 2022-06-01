@@ -71,7 +71,8 @@
     "modern-normalize": "^1.1.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-    "react-helmet-async": "^1.3.0"
+    "react-helmet-async": "^1.3.0",
+    "react-polymorphic-box": "^3.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.18.0",

@@ -83,35 +83,28 @@ export const CardBody = styled('div', {
   },
 });
 
-export const CardPreheading = styled(
-  Text,
-  {
-    position: 'relative',
-    color: '$pageContrast1',
-    textTransform: 'uppercase',
-  },
-  { as: 'h1', textStyle: 'preHeading' },
-);
+export const CardPreHeading = styled(Text, {
+  position: 'relative',
+  color: '$pageContrast1',
+});
 
-export const CardHeading = styled(
-  Text,
-  {
-    position: 'relative',
-    color: '$pageContrast3',
-    wordBreak: 'break-word',
-  },
-  { as: 'h2', textStyle: 'h2' },
-);
+CardPreHeading.defaultProps = { as: 'h1', textPreset: 'preHeading' };
 
-export const CardParagraph = styled(
-  Text,
-  {
-    position: 'relative',
-    marginBottom: '$2',
-    color: '$pageContrast2',
-  },
-  { textStyle: 'p' },
-);
+export const CardHeading = styled(Text, {
+  position: 'relative',
+  color: '$pageContrast3',
+  wordBreak: 'break-word',
+});
+
+CardHeading.defaultProps = { as: 'h2', textPreset: 'h2' };
+
+export const CardParagraph = styled(Text, {
+  position: 'relative',
+  marginBottom: '$2',
+  color: '$pageContrast2',
+});
+
+CardParagraph.defaultProps = { as: 'p', textPreset: 'p' };
 
 export const CardCtas = styled('div', {
   position: 'relative',

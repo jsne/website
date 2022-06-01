@@ -4,7 +4,7 @@ import { ReactComponent as Mail } from '~/assets/images/icon-mail.svg';
 import { styled } from '~/styles/stitches.config';
 
 import { Box } from '../atoms/Box';
-import { CardBody, CardHeading, CardPreheading, CardRoot } from '../atoms/Card';
+import { CardBody, CardHeading, CardPreHeading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
 import { MediaProps } from './Media';
 import { SignUpForm, SignUpFormProps } from './SignUpForm';
@@ -88,9 +88,9 @@ const MailingListCardUnstyled: React.FC<MailingListCardProps> = ({
         alignContent: 'start',
       }}
     >
-      <CardPreheading css={{ color: '$secondaryContrast2Alpha' }}>
+      <CardPreHeading css={{ color: '$secondaryContrast2Alpha' }}>
         {preHeading}
-      </CardPreheading>
+      </CardPreHeading>
 
       <CardHeading css={{ color: '$secondaryContrast1' }}>{heading}</CardHeading>
 

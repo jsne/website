@@ -32,7 +32,7 @@ export const AllPageTitle = () => (
   <>
     <HeroRoot>
       <HeroMain wrapperPadding="x8">
-        <HeroTitle as="h1" textStyle="h1">
+        <HeroTitle as="h1" textPreset="h1">
           JavaScript North East
         </HeroTitle>
       </HeroMain>

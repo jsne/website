@@ -55,7 +55,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="center" wrapperPadding="x4">
-          <HeroTitle as="h1" textStyle="hero">
+          <HeroTitle as="h1" textPreset="hero">
             {page.title}
           </HeroTitle>
           <HeroBody>
@@ -87,14 +87,14 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
           }}
         >
           <Text
-            textStyle="preHeading"
+            textPreset="preHeading"
             css={{
               color: '$bodyContrast3',
             }}
           >
             {eventPreHeading}
           </Text>
-          <Text textStyle="h1" css={{ marginBottom: '$2' }}>
+          <Text textPreset="h1" css={{ marginBottom: '$2' }}>
             {event.title}
           </Text>
           <Box

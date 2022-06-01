@@ -8,7 +8,7 @@ import {
   CardImg,
   CardMedia,
   CardParagraph,
-  CardPreheading,
+  CardPreHeading,
   CardRoot,
 } from '../Card';
 
@@ -22,7 +22,7 @@ export const All = () => (
       <CardImg alt="Media" src="https://via.placeholder.com/768x512?text=Media" />
     </CardMedia>
     <CardBody>
-      <CardPreheading>Guest Speaker</CardPreheading>
+      <CardPreHeading>Guest Speaker</CardPreHeading>
       <CardHeading>Trundle Kelly</CardHeading>
       <CardParagraph>
         Hello fellow American. This you should vote me. I leave power good. Thank you.

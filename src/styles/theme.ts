@@ -2,7 +2,7 @@
 export const remify = (px: number): string => `${px / 16}rem`;
 
 /** Base key for font styles. */
-export const themeTextStylesKeys = ['h1', 'h2', 'h3', 'hero', 'p', 'preHeading'] as const;
+export const themeTextStylesKeys = ['hero', 'h1', 'h2', 'h3', 'p', 'preHeading'] as const;
 export type ThemeTextStylesKey = typeof themeTextStylesKeys[number];
 type ThemeTextStyle = Record<ThemeTextStylesKey, string>;
 
