@@ -97,20 +97,4 @@ export const {
   },
 });
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
-type JSXElementConstructor<P> =
-  | ((props: P) => React.ReactElement<any, any> | null)
-  | (new (props: P) => React.Component<any, any>);
-
-export type WithAsProp<
-  TComponent extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
-> = React.ComponentProps<TComponent> & { as?: string | React.ElementType };
-
-export const withAsProp = <
-  T extends keyof JSX.IntrinsicElements | JSXElementConstructor<any>,
->(
-  component: WithAsProp<T>,
-) => component;
-/* eslint-enable @typescript-eslint/no-explicit-any */
-
 export type CSS = StitchesCSS<typeof config>;
