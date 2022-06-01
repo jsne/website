@@ -2,6 +2,6 @@ multipass: true
 
 plugins:
   - name: cleanupIDs
-    enable: true
+    active: true
   - name: prefixIds
-    enable: true
+    active: false
