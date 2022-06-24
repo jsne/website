@@ -23,11 +23,4 @@ Default.args = {
   preHeading: 'Keep in Touch',
   heading: 'Join Our Mailing List',
   body: "Not only do all of these people exist, but they have been asking for their mail on a daily basis. It's all they're talking about up there, dude.",
-  formProps: {
-    onSubmit: (ev) => {
-      ev.preventDefault();
-      console.log(ev);
-      (ev.target as HTMLFormElement).reset();
-    },
-  },
 };

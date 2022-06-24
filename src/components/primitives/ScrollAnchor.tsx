@@ -19,6 +19,7 @@ export const ScrollAnchor: React.FC<ScrollAnchorProps> = ({
 
       if (!targetElement) {
         console.warn('[ScrollAnchor] Unable to find target element', { href });
+
         return;
       }
 

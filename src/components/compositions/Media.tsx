@@ -27,7 +27,7 @@ export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
   /** Layout variant. */
   layout?: CardRootProps['cardLayout'];
   /** Main image. */
-  media: React.ImgHTMLAttributes<HTMLImageElement>;
+  media: React.ImgHTMLAttributes<HTMLImageElement> & { backgroundColor?: string };
   /** Heading shown before main heading. */
   preHeading?: React.ReactNode | string;
 }
@@ -45,7 +45,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
   ...props
 }) => (
   <CardRoot cardLayout={layout} {...props}>
-    <CardMedia cardLayout={layout}>
+    <CardMedia cardLayout={layout} style={{ backgroundColor: media.backgroundColor }}>
       <CardImg cardLayout={layout} {...media} />
       {ctaPrimary && (
         <CardLinkOverlay aria-hidden href={ctaPrimary.href}>

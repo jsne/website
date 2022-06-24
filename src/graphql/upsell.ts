@@ -9,9 +9,9 @@ export const UpsellFragment = graphql`
       title
       description
       gatsbyImage(width: 744, height: 726, fit: FILL, formats: [WEBP])
-      # fluid(maxWidth: 744, maxHeight: 726, resizingBehavior: FILL, toFormat: WEBP) {
-      #   srcSet
-      # }
+      resize(width: 744, height: 726, fit: FILL, format: WEBP) {
+        src
+      }
     }
     body {
       childMdx {

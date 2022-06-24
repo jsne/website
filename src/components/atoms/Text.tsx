@@ -37,6 +37,7 @@ export const Text = styled(Box, {
         lineHeight: '$preHeading',
         letterSpacing: '$spaced',
         textTransform: 'uppercase',
+        fontWeight: '$medium',
       },
       p: {
         fontSize: '$p',

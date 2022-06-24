@@ -1,4 +1,4 @@
-import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom.svg';
+import { ReactComponent as Blob1 } from '~/assets/images/blob-hero-bottom-inverse.svg';
 import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { styled } from '~/styles/stitches.config';
@@ -26,12 +26,10 @@ export const HeroMain = styled(Wrapper, {
   },
 });
 
-export const HERO_BOTTOM_HEIGHT = 'clamp(4rem, 13vw, 12rem)';
-
 export const HeroBottom = styled(Blob1, {
-  position: 'absolute',
+  display: 'block',
   width: '100%',
-  height: HERO_BOTTOM_HEIGHT,
+  height: 'clamp(4rem, 13vw, 12rem)',
 });
 
 /** Title text. */

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import { ReactComponent as Mail } from '~/assets/images/icon-mail.svg';
 import { styled } from '~/styles/stitches.config';
@@ -7,7 +7,7 @@ import { Box } from '../atoms/Box';
 import { CardBody, CardHeading, CardPreHeading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
 import { MediaProps } from './Media';
-import { SignUpForm, SignUpFormProps } from './SignUpForm';
+import { SignUpForm } from './SignUpForm';
 
 const MailingListCardRoot = styled(CardRoot, {
   position: 'relative',
@@ -67,40 +67,48 @@ const MailingListIcon = styled(Icon, {
 
 export interface MailingListCardProps
   extends Pick<MediaProps, 'preHeading' | 'heading' | 'body'> {
-  /** Properties to apply to sign up form. */
-  formProps: SignUpFormProps;
+  id?: string;
 }
 
 const MailingListCardUnstyled: React.FC<MailingListCardProps> = ({
   preHeading,
   heading,
   body,
-  formProps,
   ...props
-}) => (
-  <MailingListCardRoot as="section" {...props}>
-    <MailingListIcon as={Mail} iconAppearance="ghost" />
-    <Box
-      css={{
-        position: 'relative',
-        display: 'grid',
-        gap: '$4',
-        alignContent: 'start',
-      }}
-    >
-      <CardPreHeading css={{ color: '$secondaryContrast2Alpha' }}>
-        {preHeading}
-      </CardPreHeading>
+}) => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (ev) => {
+    ev.preventDefault();
+    console.log('!!handleSubmit', formRef.current?.checkValidity());
+  };
 
-      <CardHeading css={{ color: '$secondaryContrast1' }}>{heading}</CardHeading>
+  return (
+    <MailingListCardRoot as="section" {...props}>
+      <MailingListIcon as={Mail} iconAppearance="ghost" />
+      <Box
+        css={{
+          position: 'relative',
+          display: 'grid',
+          gap: '$4',
+          alignContent: 'start',
+        }}
+      >
+        <CardPreHeading css={{ color: '$secondaryContrast2Alpha' }}>
+          {preHeading}
+        </CardPreHeading>
 
-      <CardBody css={{ lineHeight: '$p', color: '$secondaryContrast2' }}>{body}</CardBody>
+        <CardHeading css={{ color: '$secondaryContrast1' }}>{heading}</CardHeading>
 
-      <Box css={{ marginTop: '$2' }}>
-        <SignUpForm {...formProps} />
+        <CardBody css={{ lineHeight: '$p', color: '$secondaryContrast2' }}>
+          {body}
+        </CardBody>
+
+        <Box css={{ marginTop: '$2' }}>
+          <SignUpForm ref={formRef} onSubmit={handleSubmit} />
+        </Box>
       </Box>
-    </Box>
-  </MailingListCardRoot>
-);
+    </MailingListCardRoot>
+  );
+};
 
 export const MailingListCard = styled(MailingListCardUnstyled, {});

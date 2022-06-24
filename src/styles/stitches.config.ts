@@ -22,13 +22,13 @@ export const {
   prefix: 'jsne',
   theme,
   media: {
-    bpxxs: `(min-width: 480px)`,
-    bpxs: `(min-width: 640px)`,
-    bpsm: `(min-width: 768px)`,
-    bpmd: `(min-width: 1024px)`,
-    bplg: `(min-width: 1280px)`,
-    bpxl: `(min-width: 1440px)`,
-    bpxxl: `(min-width: 1920px)`,
+    bpxxs: `(min-width: 30rem)`,
+    bpxs: `(min-width: 40rem)`,
+    bpsm: `(min-width: 48rem)`,
+    bpmd: `(min-width: 64rem)`,
+    bplg: `(min-width: 80rem)`,
+    bpxl: `(min-width: 90rem)`,
+    bpxxl: `(min-width: 120rem)`,
   },
 
   utils: {

@@ -3,7 +3,6 @@ import React from 'react';
 import { Media } from '~/components/compositions/Media';
 import { Mdx } from '~/components/primitives/Mdx';
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type UpsellProps = GatsbyTypes.UpsellFragment;
 
 /** Media upsell with alternating direction on even/odd. */
@@ -36,7 +35,11 @@ export const Upsell: React.FC<UpsellProps> = ({
         },
       }}
       layout={{ '@initial': 'vertical', '@bpsm': 'horizontal' }}
-      media={{ src: targetMedia?.gatsbyImage, alt: targetMedia?.description }}
+      media={{
+        backgroundColor: targetMedia?.gatsbyImage?.backgroundColor,
+        src: targetMedia?.resize?.src,
+        alt: targetMedia?.description,
+      }}
       {...props}
     />
   );

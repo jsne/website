@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 
-import { MailingList } from '~/blocks/MailingList';
+import { MAILING_LIST_ELEMENT_ID, MailingList } from '~/blocks/MailingList';
 import { Upsells, UpsellsProps } from '~/blocks/Upsells';
 import { Venue } from '~/blocks/Venue';
 import { Box } from '~/components/atoms/Box';
@@ -10,7 +10,6 @@ import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { Header } from '~/components/compositions/Header';
 import {
-  HERO_BOTTOM_HEIGHT,
   HeroBody,
   HeroBottom,
   HeroMain,
@@ -42,16 +41,18 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 
   const eventPreHeading = nextEventHasExpired ? 'Event Update' : 'Next Event';
   const event = nextEventHasExpired ? placeholderEvent : nextEvent;
-  const mailingListId = 'mailing-list';
 
   const primaryCta = {
-    as: nextEventHasExpired ? ScrollAnchor : undefined,
+    as: nextEventHasExpired ? ScrollAnchor : 'a',
     children: nextEventHasExpired ? 'Join Our Mailing List' : 'Get Tickets',
-    href: nextEventHasExpired ? `#${mailingListId}` : nextEvent.slug,
+    href: nextEventHasExpired
+      ? `#${MAILING_LIST_ELEMENT_ID}`
+      : nextEvent.slug ?? undefined,
   };
+  console.log('!!!', primaryCta);
 
   return (
-    <Layout head={{ title: page.title }}>
+    <Layout head={{ title: page.title as string }}>
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="center" wrapperPadding="x4">
@@ -62,14 +63,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <Mdx>{heroBody}</Mdx>
           </HeroBody>
         </HeroMain>
+        <HeroBottom />
       </HeroRoot>
-      <HeroBottom />
 
       <Box
         css={{
           backgroundColor: '$body3',
           color: '$bodyContrast1',
-          paddingTop: HERO_BOTTOM_HEIGHT,
         }}
       >
         <Wrapper
@@ -111,7 +111,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <Mdx>{event.description?.childMdx?.body}</Mdx>
           </Box>
           <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
-            <Button buttonAppearance="primary" {...primaryCta} as="a" />
+            <Button buttonAppearance="primary" {...primaryCta} />
           </Box>
         </Wrapper>
       </Box>
