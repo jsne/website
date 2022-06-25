@@ -1,53 +1,43 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 
-const pageStyles = {
-  color: '#232129',
-  padding: '96px',
-  fontFamily: '-apple-system, Roboto, sans-serif, serif',
-};
-
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
-
-const codeStyles = {
-  color: '#8A6534',
-  padding: 4,
-  backgroundColor: '#FFF4DB',
-  fontSize: '1.25rem',
-  borderRadius: 4,
-};
+import img404Src from '~/assets/images/404-1.gif';
+import { Box } from '~/components/atoms/Box';
+import { Button } from '~/components/atoms/Button';
+import { Text } from '~/components/atoms/Text';
+import { Header } from '~/components/compositions/Header';
+import { HeroBody, HeroMain, HeroRoot } from '~/components/compositions/Hero';
 
 const NotFoundPage: React.FC = () => {
   return (
-    <main style={pageStyles}>
+    <Box
+      as="main"
+      role="main"
+      css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}
+    >
       <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
-      <p style={paragraphStyles}>
-        Sorry{' '}
-        <span role="img" aria-label="Pensive emoji">
-          😔
-        </span>{' '}
-        we couldn’t find what you were looking for.
-        <br />
-        {process.env.NODE_ENV === 'development' ? (
-          <>
-            <br />
-            Try creating a page in <code style={codeStyles}>src/pages/</code>.
-            <br />
-          </>
-        ) : null}
-        <br />
-        <Link to="/">Go home</Link>.
-      </p>
-    </main>
+      <HeroRoot css={{ flexGrow: 1 }}>
+        <Header />
+        <HeroMain heroLayout="center" wrapperPadding="x4" css={{ flexGrow: 1 }}>
+          <Box
+            as="img"
+            src={img404Src}
+            alt="Not found"
+            css={{ display: 'block', borderRadius: '$2' }}
+          />
+
+          <Text textPreset="h1" as="h1">
+            Page Not Found
+          </Text>
+          <HeroBody css={{ marginBottom: '$2' }}>
+            Sorry, we couldn&apos;t find what you were looking for.
+          </HeroBody>
+          <Button buttonAppearance="secondary" as={Link} to="/">
+            Go to Homepage
+          </Button>
+        </HeroMain>
+      </HeroRoot>
+    </Box>
   );
 };
 

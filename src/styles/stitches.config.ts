@@ -37,23 +37,23 @@ export const {
       if (variant === 'short') {
         return {
           /** @NOTE Using scoped variable to avoid overly complex type unions. */
-          $$thisColor: `$colors${color}`,
-          boxShadow: `0 0.1rem 0.1rem $$thisColor,
-                        0 0.15rem 0.15rem $$thisColor,
-                        0 0.25rem 0.25rem $$thisColor,
-                        0 0.375rem 0.5rem $$thisColor,
-                        0 0.5rem 1rem $$thisColor`,
+          $$thisShadowColor: `$colors${color}`,
+          boxShadow: `0 0.1rem 0.1rem $$thisShadowColor,
+                        0 0.15rem 0.15rem $$thisShadowColor,
+                        0 0.25rem 0.25rem $$thisShadowColor,
+                        0 0.375rem 0.5rem $$thisShadowColor,
+                        0 0.5rem 1rem $$thisShadowColor`,
         };
       }
 
       return {
-        $$thisColor: `$colors${color}`,
-        boxShadow: `0 1px 2px $$thisColor,
-                      0 2px 4px $$thisColor,
-                      0 4px 8px $$thisColor,
-                      0 8px 16px $$thisColor,
-                      0 16px 32px $$thisColor,
-                      0 32px 64px $$thisColor`,
+        $$thisShadowColor: `$colors${color}`,
+        boxShadow: `0 1px 2px $$thisShadowColor,
+                      0 2px 4px $$thisShadowColor,
+                      0 4px 8px $$thisShadowColor,
+                      0 8px 16px $$thisShadowColor,
+                      0 16px 32px $$thisShadowColor,
+                      0 32px 64px $$thisShadowColor`,
       };
     },
 

@@ -1,6 +1,7 @@
 import { Story } from '@storybook/react';
 import React from 'react';
 
+import { Box } from '../../atoms/Box';
 import { VenueCard, VenueCardProps } from '../VenueCard';
 
 export default {
@@ -9,7 +10,11 @@ export default {
   parameters: { layout: 'fullscreen' },
 };
 
-export const Default: Story<VenueCardProps> = (args) => <VenueCard {...args} />;
+export const Default: Story<VenueCardProps> = (args) => (
+  <Box css={{ padding: '$4' }}>
+    <VenueCard {...args} />
+  </Box>
+);
 
 Default.args = {
   venue: {

@@ -8,7 +8,7 @@ export default {
   parameters: { layout: 'fullscreen' },
 };
 
-export const AllIntro = () => (
+export const All = () => (
   <>
     <HeroRoot>
       <HeroMain heroLayout="center" wrapperWidth="small">
@@ -23,21 +23,8 @@ export const AllIntro = () => (
           Earth I got left. I&apos;m gonna get real weird with it.
         </HeroBody>
       </HeroMain>
+      <HeroBottom />
     </HeroRoot>
-    <HeroBottom />
-  </>
-);
-
-export const AllPageTitle = () => (
-  <>
-    <HeroRoot>
-      <HeroMain wrapperPadding="x8">
-        <HeroTitle as="h1" textPreset="h1">
-          JavaScript North East
-        </HeroTitle>
-      </HeroMain>
-    </HeroRoot>
-    <HeroBottom />
   </>
 );
 

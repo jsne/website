@@ -45,7 +45,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
   ...props
 }) => (
   <CardRoot cardLayout={layout} {...props}>
-    <CardMedia cardLayout={layout} style={{ backgroundColor: media.backgroundColor }}>
+    <CardMedia cardLayout={layout} style={{ backgroundColor: media?.backgroundColor }}>
       <CardImg cardLayout={layout} {...media} />
       {ctaPrimary && (
         <CardLinkOverlay aria-hidden href={ctaPrimary.href}>
