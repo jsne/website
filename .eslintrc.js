@@ -17,6 +17,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
+    'plugin:react/jsx-runtime',
     'plugin:eslint-comments/recommended',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -32,9 +33,11 @@ module.exports = {
     'lines-around-comment': 0,
     'no-confusing-arrow': 0,
     'no-console': ['warn', { allow: ['error', 'warn'] }],
+    'no-constant-binary-expression': 'error',
     'no-debugger': 0,
     'no-shadow': 'warn',
     'object-shorthand': 'warn',
+    'newline-before-return': 'warn',
 
     'graphql/template-strings': [
       'error',
