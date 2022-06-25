@@ -1,4 +1,5 @@
-import React from 'react';
+import type { Story } from '@storybook/react';
+import type { ComponentProps } from 'react';
 
 import { Button } from '../Button';
 import {
@@ -16,42 +17,49 @@ export default {
   title: 'Atoms/Card',
 };
 
-export const All = () => (
+export const Root: Story = (args) => <CardRoot {...args} />;
+Root.args = { children: 'Hello, I am Root' };
+
+export const Body: Story = (args) => <CardBody {...args} />;
+Body.args = { children: 'Card Body' };
+
+export const Heading: Story = (args) => (
   <CardRoot>
-    <CardMedia>
-      <CardImg alt="Media" src="https://via.placeholder.com/768x512?text=Media" />
-    </CardMedia>
-    <CardBody>
-      <CardPreHeading>Guest Speaker</CardPreHeading>
-      <CardHeading>Trundle Kelly</CardHeading>
-      <CardParagraph>
-        Hello fellow American. This you should vote me. I leave power good. Thank you.
-        Thank you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The
-        democratic vote for me is right thing to do Philadelphia.
-      </CardParagraph>
-      <CardCtas>
-        <Button as="a" href="#" buttonAppearance="primary">
-          So do
-        </Button>
-      </CardCtas>
-    </CardBody>
+    <CardHeading {...args} />
   </CardRoot>
 );
+Heading.args = { children: 'Card Heading Goes Here' };
 
-All.argTypes = {
-  linkAppearance: { control: { disable: true }, table: { disable: true } },
+export const PreHeading: Story = (args) => (
+  <CardRoot>
+    <CardPreHeading {...args} />
+  </CardRoot>
+);
+PreHeading.args = { children: 'Card PreHeading Goes Here' };
+
+export const Paragraph: Story = (args) => (
+  <CardRoot>
+    <CardParagraph {...args} />
+  </CardRoot>
+);
+Paragraph.args = { children: 'Card Body' };
+
+export const Img: Story = (args) => <CardImg {...args} />;
+Img.args = {
+  src: 'https://picsum.photos/200/300',
+  alt: 'Example Card Image',
+  cardLayout: 'horizontal',
 };
 
-export const Root = () => (
-  <CardRoot>
-    I am <del>G</del>root.
-  </CardRoot>
+export const Ctas: Story<ComponentProps<typeof CardCtas>> = (args) => (
+  <CardCtas {...args}>
+    <Button as="a" href="#" buttonAppearance="primary">
+      Primary CTA
+    </Button>
+    <Button as="a" href="#" buttonAppearance="secondary">
+      Secondary CTA
+    </Button>
+  </CardCtas>
 );
 
-export const Body = () => (
-  <CardBody>
-    <div>
-      <del>bo</del>bod<del>d</del>y
-    </div>
-  </CardBody>
-);
+Ctas.args = { cardLayout: 'horizontal' };

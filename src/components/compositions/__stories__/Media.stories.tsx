@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import React from 'react';
 
 import { Media, MediaProps } from '../Media';
 
@@ -19,24 +18,20 @@ const templateArgs = {
     </>
   ),
   ctaPrimary: { children: 'So do', href: '#' },
+  ctaSecondary: { children: 'What do now?', href: '#' },
   heading: 'Chrundle the Great',
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
   preHeading: 'Speakers',
 };
 
-export const Default = Template.bind(templateArgs);
+export const Default = Template.bind({});
+Default.args = { ...templateArgs };
 
-export const SecondaryCta = Template.bind({
-  ...templateArgs,
-  ctaSecondary: { children: 'Yeah?!', href: '#' },
-});
+export const HorizontalLayout = Template.bind({});
+HorizontalLayout.args = { ...templateArgs, layout: 'horizontal' };
 
-export const HorizontalLayout = Template.bind({
-  ...templateArgs,
-  layout: 'horizontal',
-});
-
-export const ResponsiveLayout = Template.bind({
+export const ResponsiveLayout = Template.bind({});
+ResponsiveLayout.args = {
   ...templateArgs,
   layout: { '@initial': 'vertical', '@bpsm': 'horizontal' },
-});
+};
