@@ -25,18 +25,24 @@ const mapFragmentToProps = (
 ): EventCardProps => ({
   heading: fragment.heading,
   description: <Mdx>{fragment.description?.childMdx?.body}</Mdx>,
-  preHeading: dateIsInPast(fragment.eventDate as string) ? (
-    'Previous Event'
-  ) : (
-    <>
-      Upcoming Event <span role="presentation">🚀</span>
-    </>
-  ),
+  eventDate: fragment.eventDate,
+  preHeading:
+    fragment.uid === 'placeholder' ? (
+      'Event Update'
+    ) : dateIsInPast(fragment.eventDate as string) ? (
+      'Previous Event'
+    ) : (
+      <>
+        Upcoming Event <span role="presentation">🚀</span>
+      </>
+    ),
   media: {
     backgroundColor: fragment.focalImage?.gatsbyImage?.backgroundColor,
     src: fragment.focalImage?.resize?.src || cardPlaceholderSrc,
     alt: fragment.focalImage?.description || 'Placeholder with JSNE logo',
   },
+  venue: fragment.venue,
+  speaker: fragment.speaker,
 });
 
 interface PageProps {
@@ -51,6 +57,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
 
   const nextEventHasExpired = dateIsInPast(nextEvent.eventDate as string);
 
+  /** Next event or placeholder event if next event is in the past. */
   const primaryEvent = mapFragmentToProps(
     (nextEventHasExpired
       ? placeholderEvent

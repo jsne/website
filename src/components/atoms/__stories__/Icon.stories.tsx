@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ReactComponent as Calendar } from '~/assets/images/icon-calendar.svg';
 
 import { Icon } from '../Icon';

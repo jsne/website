@@ -1,7 +1,6 @@
 import { Story } from '@storybook/react';
-import React from 'react';
 
-import { Link } from '../Link';
+import { Link, LinkAuto } from '../Link';
 
 export default {
   title: 'Atoms/Link',
@@ -39,4 +38,11 @@ Tertiary.args = {
   children: 'This is h1 Text',
   href: '#',
   linkAppearance: 'tertiary',
+};
+
+export const Auto: Story = (args) => <LinkAuto {...args} />;
+Auto.args = {
+  children: 'I will open in a new tab',
+  href: 'https://example.com',
+  linkAppearance: 'primary',
 };

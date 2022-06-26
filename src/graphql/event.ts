@@ -23,6 +23,7 @@ export const EventListingFragment = graphql`
     speaker {
       ...SpeakerFragment
     }
+    uid
     venue {
       ...VenueFragment
     }

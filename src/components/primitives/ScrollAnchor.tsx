@@ -1,5 +1,7 @@
 import React, { useCallback } from 'react';
 
+import { prefersMotion } from '~/utilities';
+
 export type ScrollAnchorProps = Omit<
   React.AnchorHTMLAttributes<HTMLAnchorElement>,
   'href'
@@ -23,7 +25,10 @@ export const ScrollAnchor: React.FC<ScrollAnchorProps> = ({
         return;
       }
 
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      targetElement.scrollIntoView({
+        behavior: prefersMotion ? 'smooth' : 'auto',
+        block: 'start',
+      });
 
       if (onClick) {
         onClick(ev);

@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import React from 'react';
 
 import { themeTextStylesKeys } from '../../../styles/theme';
 import { Text } from '../Text';
@@ -47,4 +46,10 @@ export const PreHeading: Story = (args) => <Text {...args} />;
 PreHeading.args = {
   children: 'Is your cat making TOO MUCH NOISE ALL THE TIME?',
   textPreset: 'preHeading',
+};
+
+export const Caption: Story = (args) => <Text {...args} />;
+Caption.args = {
+  children: 'Is your cat making TOO MUCH NOISE ALL THE TIME?',
+  textPreset: 'caption',
 };

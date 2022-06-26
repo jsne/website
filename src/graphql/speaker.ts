@@ -12,5 +12,6 @@ export const SpeakerFragment = graphql`
     }
     id
     name
+    handle
   }
 `;

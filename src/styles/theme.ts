@@ -2,7 +2,15 @@
 export const remify = (px: number): string => `${px / 16}rem`;
 
 /** Base key for font styles. */
-export const themeTextStylesKeys = ['hero', 'h1', 'h2', 'h3', 'p', 'preHeading'] as const;
+export const themeTextStylesKeys = [
+  'hero',
+  'h1',
+  'h2',
+  'h3',
+  'p',
+  'preHeading',
+  'caption',
+] as const;
 export type ThemeTextStylesKey = typeof themeTextStylesKeys[number];
 type ThemeTextStyle = Record<ThemeTextStylesKey, string>;
 
@@ -13,6 +21,7 @@ const fontSizes: ThemeTextStyle = {
   h3: remify(36),
   p: remify(16),
   preHeading: remify(16),
+  caption: remify(14),
 };
 
 const lineHeights: ThemeTextStyle = {
@@ -22,6 +31,7 @@ const lineHeights: ThemeTextStyle = {
   h3: '1.2',
   p: '1.55',
   preHeading: '1.55',
+  caption: '1.55',
 };
 
 /** Main theme definition. */

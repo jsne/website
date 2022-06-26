@@ -55,3 +55,16 @@ export const Link = styled('a', {
 });
 
 export type LinkProps = ComponentProps<typeof Link>;
+
+/** Link that automatically opens new tab for external hrefs. */
+export const LinkAuto = (props: LinkProps) => {
+  const isExternalLink = !props.href?.startsWith('/');
+
+  return (
+    <Link
+      {...props}
+      target={isExternalLink ? '_blank' : props.target}
+      rel={isExternalLink ? 'noopener noreferrer' : props.rel}
+    />
+  );
+};

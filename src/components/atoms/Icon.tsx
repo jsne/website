@@ -1,3 +1,5 @@
+import { ComponentProps } from 'react';
+
 import { styled } from '~/styles/stitches.config';
 
 export const Icon = styled('svg', {
@@ -32,3 +34,5 @@ export const Icon = styled('svg', {
     },
   },
 });
+
+export type IconProps = ComponentProps<typeof Icon>;

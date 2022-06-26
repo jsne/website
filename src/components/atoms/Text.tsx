@@ -44,6 +44,11 @@ export const Text = styled(Box, {
         lineHeight: '$p',
         fontWeight: '$regular',
       },
+      caption: {
+        fontSize: '$caption',
+        lineHeight: '$caption',
+        fontWeight: '$regular',
+      },
     },
   },
 
