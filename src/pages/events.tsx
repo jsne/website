@@ -78,7 +78,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">
-          <HeroTitle as="h1" textPreset="h1">
+          <HeroTitle as="h1" textPreset="h2">
             {page.title}
           </HeroTitle>
 

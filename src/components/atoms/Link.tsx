@@ -1,3 +1,5 @@
+import { ComponentProps } from 'react';
+
 import { styled } from '~/styles/stitches.config';
 
 export const Link = styled('a', {
@@ -51,3 +53,5 @@ export const Link = styled('a', {
     },
   },
 });
+
+export type LinkProps = ComponentProps<typeof Link>;

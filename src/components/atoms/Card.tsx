@@ -73,8 +73,8 @@ export const CardBody = styled('div', {
       vertical: { gap: '$4', padding: '$5' },
       horizontal: {
         width: '100%',
-        gap: '$5',
-        padding: '$7',
+        gap: '$4',
+        padding: '$8',
       },
     },
   },

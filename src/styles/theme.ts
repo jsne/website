@@ -10,7 +10,7 @@ const fontSizes: ThemeTextStyle = {
   hero: remify(64),
   h1: remify(52),
   h2: remify(44),
-  h3: remify(40),
+  h3: remify(36),
   p: remify(16),
   preHeading: remify(16),
 };

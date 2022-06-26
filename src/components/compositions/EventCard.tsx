@@ -40,7 +40,7 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
     <CardRoot ref={ref} {...props} as={as} cardLayout="horizontal">
       <CardBody cardLayout="horizontal">
         <CardPreHeading>{preHeading}</CardPreHeading>
-        <CardHeading>{heading}</CardHeading>
+        <CardHeading textPreset="h3">{heading}</CardHeading>
         <CardDescription>{description}</CardDescription>
 
         {ctas && ctas.length > 0 && (
