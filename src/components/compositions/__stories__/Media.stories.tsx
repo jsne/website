@@ -10,15 +10,15 @@ export default {
 const Template: Story<MediaProps> = (args) => <Media {...args} />;
 
 const templateArgs = {
-  body: (
+  ctaPrimary: { children: 'So do', href: '#' },
+  ctaSecondary: { children: 'What do now?', href: '#' },
+  description: (
     <>
       Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
       you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The
       democratic vote for me is right thing to do Philadelphia.
     </>
   ),
-  ctaPrimary: { children: 'So do', href: '#' },
-  ctaSecondary: { children: 'What do now?', href: '#' },
   heading: 'Chrundle the Great',
   media: { alt: 'Media', src: 'https://via.placeholder.com/768x512?text=Media' },
   preHeading: 'Speakers',

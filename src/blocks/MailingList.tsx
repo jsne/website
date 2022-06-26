@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import React from 'react';
+import { FC } from 'react';
 
 import { Box } from '~/components/atoms/Box';
 import { MailingListCard } from '~/components/compositions/MailingListCard';
@@ -22,7 +22,7 @@ export const mailingListQuery = graphql`
   }
 `;
 
-const MailingListRoot: React.FC = (props) => {
+const MailingListRoot: FC = (props) => {
   const { contentfulUpsell } =
     useStaticQuery<GatsbyTypes.mailingListQuery>(mailingListQuery);
 

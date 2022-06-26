@@ -4,11 +4,11 @@ import { Button } from '~/components/atoms/Button';
 import {
   CardBody,
   CardCtas,
+  CardDescription,
   CardHeading,
   CardImg,
   CardLinkOverlay,
   CardMedia,
-  CardParagraph,
   CardPreHeading,
   CardRoot,
   CardRootProps,
@@ -16,12 +16,12 @@ import {
 import { styled } from '~/styles/stitches.config';
 
 export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
-  /** Paragraph content. */
-  body: React.ReactNode | string;
   /** Primary call to action. */
   ctaPrimary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
   /** Secondary call to action. */
   ctaSecondary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  /** Paragraph content. */
+  description: React.ReactNode | string;
   /** Main heading. */
   heading: React.ReactNode | string;
   /** Layout variant. */
@@ -35,9 +35,9 @@ export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
 const defaultLayout = { '@initial': 'vertical' } as const;
 
 const MediaUnstyled: React.FC<MediaProps> = ({
-  body,
   ctaPrimary,
   ctaSecondary,
+  description,
   heading,
   layout = defaultLayout,
   media,
@@ -54,10 +54,10 @@ const MediaUnstyled: React.FC<MediaProps> = ({
       )}
     </CardMedia>
 
-    <CardBody cardLayout={layout}>
+    <CardBody cardLayout={layout} css={{ alignContent: 'center', maxWidth: '38rem' }}>
       <CardPreHeading>{preHeading}</CardPreHeading>
       <CardHeading>{heading}</CardHeading>
-      <CardParagraph>{body}</CardParagraph>
+      <CardDescription>{description}</CardDescription>
 
       <CardCtas cardLayout={layout}>
         {ctaPrimary && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}

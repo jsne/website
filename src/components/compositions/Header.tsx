@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { ReactComponent as Logo } from '~/assets/images/logo.svg';
 import { Wrapper } from '~/components/atoms/Wrapper';
@@ -39,7 +39,7 @@ const lilJiggle = keyframes({
 });
 
 export const HeaderLogo = styled(Logo, {
-  width: '6rem',
+  width: '7rem',
   animationDelay: '150ms',
   animationDuration: '450ms',
   animationFillMode: 'both',
@@ -56,7 +56,7 @@ export interface HeaderProps {
 }
 
 /** Main website header. */
-export const Header: React.FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
+export const Header: FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
   <HeaderRoot as="header" role="banner" wrapperPadding="x4" {...props}>
     <HeaderLink href={logoSlug} title="Go to Homepage">
       <HeaderLogo aria-hidden />

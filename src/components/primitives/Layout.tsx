@@ -38,5 +38,6 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, hea
   <HelmetProvider>
     <LayoutHead {...head} />
     {children}
+    <noscript>I can&apos;t believe you&apos;ve done this.</noscript>
   </HelmetProvider>
 );

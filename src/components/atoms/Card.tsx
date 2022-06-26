@@ -50,11 +50,8 @@ export const CardMedia = styled('div', {
 });
 
 export const CardImg = styled('img', {
-  top: 0,
-  left: 0,
   display: 'block',
   width: '100%',
-  height: '100%',
   objectFit: 'cover',
 
   variants: {
@@ -67,15 +64,15 @@ export const CardImg = styled('img', {
 
 export const CardBody = styled('div', {
   display: 'grid',
-  alignContent: 'center',
   justifyItems: 'start',
+  alignContent: 'start',
+  textAlign: 'left',
 
   variants: {
     cardLayout: {
       vertical: { gap: '$4', padding: '$5' },
       horizontal: {
         width: '100%',
-        maxWidth: '38rem',
         gap: '$5',
         padding: '$7',
       },
@@ -98,13 +95,16 @@ export const CardHeading = styled(Text, {
 
 CardHeading.defaultProps = { as: 'h2', textPreset: 'h2' };
 
-export const CardParagraph = styled(Text, {
+export const CardDescription = styled(Text, {
   position: 'relative',
+  display: 'grid',
+  gap: '$3',
+  width: '100%',
   marginBottom: '$2',
   color: '$pageContrast2',
 });
 
-CardParagraph.defaultProps = { as: 'p', textPreset: 'p' };
+CardDescription.defaultProps = { as: 'div', textPreset: 'p' };
 
 export const CardCtas = styled('div', {
   position: 'relative',

@@ -5,7 +5,6 @@ import { styled } from '~/styles/stitches.config';
 
 /** Root element. */
 export const HeroRoot = styled('section', {
-  position: 'relative',
   withLinearGradient: { variant: 'primary' },
 });
 
@@ -22,14 +21,19 @@ export const HeroMain = styled(Wrapper, {
         justifyItems: 'center',
         textAlign: 'center',
       },
+      left: {
+        justifyItems: 'flex-start',
+      },
     },
   },
 });
 
+export const HERO_BOTTOM_HEIGHT = 'clamp(4rem, 13vw, 12rem)';
+
 export const HeroBottom = styled(Blob1, {
   display: 'block',
   width: '100%',
-  height: 'clamp(4rem, 13vw, 12rem)',
+  height: HERO_BOTTOM_HEIGHT,
 });
 
 /** Title text. */

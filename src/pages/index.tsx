@@ -21,19 +21,14 @@ import { Mdx } from '~/components/primitives/Mdx';
 import { ScrollAnchor } from '~/components/primitives/ScrollAnchor';
 
 interface IndexPageProps {
-  data: GatsbyTypes.HomeQueryQuery;
+  data: GatsbyTypes.HomeQuery;
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
-  const page = data.contentfulPage;
+  const page = data.contentfulPage as GatsbyTypes.ContentfulPage;
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.nextEvent.edges[0].node;
   const { placeholderEvent } = data;
-
-  if (!page || !heroBody || !placeholderEvent) {
-    console.error('Unable to load page', { page, heroBody, placeholderEvent });
-    throw new Error('Unable to load page.');
-  }
 
   const nextEventHasExpired =
     nextEvent?.eventDate &&
@@ -49,7 +44,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       ? `#${MAILING_LIST_ELEMENT_ID}`
       : nextEvent.slug ?? undefined,
   };
-  console.log('!!!', primaryCta);
 
   return (
     <Layout head={{ title: page.title as string }}>
@@ -95,7 +89,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             {eventPreHeading}
           </Text>
           <Text textPreset="h1" css={{ marginBottom: '$2' }}>
-            {event.title}
+            {event?.heading}
           </Text>
           <Box
             css={{
@@ -108,7 +102,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
               },
             }}
           >
-            <Mdx>{event.description?.childMdx?.body}</Mdx>
+            <Mdx>{event?.description?.childMdx?.body}</Mdx>
           </Box>
           <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
             <Button buttonAppearance="primary" {...primaryCta} />
@@ -122,15 +116,13 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
         <MailingList css={{ paddingTop: '$section', paddingBottom: '$section' }} />
       </Wrapper>
 
-      {event.venue && <Venue venue={event.venue} />}
-
-      <noscript>I can&apos;t believe you&apos;ve done this.</noscript>
+      {event?.venue && <Venue venue={event.venue} />}
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
-  query HomeQuery {
+  query Home {
     contentfulPage(slug: { eq: "home" }) {
       ...Page
     }

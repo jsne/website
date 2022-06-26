@@ -5,10 +5,10 @@ import { Button } from '../Button';
 import {
   CardBody,
   CardCtas,
+  CardDescription,
   CardHeading,
   CardImg,
   CardMedia,
-  CardParagraph,
   CardPreHeading,
   CardRoot,
 } from '../Card';
@@ -39,7 +39,7 @@ PreHeading.args = { children: 'Card PreHeading Goes Here' };
 
 export const Paragraph: Story = (args) => (
   <CardRoot>
-    <CardParagraph {...args} />
+    <CardDescription {...args} />
   </CardRoot>
 );
 Paragraph.args = { children: 'Card Body' };
@@ -48,6 +48,15 @@ export const Img: Story = (args) => <CardImg {...args} />;
 Img.args = {
   src: 'https://picsum.photos/200/300',
   alt: 'Example Card Image',
+  cardLayout: 'horizontal',
+};
+
+export const Media: Story = (args) => (
+  <CardMedia {...args}>
+    <CardImg src="https://picsum.photos/200/300" alt="Example Card Image" />
+  </CardMedia>
+);
+Media.args = {
   cardLayout: 'horizontal',
 };
 

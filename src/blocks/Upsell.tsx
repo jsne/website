@@ -1,12 +1,12 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { Media } from '~/components/compositions/Media';
 import { Mdx } from '~/components/primitives/Mdx';
 
-export type UpsellProps = GatsbyTypes.UpsellFragment;
+export type UpsellProps = GatsbyTypes.ContentfulUpsell;
 
 /** Media upsell with alternating direction on even/odd. */
-export const Upsell: React.FC<UpsellProps> = ({
+export const Upsell: FC<UpsellProps> = ({
   body,
   media,
   ctaPrimaryItem,
@@ -19,7 +19,7 @@ export const Upsell: React.FC<UpsellProps> = ({
 
   return (
     <Media
-      body={<Mdx>{body?.childMdx?.body}</Mdx>}
+      description={<Mdx>{body?.childMdx?.body}</Mdx>}
       ctaPrimary={{
         children: ctaPrimaryLabel,
         href: ctaPrimaryItem?.slug,

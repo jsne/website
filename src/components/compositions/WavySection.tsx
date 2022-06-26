@@ -18,7 +18,7 @@ export const WavySectionRoot = styled(Box, {
     content: '',
     position: 'relative',
     display: 'block',
-    top: 0,
+    top: '0.15rem',
     left: 0,
     width: '100%',
     height: '5.66vw',
