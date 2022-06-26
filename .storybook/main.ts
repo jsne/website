@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 const {
   moduleRulesSvg,
-  pluginDefineOptions,
+  defineOptions,
   resolveAlias,
 } = require('../.config/webpack.config');
 
@@ -43,7 +43,7 @@ module.exports = {
 
     return {
       ...config,
-      plugins: [...config.plugins, new webpack.DefinePlugin(pluginDefineOptions())],
+      plugins: [...config.plugins, new webpack.DefinePlugin(defineOptions())],
       resolve: {
         ...config.resolve,
         alias: {

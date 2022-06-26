@@ -1,8 +1,8 @@
 import { addons } from '@storybook/addons';
 import { create } from '@storybook/theming/create';
 
+// @ts-expect-error
 import brandImage from '../src/assets/images/logo-wordmark.svg';
-
 import { theme } from './theme';
 
 /**

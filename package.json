@@ -29,7 +29,7 @@
       "pretty-quick --staged",
       "eslint --fix"
     ],
-    "**/*.{css}": [
+    "**/*.{css,md}": [
       "pretty-quick --staged"
     ]
   },
@@ -101,6 +101,7 @@
     "eslint-plugin-graphql": "^4.0.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "fork-ts-checker-webpack-plugin": "^7.2.11",
     "husky": "^8.0.1",
     "lint-staged": "^12.4.1",
     "prettier": "^2.7.1",
