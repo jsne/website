@@ -60,7 +60,7 @@ module.exports = {
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',
     '@typescript-eslint/no-unused-vars': [
-      'warn',
+      'error',
       {
         args: 'all',
         argsIgnorePattern: '^_',
