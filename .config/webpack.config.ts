@@ -1,14 +1,12 @@
-/* eslint-env node */
 /* eslint-disable @typescript-eslint/no-var-requires */
+import path from 'path';
 
-const path = require('path');
-
-module.exports.defineOptions = (stage = 'develop') => ({
+export const defineOptions = (stage = 'develop') => ({
   __DEVELOPMENT__: stage === `develop` || stage === `develop-html`,
   __IS_LIVE__: process.env.IS_LIVE === 'true',
 });
 
-module.exports.moduleRulesSvg = {
+export const moduleRulesSvg = {
   test: /\.svg$/,
   use: [
     {
@@ -24,6 +22,6 @@ module.exports.moduleRulesSvg = {
   },
 };
 
-module.exports.resolveAlias = {
+export const resolveAlias = {
   '~': path.resolve(__dirname, '..', 'src'),
 };
