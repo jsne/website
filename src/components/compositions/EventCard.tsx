@@ -38,6 +38,7 @@ const EventCardInfo: FC<EventCardInfoProps> = ({ speaker, eventDate, venue }) =>
     as="ul"
     css={{
       display: 'flex',
+      flexWrap: 'wrap',
       gap: '$4',
       listStyle: 'none',
       marginTop: 0,

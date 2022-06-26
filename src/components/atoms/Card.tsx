@@ -56,8 +56,15 @@ export const CardImg = styled('img', {
 
   variants: {
     cardLayout: {
-      vertical: { position: 'absolute' },
-      horizontal: { position: 'static' },
+      vertical: {
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        height: '100%',
+      },
+      horizontal: {
+        position: 'static',
+      },
     },
   },
 });
