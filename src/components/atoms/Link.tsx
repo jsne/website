@@ -58,7 +58,10 @@ export type LinkProps = ComponentProps<typeof Link>;
 
 /** Link that automatically opens new tab for external hrefs. */
 export const LinkAuto = (props: LinkProps) => {
-  const isExternalLink = !props.href?.startsWith('/');
+  const isExternalLink =
+    !props.href?.startsWith(window.location.origin) &&
+    !props.href?.startsWith('/') &&
+    !props.href?.startsWith('#');
 
   return (
     <Link

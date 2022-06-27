@@ -60,8 +60,10 @@ const MediaUnstyled: React.FC<MediaProps> = ({
       <CardDescription>{description}</CardDescription>
 
       <CardCtas cardLayout={layout}>
-        {ctaPrimary && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}
-        {ctaSecondary && <Button as="a" buttonAppearance="secondary" {...ctaSecondary} />}
+        {ctaPrimary?.href && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}
+        {ctaSecondary?.href && (
+          <Button as="a" buttonAppearance="secondary" {...ctaSecondary} />
+        )}
       </CardCtas>
     </CardBody>
   </CardRoot>

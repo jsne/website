@@ -40,9 +40,16 @@ Tertiary.args = {
   linkAppearance: 'tertiary',
 };
 
-export const Auto: Story = (args) => <LinkAuto {...args} />;
-Auto.args = {
+export const AutoExternal: Story = (args) => <LinkAuto {...args} />;
+AutoExternal.args = {
   children: 'I will open in a new tab',
   href: 'https://example.com',
+  linkAppearance: 'primary',
+};
+
+export const AutoInternal: Story = (args) => <LinkAuto {...args} />;
+AutoInternal.args = {
+  children: 'I will not open in a new tab (but Storybook will force me to)',
+  href: '#example',
   linkAppearance: 'primary',
 };
