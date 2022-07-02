@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { FC } from 'react';
 
 import { ReactComponent as Mail } from '~/assets/images/icon-mail.svg';
 import { styled } from '~/styles/stitches.config';
@@ -7,7 +7,7 @@ import { Box } from '../atoms/Box';
 import { CardBody, CardHeading, CardPreHeading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
 import { MediaProps } from './Media';
-import { SignUpForm } from './SignUpForm';
+import { SignUpForm, SignUpFormProps } from './SignUpForm';
 
 const MailingListCardRoot = styled(CardRoot, {
   position: 'relative',
@@ -67,21 +67,17 @@ const MailingListIcon = styled(Icon, {
 
 export interface MailingListCardProps
   extends Pick<MediaProps, 'preHeading' | 'heading' | 'body'> {
+  formProps: SignUpFormProps;
   id?: string;
 }
 
-const MailingListCardUnstyled: React.FC<MailingListCardProps> = ({
+const MailingListCardUnstyled: FC<MailingListCardProps> = ({
   preHeading,
   heading,
   body,
+  formProps,
   ...props
 }) => {
-  const formRef = useRef<HTMLFormElement>(null);
-  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (ev) => {
-    ev.preventDefault();
-    console.log('!!handleSubmit', formRef.current?.checkValidity());
-  };
-
   return (
     <MailingListCardRoot as="section" {...props}>
       <MailingListIcon as={Mail} iconAppearance="ghost" />
@@ -104,7 +100,7 @@ const MailingListCardUnstyled: React.FC<MailingListCardProps> = ({
         </CardBody>
 
         <Box css={{ marginTop: '$2' }}>
-          <SignUpForm ref={formRef} onSubmit={handleSubmit} />
+          <SignUpForm {...formProps} />
         </Box>
       </Box>
     </MailingListCardRoot>

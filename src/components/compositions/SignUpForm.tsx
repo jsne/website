@@ -1,13 +1,13 @@
-import React, { forwardRef } from 'react';
+import { ComponentProps, HTMLProps, forwardRef } from 'react';
 
 import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
 import { Input } from '../atoms/Input';
 import { VisuallyHidden } from '../atoms/VisuallyHidden';
 
-export type SignUpFormProps = React.ComponentProps<typeof SignUpForm>;
+export type SignUpFormProps = ComponentProps<typeof SignUpForm>;
 
-export const SignUpForm = forwardRef<HTMLFormElement, React.ComponentProps<'form'>>(
+export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>>(
   (props, ref) => (
     <Box
       ref={ref}
@@ -31,6 +31,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, React.ComponentProps<'form
       <VisuallyHidden>
         <label htmlFor="mailing-list-email">Email Address</label>
       </VisuallyHidden>
+
       <Input
         id="mailing-list-email"
         name="email"
@@ -49,6 +50,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, React.ComponentProps<'form
           },
         }}
       />
+
       <Button
         buttonAppearance="primary"
         type="submit"

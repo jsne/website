@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import { Box } from '~/components/atoms/Box';
 import { MailingListCard } from '~/components/compositions/MailingListCard';
 import { Mdx } from '~/components/primitives/Mdx';
 import { styled } from '~/styles/stitches.config';
 
-export const MAILING_LIST_ELEMENT_ID = 'upsell-mailing-list';
+export const MAILING_LIST_ELEMENT_ID = 'join-mailing-list';
 
 export const mailingListQuery = graphql`
   query mailingList {
@@ -23,6 +23,8 @@ export const mailingListQuery = graphql`
 `;
 
 const MailingListRoot: FC = (props) => {
+  const formRef = useRef<HTMLFormElement>(null);
+
   const { contentfulUpsell } =
     useStaticQuery<GatsbyTypes.mailingListQuery>(mailingListQuery);
 
@@ -34,6 +36,14 @@ const MailingListRoot: FC = (props) => {
   return (
     <Box {...props}>
       <MailingListCard
+        formProps={{
+          ref: formRef,
+          onSubmit: (ev) => {
+            ev.preventDefault();
+            const data = new FormData(formRef.current as HTMLFormElement);
+            console.log(Object.fromEntries(data.entries()));
+          },
+        }}
         id={MAILING_LIST_ELEMENT_ID}
         preHeading={contentfulUpsell.preHeading}
         heading={contentfulUpsell.heading}
