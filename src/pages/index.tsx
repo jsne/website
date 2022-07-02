@@ -122,7 +122,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query Home {
-    contentfulPage(slug: { eq: "home" }) {
+    contentfulPage(slug: { eq: "/home" }) {
       ...Page
     }
     placeholderEvent: contentfulEvent(uid: { eq: "placeholder" }) {
