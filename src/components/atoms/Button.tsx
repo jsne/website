@@ -1,9 +1,11 @@
+import { Box } from 'react-polymorphic-box';
+
 import { styled } from '~/styles/stitches.config';
 
 export const BUTTON_MAX_WIDTH = '13rem';
 
 /** Generic variant-controlled button. */
-export const Button = styled('button', {
+export const Button = styled(Box, {
   display: 'inline-flex',
   justifyContent: 'center',
   fontWeight: '$bold',
@@ -72,3 +74,5 @@ export const Button = styled('button', {
     },
   },
 });
+
+Button.defaultProps = { as: 'button' };
