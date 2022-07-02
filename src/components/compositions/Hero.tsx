@@ -13,7 +13,7 @@ export const HeroMain = styled(Wrapper, {
   display: 'grid',
   gap: '$4',
   paddingTop: '$6',
-  paddingBottom: '$section',
+  paddingBottom: '$16',
 
   variants: {
     heroLayout: {

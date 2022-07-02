@@ -76,7 +76,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             gap: '$2',
             width: '100%',
             maxWidth: '$wrapperWidth1',
-            paddingBottom: '$section',
+            paddingBottom: '$16',
             textAlign: 'center',
           }}
         >
@@ -113,7 +113,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
       <Wrapper wrapperPadding="x4" wrapperWidth="medium">
-        <MailingList css={{ paddingTop: '$section', paddingBottom: '$section' }} />
+        <MailingList css={{ paddingTop: '$16', paddingBottom: '$16' }} />
       </Wrapper>
 
       {event?.venue && <Venue venue={event.venue} />}

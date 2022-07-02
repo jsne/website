@@ -56,7 +56,7 @@ export const WavySection: React.FC<{ children?: React.ReactNode }> = ({
   <WavySectionRoot as="section" {...props}>
     <Box
       css={{
-        paddingTop: '$section',
+        paddingTop: '$16',
         withLinearGradient,
       }}
     >

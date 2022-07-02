@@ -38,7 +38,7 @@ const MailingListCardRoot = styled(CardRoot, {
   '@bpsm': {
     display: 'flex',
     flexDirection: 'row-reverse',
-    gap: '$section',
+    gap: '$16',
   },
 });
 

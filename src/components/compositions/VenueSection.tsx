@@ -46,8 +46,8 @@ export const VenueSection: React.FC<VenueSectionProps> = ({
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
-        paddingTop: '$section',
-        paddingBottom: '$section',
+        paddingTop: '$16',
+        paddingBottom: '$16',
         zIndex: 1,
         pointerEvents: 'none',
         '@bpsm': {

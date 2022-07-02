@@ -110,7 +110,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
           gap: '$10',
           width: '100%',
           marginTop: 'calc((var(--offset) * 1.2) * -1)',
-          paddingBottom: '$section',
+          paddingBottom: '$16',
         }}
       >
         <EventCard {...primaryEvent} />
@@ -123,7 +123,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
       <Wrapper wrapperPadding="x4" wrapperWidth="medium">
-        <MailingList css={{ paddingTop: '$section', paddingBottom: '$section' }} />
+        <MailingList css={{ paddingTop: '$16', paddingBottom: '$16' }} />
       </Wrapper>
     </Layout>
   );
