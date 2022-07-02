@@ -87,6 +87,7 @@
     "@storybook/testing-library": "^0.0.13",
     "@svgr/webpack": "^6.2.1",
     "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@types/mapbox-gl": "^2.7.3",
     "@types/mdx-js__react": "^1.5.5",
     "@types/node": "16",
     "@types/react": "^18.0.14",
