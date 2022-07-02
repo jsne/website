@@ -1,8 +1,8 @@
 import type {
-  default as Mapboxgl,
   LngLatLike,
   Map as MapboxMap,
   MapboxOptions,
+  default as MapboxglNamespace,
   Marker,
   MarkerOptions,
 } from '!mapbox-gl';
@@ -43,6 +43,8 @@ export interface InteractiveMapProps {
   markerOptions: MapMarkerOptions;
 }
 
+type Mapboxgl = typeof MapboxglNamespace;
+
 // @NOTE Not called 'Map' to avoid conflicts with global `Map` interface.
 export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   id,
@@ -52,7 +54,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   ...props
 }) => {
   const [didInit, setDidInit] = useState(false);
-  const mapboxgl = useRef<typeof Mapboxgl | undefined>(undefined);
+  /** Full Mapbox import. */
+  const mapboxgl = useRef<Mapboxgl | undefined>();
+  /** Instantiated Mapbox `Map`. */
   const map = useRef<MapboxMap>();
 
   useEffect(() => {
@@ -65,11 +69,12 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
   useEffect(() => {
     if (!didInit) return;
+    const currentMap = mapboxgl.current as Mapboxgl;
 
     let marker: Marker;
 
     try {
-      map.current = new mapboxgl.current!.Map({
+      map.current = new currentMap.Map({
         container: id,
         style: 'mapbox://styles/nerdyman/ckrrkx0a35bx618nkb5g2ihvy?optimize=true',
         ...mapOptions,
@@ -79,9 +84,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         },
       });
 
-      map.current!.scrollZoom.disable();
+      map.current.scrollZoom.disable();
 
-      marker = new mapboxgl.current!.Marker({
+      marker = new currentMap.Marker({
         color: 'var(--jsne-colors-primary2)',
       })
         .setLngLat(markerOptions.center as LngLatLike)
@@ -100,7 +105,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     }
 
     return () => {
-      if (marker) marker.remove();
+      map.current?.remove();
     };
   }, [didInit, lonOffset, id, mapOptions, markerOptions]);
 
