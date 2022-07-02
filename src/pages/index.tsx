@@ -16,9 +16,9 @@ import {
   HeroRoot,
   HeroTitle,
 } from '~/components/compositions/Hero';
+import { AutoLink } from '~/components/primitives/AutoLink';
 import { Layout } from '~/components/primitives/Layout';
 import { Mdx } from '~/components/primitives/Mdx';
-import { ScrollAnchor } from '~/components/primitives/ScrollAnchor';
 
 interface IndexPageProps {
   data: GatsbyTypes.HomeQuery;
@@ -38,7 +38,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
   const event = nextEventHasExpired ? placeholderEvent : nextEvent;
 
   const primaryCta = {
-    as: nextEventHasExpired ? ScrollAnchor : 'a',
     children: nextEventHasExpired ? 'Join Our Mailing List' : 'Get Tickets',
     href: nextEventHasExpired
       ? `#${MAILING_LIST_ELEMENT_ID}`
@@ -105,7 +104,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
             <Mdx>{event?.description?.childMdx?.body}</Mdx>
           </Box>
           <Box css={{ display: 'grid', gridGap: '$6', gridAutoFlow: 'column' }}>
-            <Button buttonAppearance="primary" {...primaryCta} />
+            <Button as={AutoLink} buttonAppearance="primary" {...primaryCta} />
           </Box>
         </Wrapper>
       </Box>

@@ -17,7 +17,6 @@ import {
 } from '~/components/compositions/Hero';
 import { Layout } from '~/components/primitives/Layout';
 import { Mdx } from '~/components/primitives/Mdx';
-import { ScrollAnchor } from '~/components/primitives/ScrollAnchor';
 import { dateIsInPast } from '~/utilities';
 
 const mapFragmentToProps = (
@@ -64,13 +63,12 @@ const IndexPage: FC<PageProps> = ({ data }) => {
   );
 
   const previousEvents = nextEventHasExpired
-    ? data.events.edges.slice(1, data.events.edges.length)
-    : data.events.edges;
+    ? data.events.edges
+    : data.events.edges.slice(1, data.events.edges.length);
 
   primaryEvent.ctas = nextEventHasExpired
     ? [
         {
-          as: nextEventHasExpired ? ScrollAnchor : 'a',
           children: nextEventHasExpired ? 'Join Our Mailing List' : 'Get Tickets',
           href: nextEventHasExpired
             ? `#${MAILING_LIST_ELEMENT_ID}`
@@ -130,7 +128,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
 
 export const pageQuery = graphql`
   query EventPage {
-    contentfulPage(slug: { eq: "events" }) {
+    contentfulPage(slug: { eq: "/events" }) {
       ...Page
     }
     placeholderEvent: contentfulEvent(uid: { eq: "placeholder" }) {

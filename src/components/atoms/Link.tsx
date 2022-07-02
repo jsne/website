@@ -2,7 +2,9 @@ import { ComponentProps } from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
-export const Link = styled('a', {
+import { AutoLink, AutoLinkProps } from '../primitives/AutoLink';
+
+export const Link = styled(AutoLink, {
   position: 'relative',
   fontWeight: '$medium',
   borderRadius: '$1',
@@ -56,20 +58,4 @@ export const Link = styled('a', {
   },
 });
 
-export type LinkProps = ComponentProps<typeof Link>;
-
-/** Link that automatically opens new tab for external hrefs. */
-export const LinkAuto = (props: LinkProps) => {
-  const isExternalLink =
-    !props.href?.startsWith(window.location.origin) &&
-    !props.href?.startsWith('/') &&
-    !props.href?.startsWith('#');
-
-  return (
-    <Link
-      {...props}
-      target={isExternalLink ? '_blank' : props.target}
-      rel={isExternalLink ? 'noopener noreferrer' : props.rel}
-    />
-  );
-};
+export type LinkProps = AutoLinkProps & ComponentProps<typeof Link>;

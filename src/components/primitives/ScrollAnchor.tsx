@@ -1,41 +1,42 @@
-import React, { useCallback } from 'react';
+import React, { forwardRef, useCallback } from 'react';
 
-import { prefersMotion } from '~/utilities';
+import { getPrefersMotion } from '~/utilities';
 
-export type ScrollAnchorProps = Omit<
-  React.AnchorHTMLAttributes<HTMLAnchorElement>,
-  'href'
-> &
-  Required<Pick<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'href'>>;
+type BaseProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
-/** Smooth scroll to an anchor. */
-export const ScrollAnchor: React.FC<ScrollAnchorProps> = ({
-  href,
-  onClick,
-  ...props
-}) => {
-  const handleClick = useCallback(
-    (ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-      ev.preventDefault();
-      const targetElement = document.getElementById(href.replace(/#/, ''));
+export type ScrollAnchorProps = Omit<BaseProps, 'href'> &
+  Required<Pick<BaseProps, 'href'>>;
 
-      if (!targetElement) {
-        console.warn('[ScrollAnchor] Unable to find target element', { href });
+/** Smooth scroll to an anchor if the user prefers motion. */
+export const ScrollAnchor = forwardRef<HTMLAnchorElement, ScrollAnchorProps>(
+  ({ href, onClick, ...props }, ref) => {
+    const handleClick = useCallback(
+      (ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        ev.preventDefault();
+        const anchor = href.split('#')[1];
+        const targetElement = document.getElementById(anchor);
 
-        return;
-      }
+        if (!targetElement) {
+          console.error('[ScrollAnchor] Unable to find target element', { href });
 
-      targetElement.scrollIntoView({
-        behavior: prefersMotion ? 'smooth' : 'auto',
-        block: 'start',
-      });
+          return;
+        }
 
-      if (onClick) {
-        onClick(ev);
-      }
-    },
-    [href, onClick],
-  );
+        targetElement.scrollIntoView({
+          behavior: getPrefersMotion() ? 'smooth' : 'auto',
+          block: 'start',
+          inline: 'start',
+        });
 
-  return <a {...props} href={href} onClick={handleClick} />;
-};
+        globalThis.history.pushState({}, '', `#${anchor}`);
+
+        onClick?.(ev);
+      },
+      [href, onClick],
+    );
+
+    return <a {...props} href={href} onClick={handleClick} ref={ref} />;
+  },
+);
+
+ScrollAnchor.displayName = 'ScrollAnchor';

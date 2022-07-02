@@ -2,7 +2,7 @@ import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { MDXRenderer, MDXRendererProps } from 'gatsby-plugin-mdx';
 import { FC } from 'react';
 
-import { LinkAuto, LinkProps } from '~/components/atoms/Link';
+import { Link, LinkProps } from '~/components/atoms/Link';
 import { Text, TextProps } from '~/components/atoms/Text';
 
 export interface MdxProps
@@ -13,7 +13,7 @@ export interface MdxProps
 
 export const mdxDefaultComponents = {
   p: (props: TextProps) => <Text as="p" {...props} />,
-  a: (props: LinkProps) => <LinkAuto linkAppearance="secondary" {...props} />,
+  a: (props: LinkProps) => <Link linkAppearance="secondary" {...props} />,
 };
 
 /** Simple wrapper for any MDX markup (does not define any custom components). */

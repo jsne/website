@@ -4,13 +4,15 @@ import { ReactComponent as Logo } from '~/assets/images/logo.svg';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { keyframes, styled } from '~/styles/stitches.config';
 
+import { AutoLink } from '../primitives/AutoLink';
+
 export const HeaderRoot = styled(Wrapper, {
   display: 'flex',
   justifyContent: 'space-between',
   padding: '$4',
 });
 
-export const HeaderLink = styled('a', {
+export const HeaderLink = styled(AutoLink, {
   display: 'block',
   withTransition: 'filter transform',
 

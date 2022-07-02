@@ -1,11 +1,4 @@
-import {
-  AnchorHTMLAttributes,
-  ElementType,
-  FC,
-  ImgHTMLAttributes,
-  ReactNode,
-  forwardRef,
-} from 'react';
+import { AnchorHTMLAttributes, ElementType, FC, ReactNode, forwardRef } from 'react';
 import { PolymorphicComponentProps } from 'react-polymorphic-box';
 
 import { ReactComponent as Calendar } from '~/assets/images/icon-calendar.svg';
@@ -21,11 +14,13 @@ import {
   CardDescription,
   CardHeading,
   CardImg,
+  CardImgProps,
+  CardMedia,
   CardPreHeading,
   CardRoot,
   CardRootProps,
 } from '../atoms/Card';
-import { LinkAuto } from '../atoms/Link';
+import { Link } from '../atoms/Link';
 import { TextIcon } from './TextIcon';
 
 type EventCardInfoProps = Pick<
@@ -54,9 +49,9 @@ const EventCardInfo: FC<EventCardInfoProps> = ({ speaker, eventDate, venue }) =>
     <li>
       <TextIcon iconAppearance="page" icon={MapMarker}>
         {venue ? (
-          <LinkAuto linkAppearance="secondary" href={venue.mapsLink as string}>
+          <Link linkAppearance="secondary" href={venue.mapsLink as string}>
             {venue.name}
-          </LinkAuto>
+          </Link>
         ) : (
           'Unknown'
         )}
@@ -82,7 +77,7 @@ export interface EventCardProps
   /** Main heading. */
   heading: ReactNode | string;
   /** Main image. */
-  media: ImgHTMLAttributes<HTMLImageElement> & { backgroundColor?: string };
+  media: CardImgProps;
   /** Heading shown before main heading. */
   preHeading?: ReactNode | string;
 }

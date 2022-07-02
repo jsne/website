@@ -1,4 +1,4 @@
-import React from 'react';
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { Button } from '~/components/atoms/Button';
 import {
@@ -50,7 +50,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
     <CardMedia cardLayout={layout} mediaAppearance={media.mediaAppearance}>
       <CardImg {...media} />
       {ctaPrimary && (
-        <CardLinkOverlay aria-hidden href={ctaPrimary.href}>
+        <CardLinkOverlay aria-hidden href={ctaPrimary.href as string}>
           {heading}
         </CardLinkOverlay>
       )}
@@ -62,9 +62,11 @@ const MediaUnstyled: React.FC<MediaProps> = ({
       <CardDescription>{description}</CardDescription>
 
       <CardCtas cardLayout={layout}>
-        {ctaPrimary?.href && <Button as="a" buttonAppearance="primary" {...ctaPrimary} />}
+        {ctaPrimary?.href && (
+          <Button as={AutoLink} buttonAppearance="primary" {...ctaPrimary} />
+        )}
         {ctaSecondary?.href && (
-          <Button as="a" buttonAppearance="secondary" {...ctaSecondary} />
+          <Button as={AutoLink} buttonAppearance="secondary" {...ctaSecondary} />
         )}
       </CardCtas>
     </CardBody>
