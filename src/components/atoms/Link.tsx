@@ -45,7 +45,9 @@ export const Link = styled('a', {
         },
       },
       tertiary: {
-        withLinearGradient: { variant: 'tertiary' },
+        withLinearGradient: {
+          variant: 'tertiary',
+        },
         '&:focus-visible': {
           withOutline: '$tertiary1',
         },

@@ -36,7 +36,7 @@ export const Upsell: FC<UpsellProps> = ({
       }}
       layout={{ '@initial': 'vertical', '@bpsm': 'horizontal' }}
       media={{
-        backgroundColor: targetMedia?.gatsbyImage?.backgroundColor,
+        mediaAppearance: 'gradient',
         src: targetMedia?.resize?.src,
         alt: targetMedia?.description,
       }}

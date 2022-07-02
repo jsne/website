@@ -2,6 +2,7 @@ import type { ComponentProps } from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
+import { AutoLink } from '../primitives/AutoLink';
 import { Box } from './Box';
 import { BUTTON_MAX_WIDTH } from './Button';
 import { Text } from './Text';
@@ -27,7 +28,7 @@ export const CardRoot = styled(Box, {
 export type CardRootProps = ComponentProps<typeof CardRoot>;
 
 /** Overlaying component to make entire card act as single link. */
-export const CardLinkOverlay = styled('a', {
+export const CardLinkOverlay = styled(AutoLink, {
   position: 'absolute',
   top: 0,
   left: 0,
@@ -39,12 +40,33 @@ export const CardLinkOverlay = styled('a', {
 
 export const CardMedia = styled('div', {
   position: 'relative',
-  background: '$pageContrast1',
 
   variants: {
     cardLayout: {
-      vertical: { paddingTop: '56.25%' },
-      horizontal: { width: '32%', paddingTop: 0 },
+      vertical: {
+        aspectRatio: '16/9',
+      },
+      horizontal: {
+        maxWidth: '32%',
+      },
+    },
+    mediaAppearance: {
+      gradient: {
+        filter: 'saturate(0.65)',
+        backgroundImage: `linear-gradient(
+          80deg,
+          hsl(43deg 45% 67%) 0%,
+          hsl(32deg 55% 67%) 15%,
+          hsl(23deg 63% 67%) 25%,
+          hsl(13deg 67% 69%) 32%,
+          hsl(1deg 68% 70%) 39%,
+          hsl(348deg 66% 67%) 47%,
+          hsl(334deg 59% 64%) 56%,
+          hsl(316deg 46% 59%) 68%,
+          hsl(288deg 40% 57%) 82%,
+          hsl(256deg 49% 61%) 100%
+        )`,
+      },
     },
   },
 });
@@ -52,22 +74,20 @@ export const CardMedia = styled('div', {
 export const CardImg = styled('img', {
   display: 'block',
   width: '100%',
+  maxWidth: '100%',
   objectFit: 'cover',
 
   variants: {
-    cardLayout: {
-      vertical: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
+    mediaAppearance: {
+      gradient: {
+        mixBlendMode: 'hard-light',
         height: '100%',
-      },
-      horizontal: {
-        position: 'static',
       },
     },
   },
 });
+
+export type CardImgProps = ComponentProps<typeof CardImg>;
 
 export const CardBody = styled('div', {
   display: 'grid',
@@ -77,7 +97,10 @@ export const CardBody = styled('div', {
 
   variants: {
     cardLayout: {
-      vertical: { gap: '$4', padding: '$5' },
+      vertical: {
+        gap: '$4',
+        padding: '$5',
+      },
       horizontal: {
         width: '100%',
         gap: '$4',

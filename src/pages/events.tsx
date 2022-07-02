@@ -37,7 +37,7 @@ const mapFragmentToProps = (
       </>
     ),
   media: {
-    backgroundColor: fragment.focalImage?.gatsbyImage?.backgroundColor,
+    mediaAppearance: fragment.focalImage?.resize?.src ? 'gradient' : undefined,
     src: fragment.focalImage?.resize?.src || cardPlaceholderSrc,
     alt: fragment.focalImage?.description || 'Placeholder with JSNE logo',
   },
@@ -54,7 +54,6 @@ const IndexPage: FC<PageProps> = ({ data }) => {
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.events.edges[0].node;
   const { placeholderEvent } = data;
-
   const nextEventHasExpired = dateIsInPast(nextEvent.eventDate as string);
 
   /** Next event or placeholder event if next event is in the past. */

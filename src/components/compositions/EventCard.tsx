@@ -142,12 +142,15 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
             display: 'flex',
             alignItems: 'start',
             maxWidth: '20rem',
-            overflow: 'hidden',
-            borderRadius: '$2',
           },
         }}
       >
-        <CardImg {...media} css={{ aspectRatio: '1/1', borderRadius: '$2' }} />
+        <CardMedia
+          mediaAppearance={media?.mediaAppearance}
+          css={{ width: '100%', overflow: 'hidden', borderRadius: '$2' }}
+        >
+          <CardImg {...media} css={{ aspectRatio: '1/1', borderRadius: '$2' }} />
+        </CardMedia>
       </CardBody>
     </CardRoot>
   ),

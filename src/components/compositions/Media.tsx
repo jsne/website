@@ -7,27 +7,29 @@ import {
   CardDescription,
   CardHeading,
   CardImg,
+  CardImgProps,
   CardLinkOverlay,
   CardMedia,
   CardPreHeading,
   CardRoot,
   CardRootProps,
 } from '~/components/atoms/Card';
+import { AutoLink } from '~/components/primitives/AutoLink';
 import { styled } from '~/styles/stitches.config';
 
 export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
   /** Primary call to action. */
-  ctaPrimary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  ctaPrimary?: AnchorHTMLAttributes<HTMLAnchorElement>;
   /** Secondary call to action. */
-  ctaSecondary?: React.AnchorHTMLAttributes<HTMLAnchorElement>;
+  ctaSecondary?: AnchorHTMLAttributes<HTMLAnchorElement>;
   /** Paragraph content. */
-  description: React.ReactNode | string;
+  description: ReactNode | string;
   /** Main heading. */
-  heading: React.ReactNode | string;
+  heading: ReactNode | string;
   /** Layout variant. */
   layout?: CardRootProps['cardLayout'];
   /** Main image. */
-  media: React.ImgHTMLAttributes<HTMLImageElement> & { backgroundColor?: string };
+  media: CardImgProps & { backgroundColor?: string };
   /** Heading shown before main heading. */
   preHeading?: React.ReactNode | string;
 }
@@ -45,8 +47,8 @@ const MediaUnstyled: React.FC<MediaProps> = ({
   ...props
 }) => (
   <CardRoot cardLayout={layout} {...props}>
-    <CardMedia cardLayout={layout} style={{ backgroundColor: media?.backgroundColor }}>
-      <CardImg cardLayout={layout} {...media} />
+    <CardMedia cardLayout={layout} mediaAppearance={media.mediaAppearance}>
+      <CardImg {...media} />
       {ctaPrimary && (
         <CardLinkOverlay aria-hidden href={ctaPrimary.href}>
           {heading}
