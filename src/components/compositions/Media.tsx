@@ -50,9 +50,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
     <CardMedia cardLayout={layout} mediaAppearance={media.mediaAppearance}>
       <CardImg {...media} />
       {ctaPrimary && (
-        <CardLinkOverlay aria-hidden href={ctaPrimary.href as string}>
-          {heading}
-        </CardLinkOverlay>
+        <CardLinkOverlay href={ctaPrimary.href as string}>{heading}</CardLinkOverlay>
       )}
     </CardMedia>
 
