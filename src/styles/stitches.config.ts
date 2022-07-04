@@ -59,7 +59,7 @@ export const {
 
     /** Get linear-gradient `background-image` with accessible `color`. */
     withLinearGradient: ({
-      angle = 87.06,
+      angle = 85.31,
       property = 'background-image',
       variant,
     }: {

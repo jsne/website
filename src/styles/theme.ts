@@ -63,8 +63,8 @@ export const theme = {
     white2: '#e5e5e5',
     white2Alpha: '#e5e5e5bf',
     white3: '#a5a3b7',
-    white4: '#8a889b',
-    white3Alpha: '#a5a3b759',
+    white4: '#7f7d91',
+    white3Alpha: '#a5a3b762',
 
     // Abstracted colour definitions.
 
