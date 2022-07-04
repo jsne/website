@@ -3,7 +3,8 @@ export const dateIsInPast = (date: string) =>
   new Date(date).getSeconds() < new Date().getSeconds();
 
 export const getPrefersMotion = () =>
-  globalThis.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+  typeof window !== 'undefined' &&
+  window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
 
 /** Convert timestamp to a pretty date. */
 export const toPrettyDate = (date: string) =>

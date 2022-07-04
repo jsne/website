@@ -12,6 +12,10 @@ export const ScrollAnchor = forwardRef<HTMLAnchorElement, ScrollAnchorProps>(
   ({ href, onClick, ...props }, ref) => {
     const handleClick = useCallback(
       (ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        if (typeof window === 'undefined') {
+          return;
+        }
+
         ev.preventDefault();
         const anchor = href.split('#')[1];
         const targetElement = document.getElementById(anchor);
@@ -28,7 +32,7 @@ export const ScrollAnchor = forwardRef<HTMLAnchorElement, ScrollAnchorProps>(
           inline: 'start',
         });
 
-        globalThis.history.pushState({}, '', `#${anchor}`);
+        window.history.pushState({}, '', `#${anchor}`);
 
         onClick?.(ev);
       },
