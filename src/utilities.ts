@@ -8,10 +8,13 @@ export const getPrefersMotion = () =>
 
 /** Convert timestamp to a pretty date. */
 export const toPrettyDate = (date: string) =>
-  new Intl.DateTimeFormat(navigator.language, {
-    dateStyle: 'short',
-    timeStyle: 'short',
-  }).format(new Date(date));
+  new Intl.DateTimeFormat(
+    typeof navigator !== 'undefined' ? navigator.language : 'en-GB',
+    {
+      dateStyle: 'short',
+      timeStyle: 'short',
+    },
+  ).format(new Date(date));
 
 interface GetLinkTypeReturn {
   /** Whether the link is on the current site. */
