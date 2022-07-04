@@ -37,10 +37,11 @@ export const getLinkType = (path: string): GetLinkTypeReturn => {
     };
   }
 
-  if (typeof window !== 'undefined' && path.startsWith('/')) {
+  if (path.startsWith('/')) {
     return {
       isInternal: true,
-      isSamePage: path === window.location.pathname,
+      isSamePage:
+        typeof window === 'undefined' ? false : path === window.location.pathname,
       isAnchor,
     };
   }
