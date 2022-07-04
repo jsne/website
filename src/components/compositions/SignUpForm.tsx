@@ -15,6 +15,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
       css={{
         position: 'relative',
         display: 'flex',
+        flexDirection: 'column',
         width: '100%',
         maxWidth: '32rem',
         borderRadius: '$1',
@@ -24,6 +25,10 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
 
         '&:focus-within': {
           withOutline: '$secondaryContrast3Alpha',
+        },
+
+        '@bpxxs': {
+          flexDirection: 'row',
         },
       }}
       {...props}
@@ -40,13 +45,17 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
         type="email"
         required
         css={{
+          position: 'relative',
           flexGrow: 1,
-          borderRadius: '$1 0 0 $1',
+          borderRadius: '$1 $1 0 0',
 
           // Prevent rightmost outline being covered by button when focused.
-          '&:focus, &:invalid': {
-            position: 'relative',
-            zIndex: 1,
+          ':focus': {
+            zIndex: 2,
+          },
+
+          '@bpxxs': {
+            borderRadius: '$1 0 0 $1',
           },
         }}
       />
@@ -56,13 +65,20 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
         type="submit"
         css={{
           minWidth: '9rem',
-          borderRadius: '0 $1 $1 0',
+          borderRadius: '0 0 $1 $1',
           boxShadow: 'none',
+
           '&:active:not(:disabled), &:hover:not(:disabled)': {
             transform: 'none',
           },
+
           '&:focus:not(:disabled)': {
+            position: 'relative',
             withOutline: '$tertiary1',
+          },
+
+          '@bpxxs': {
+            borderRadius: '0 $1 $1 0',
           },
         }}
       >
