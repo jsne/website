@@ -21,6 +21,7 @@ import {
   CardRootProps,
 } from '../atoms/Card';
 import { Link } from '../atoms/Link';
+import { AutoLink } from '../primitives/AutoLink';
 import { TextIcon } from './TextIcon';
 
 type EventCardInfoProps = Pick<
@@ -120,7 +121,7 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
             {ctas.map((cta, index) => (
               <Button
                 key={cta.href}
-                as="a"
+                as={AutoLink}
                 buttonAppearance={index === 0 ? 'primary' : 'secondary'}
                 {...cta}
               />
