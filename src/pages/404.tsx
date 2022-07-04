@@ -29,9 +29,11 @@ const NotFoundPage: React.FC = () => {
             <HeroTitle textPreset="h1" as="h1">
               Page Not Found
             </HeroTitle>
+
             <HeroBody css={{ marginBottom: '$2' }}>
               Sorry, we couldn&apos;t find what you were looking for.
             </HeroBody>
+
             <Button buttonAppearance="secondary" as={Link} to="/">
               Go to Homepage
             </Button>

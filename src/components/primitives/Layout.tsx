@@ -1,11 +1,11 @@
-import React, { PropsWithChildren } from 'react';
+import { FC, PropsWithChildren } from 'react';
 import { Helmet, HelmetProps, HelmetProvider } from 'react-helmet-async';
 
 import '~/styles/global.css';
 import { getCssText } from '~/styles/stitches.config';
 
 /** `head` element with default global styles. */
-const LayoutHead: React.FC<PropsWithChildren<HelmetProps>> = ({
+const LayoutHead: FC<PropsWithChildren<HelmetProps>> = ({
   htmlAttributes,
   children,
   ...props
@@ -16,7 +16,7 @@ const LayoutHead: React.FC<PropsWithChildren<HelmetProps>> = ({
   >
     {children}
     <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
       rel="stylesheet"
     />
 
