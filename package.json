@@ -8,6 +8,9 @@
     "gatsby"
   ],
   "packageManager": "yarn@1.22.18",
+  "workspaces": [
+    "libs/*"
+  ],
   "browserslist": {
     "production": [
       "last 2 chrome versions",
@@ -47,8 +50,7 @@
     "start": "gatsby develop",
     "storybook": "start-storybook --no-open -p 6006",
     "storybook:build": "build-storybook",
-    "typecheck": "tsc --noEmit",
-    "build-storybook": "build-storybook"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
