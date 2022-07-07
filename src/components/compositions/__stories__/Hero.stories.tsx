@@ -1,5 +1,4 @@
 import { Story } from '@storybook/react';
-import React from 'react';
 
 import { HeroBody, HeroBottom, HeroMain, HeroRoot, HeroTitle } from '../Hero';
 

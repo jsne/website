@@ -4,7 +4,10 @@ import { Helmet, HelmetProps, HelmetProvider } from 'react-helmet-async';
 import '~/styles/global.css';
 import { getCssText } from '~/styles/stitches.config';
 
-/** `head` element with default global styles. */
+/**
+ * `head` element with default global styles.
+ * @NOTE This also wraps all Storybook stories.
+ */
 const LayoutHead: FC<PropsWithChildren<HelmetProps>> = ({
   htmlAttributes,
   children,

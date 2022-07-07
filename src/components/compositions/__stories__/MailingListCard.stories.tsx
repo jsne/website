@@ -1,6 +1,5 @@
 /* eslint no-console: 0 */
 import { Story } from '@storybook/react';
-import React from 'react';
 
 import { Box } from '~/components/atoms/Box';
 

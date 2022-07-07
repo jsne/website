@@ -12,7 +12,7 @@ const Template: Story<EventCardProps> = (args) => <EventCard {...args} />;
 export const PastEvent = Template.bind({});
 
 PastEvent.args = {
-  body: (
+  description: (
     <>
       Hello fellow American. This you should vote me. I leave power good. Thank you. Thank
       you. If you vote me I&apos;m hot. What? Taxes they&apos;ll be lower son. The

@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { ReactComponent as Top } from '~/assets/images/map-section-top.svg';
 import { styled } from '~/styles/stitches.config';
@@ -30,7 +30,7 @@ const VENUE_SECTION_TOP_OFFSET = '8.511979823455233vw';
 export type VenueSectionProps = InteractiveMapProps & Pick<VenueCardProps, 'venue'>;
 
 /** Venue info and interactive map with some waaaAAAaaaAAAvy styles. */
-export const VenueSection: React.FC<VenueSectionProps> = ({
+export const VenueSection: FC<VenueSectionProps> = ({
   id,
   mapOptions,
   markerOptions,

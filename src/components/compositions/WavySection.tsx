@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC, ReactNode } from 'react';
 
 import wavySectionBottomShadow from '~/assets/images/wavy-section-bottom-shadow.svg';
 import wavySectionBottom from '~/assets/images/wavy-section-bottom.svg';
@@ -49,10 +49,7 @@ export const WavySectionRoot = styled(Box, {
   },
 });
 
-export const WavySection: React.FC<{ children?: React.ReactNode }> = ({
-  children,
-  ...props
-}) => (
+export const WavySection: FC<{ children?: ReactNode }> = ({ children, ...props }) => (
   <WavySectionRoot as="section" {...props}>
     <Box
       css={{
