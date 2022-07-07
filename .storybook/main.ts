@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const webpack = require('webpack');
 
 const {
@@ -11,7 +13,8 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-links',
     '@storybook/addon-a11y',
-    // '@storybook/addon-storysource',
+    'storybook-addon-gatsby',
+    '@storybook/addon-storysource',
   ],
   core: {
     builder: 'webpack5',
@@ -39,6 +42,7 @@ module.exports = {
     },
   },
   webpackFinal: async (config: any) => {
+    config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/];
     config.module.rules.push(moduleRulesSvg);
 
     return {

@@ -1,7 +1,8 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import type { CreateBabelConfigArgs, CreateWebpackConfigArgs } from 'gatsby';
 
-import { defineOptions, resolveAlias } from './.config/webpack.config';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { defineOptions, resolveAlias } = require('./.config/webpack.config');
 
 exports.onCreateBabelConfig = ({ actions }: CreateBabelConfigArgs) => {
   actions.setBabelPlugin({
