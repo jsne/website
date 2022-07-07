@@ -17,10 +17,12 @@ class JsonResponse extends Response {
     bodyInit: JsonResponseInit,
     { headers, ...maybeInit }: ResponseInit | Response = {},
   ) {
+    const fallbackResponse = new Response();
+
     const jsonBodyInit = JSON.stringify({
       ...bodyInit,
-      status: maybeInit.status,
-      ok: 'ok' in maybeInit ? maybeInit.ok : true,
+      status: maybeInit.status || fallbackResponse.status,
+      ok: 'ok' in maybeInit ? maybeInit.ok : fallbackResponse.ok,
     });
 
     super(jsonBodyInit, {
