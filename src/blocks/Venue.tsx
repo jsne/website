@@ -1,4 +1,4 @@
-import React from 'react';
+import { FC } from 'react';
 
 import { VenueSection, VenueSectionProps } from '~/components/compositions/VenueSection';
 import { Mdx } from '~/components/primitives/Mdx';
@@ -8,7 +8,7 @@ interface VenueProps {
 }
 
 /** Venue section with map, accepts and converts the venue fragment type. */
-export const Venue: React.FC<VenueProps> = ({ venue, ...props }) => {
+export const Venue: FC<VenueProps> = ({ venue, ...props }) => {
   if (!venue.name || !venue.address || !venue.mapsLink || !venue.location) {
     console.error('[Venue] Some properties were missing', venue);
     throw new Error('[Venue] Invalid venue provided');

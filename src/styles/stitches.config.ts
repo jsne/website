@@ -84,8 +84,7 @@ export const {
 
     /** Apply 'outline' styles (really uses `box-shadow`). */
     withOutline: (color: ThemeColorsTokenKey = '$secondary1') => ({
-      outline: 0,
-      boxShadow: `0 0 0 0.2rem $colors${color}`,
+      outline: `0.25rem solid $colors${color}`,
     }),
 
     /** Apply tokenised transition targeting specific CSS properties. */

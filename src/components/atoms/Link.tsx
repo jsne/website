@@ -8,10 +8,9 @@ export const Link = styled(AutoLink, {
   position: 'relative',
   fontWeight: '$medium',
   borderRadius: '$1',
-  outline: 0,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
-  withTransition: 'box-shadow',
+  withTransition: 'outline',
 
   /** @NOTE Using psuedo-element to avoid box size issues. */
   '&::after': {

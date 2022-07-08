@@ -38,6 +38,7 @@ const MailingListRoot: FC = (props) => {
       <MailingListCard
         formProps={{
           ref: formRef,
+          action: 'https://jsne.nerdyman.workers.dev',
           onSubmit: (ev) => {
             ev.preventDefault();
             const data = new FormData(formRef.current as HTMLFormElement);

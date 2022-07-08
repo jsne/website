@@ -5,8 +5,6 @@ import { Button } from '../atoms/Button';
 import { Input } from '../atoms/Input';
 import { VisuallyHidden } from '../atoms/VisuallyHidden';
 
-export type SignUpFormProps = ComponentProps<typeof SignUpForm>;
-
 export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>>(
   (props, ref) => (
     <Box
@@ -21,7 +19,7 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
         borderRadius: '$1',
         withBoxShadow: { color: '$shadow1' },
         withLinearGradient: { variant: 'primary' },
-        withTransition: 'box-shadow',
+        withTransition: 'outline',
 
         '&:focus-within': {
           withOutline: '$secondaryContrast3Alpha',
@@ -43,6 +41,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
         inputFocusAppearance="tertiary"
         placeholder="mantis.toboggan@example.com"
         type="email"
+        autoCapitalize="off"
+        autoCorrect="off"
         required
         css={{
           position: 'relative',
@@ -89,3 +89,5 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
 );
 
 SignUpForm.displayName = 'SignUpForm';
+
+export type SignUpFormProps = ComponentProps<typeof SignUpForm>;

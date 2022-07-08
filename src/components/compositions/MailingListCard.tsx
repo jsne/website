@@ -47,6 +47,7 @@ const MailingListIcon = styled(Icon, {
   top: '50%',
   left: '50%',
   width: 'auto',
+  maxWidth: '100%',
   height: '100%',
   padding: '$6',
   transform: 'translate(-50%, -50%)',

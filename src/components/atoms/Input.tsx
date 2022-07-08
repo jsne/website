@@ -8,8 +8,7 @@ export const Input = styled('input', {
   border: 0,
   borderRadius: '$1',
   appearance: 'none',
-  outline: 0,
-  withTransition: 'box-shadow, opacity',
+  withTransition: 'opacity, outline',
 
   '&:disabled': {
     opacity: 0.5,
@@ -19,6 +18,10 @@ export const Input = styled('input', {
 
   '&:invalid:not(:placeholder-shown)': {
     withOutline: '$error3',
+
+    '&:focus:not(:disabled)': {
+      withOutline: '$error3',
+    },
   },
 
   variants: {

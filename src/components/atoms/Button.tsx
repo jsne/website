@@ -17,10 +17,9 @@ export const Button = styled(Box, {
   textDecoration: 'none',
   appearance: 'none',
   cursor: 'pointer',
-  outline: 0,
   textTransform: 'uppercase',
   withBoxShadow: { variant: 'short' },
-  withTransition: 'box-shadow, filter, transform',
+  withTransition: 'box-shadow, filter, outline, transform',
 
   '&::before': {
     content: '',

@@ -48,7 +48,7 @@ const MediaUnstyled: React.FC<MediaProps> = ({
 }) => (
   <CardRoot cardLayout={layout} {...props}>
     <CardMedia cardLayout={layout} mediaAppearance={media.mediaAppearance}>
-      <CardImg {...media} />
+      <CardImg {...media} css={{ height: '100%' }} />
       {ctaPrimary && (
         <CardLinkOverlay href={ctaPrimary.href as string}>{heading}</CardLinkOverlay>
       )}
