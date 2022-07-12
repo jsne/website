@@ -1,5 +1,4 @@
 /* eslint-env node */
-/* eslint-disable @typescript-eslint/no-var-requires */
 
 /**
  * @SEE <https://github.com/duncanleung/gatsby-typescript-emotion-storybook/blob/master/jest.config.js>
@@ -16,7 +15,6 @@ module.exports = {
     '!<rootDir>/src/components/**/index.ts',
   ],
   globals: {
-    __IS_LIVE__: false,
     __PATH_PREFIX__: '',
   },
   moduleDirectories: ['node_modules', __dirname],
