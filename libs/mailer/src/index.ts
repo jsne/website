@@ -7,20 +7,45 @@ export interface Env {
   MAILCHIMP_LIST_ID: string;
 }
 
+/** Hosts allowed to talk to the worker. */
+const validOrigins = [
+  // 'http://localhost:8000',
+  'https://jsne.co.uk',
+  'https://jsne.vercel.app',
+];
+
+const getCorsHeaders = (request: Request) => {
+  const requestOrigin = request.headers.get('origin');
+  /** Provided origin if valid or fallback. */
+  const allowOrigin =
+    requestOrigin && validOrigins.includes(requestOrigin)
+      ? requestOrigin
+      : validOrigins[0];
+
+  return {
+    'Access-Control-Allow-Headers': '*',
+    'Access-Control-Allow-Methods': 'OPTIONS,POST',
+    'Access-Control-Allow-Origin': allowOrigin,
+  };
+};
+
 interface JsonResponseInit extends Partial<Pick<Response, 'status'>> {
+  /** Message to return to the user. */
   message: string;
+  /** The initiating request. */
+  request: Request;
 }
 
 /** `Response` with JSON properties automatically applied. */
 class JsonResponse extends Response {
   constructor(
-    bodyInit: JsonResponseInit,
+    { request, message }: JsonResponseInit,
     { headers, ...maybeInit }: ResponseInit | Response = {},
   ) {
     const fallbackResponse = new Response();
 
     const jsonBodyInit = JSON.stringify({
-      ...bodyInit,
+      message,
       status: maybeInit.status || fallbackResponse.status,
       ok: 'ok' in maybeInit ? maybeInit.ok : fallbackResponse.ok,
     });
@@ -28,6 +53,7 @@ class JsonResponse extends Response {
     super(jsonBodyInit, {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
+        ...getCorsHeaders(request),
         ...headers,
       },
       ...maybeInit,
@@ -57,28 +83,25 @@ const generateMd5 = async (target: string) =>
     .map((b) => b.toString(16).padStart(2, '0'))
     .join('');
 
-/** Hosts allowed to talk to the worker. */
-const validHosts = ['jsne.co.uk', 'jsne.vercel.app'];
-
 /** Proxy a request from the JSNE website to the Mailchimp mailing list.*/
 const mailer = {
   async fetch(request: Request, env: Env /*ctx: ExecutionContext*/): Promise<Response> {
-    const { host } = new URL(request.url);
-
-    // Only allow specific domains.
-    if (!validHosts.includes(host)) {
-      return new JsonResponse({ message: 'invalid referer' }, { ok: false, status: 403 });
+    if (request.method === 'OPTIONS') {
+      return new Response(null, { headers: getCorsHeaders(request) });
     }
 
     // Only support POST requests.
     if (request.method.toLowerCase() !== 'post') {
-      return new JsonResponse({ message: 'invalid request' }, { ok: false, status: 415 });
+      return new JsonResponse(
+        { message: 'Invalid request', request },
+        { ok: false, status: 415 },
+      );
     }
 
     // Only support JSON.
     if (!request.headers.get('Content-Type')?.includes('application/json')) {
       return new JsonResponse(
-        { message: 'requests must use `application/json` content type' },
+        { message: 'requests must use `application/json` content type', request },
         {
           ok: false,
           status: 415,
@@ -90,7 +113,10 @@ const mailer = {
       await request.json<{ email?: string; messageSuccess: string }>();
 
     if (!email) {
-      return new JsonResponse({ message: 'invalid email' }, { ok: false, status: 400 });
+      return new JsonResponse(
+        { message: 'Invalid email', request },
+        { ok: false, status: 400 },
+      );
     }
 
     const subcribeUrl = `/lists/${env.MAILCHIMP_LIST_ID}/members`;
@@ -111,7 +137,7 @@ const mailer = {
       if (subscribe.ok) {
         console.info('mailing list subscribe ok', subscribe);
 
-        return new JsonResponse({ message: messageSuccess });
+        return new JsonResponse({ message: messageSuccess, request });
       }
 
       const subscribeJson = await subscribe.json<{ title: string }>();
@@ -141,7 +167,7 @@ const mailer = {
           if (resubscribe.ok) {
             console.info('mailing list resubscribe ok', resubscribe);
 
-            return new JsonResponse({ message: messageSuccess });
+            return new JsonResponse({ message: messageSuccess, request });
           }
 
           console.error('mailing list resubscribe not ok', await resubscribe.json());
@@ -155,6 +181,7 @@ const mailer = {
       return new JsonResponse(
         {
           message: 'failed to update mailing list',
+          request,
         },
         {
           ok: subscribe.ok,
@@ -165,7 +192,7 @@ const mailer = {
       console.error('POSTing to mailchimp failed', err);
 
       return new JsonResponse(
-        { message: 'failed to contact server' },
+        { message: 'failed to contact server', request },
         {
           ok: false,
           status: 500,

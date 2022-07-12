@@ -6,6 +6,7 @@ import { styled } from '~/styles/stitches.config';
 import { Box } from '../atoms/Box';
 import { CardBody, CardHeading, CardPreHeading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
+import { Text } from '../atoms/Text';
 import { MediaProps } from './Media';
 import { SignUpForm, SignUpFormProps } from './SignUpForm';
 
@@ -70,11 +71,13 @@ export interface MailingListCardProps
   extends Pick<MediaProps, 'preHeading' | 'heading' | 'body'> {
   formProps: SignUpFormProps;
   id?: string;
+  status?: string;
 }
 
 const MailingListCardUnstyled: FC<MailingListCardProps> = ({
   preHeading,
   heading,
+  status,
   body,
   formProps,
   ...props
@@ -103,6 +106,12 @@ const MailingListCardUnstyled: FC<MailingListCardProps> = ({
         <Box css={{ marginTop: '$2' }}>
           <SignUpForm {...formProps} />
         </Box>
+
+        {status && (
+          <Text aria-live="polite" textPreset="caption">
+            {status}
+          </Text>
+        )}
       </Box>
     </MailingListCardRoot>
   );
