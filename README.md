@@ -6,7 +6,7 @@
   <h1>The JavaScript North East Website</h1>
 
 <a href="https://www.figma.com/file/O24nLj4pfD9rMKYhkjetzM/JSNE-Site-2020?node-id=252%3A0">
-  <img alt="Figma label" src="https://img.shields.io/badge/Design-Figma-blue">
+  <img alt="Figma label" src="https://img.shields.io/badge/design-figma-blue">
 </a>
 <a href="https://app.netlify.com/sites/jsne-website/deploys">
   <img alt="Live deployment status" src="https://img.shields.io/netlify/57164a3b-9cad-472f-bfc4-56171dc261c3?label=live%20deploy">
