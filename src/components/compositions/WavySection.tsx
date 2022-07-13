@@ -9,6 +9,8 @@ import { styled } from '~/styles/stitches.config';
 // @NOTE need to use flat angle so top, middle and bottom seamlessly blend.
 const withLinearGradient = { variant: 'tertiary', angle: 90 } as const;
 
+export const WAVY_SECTION_TOP_HEIGHT = '5.66vw';
+
 export const WavySectionRoot = styled(Box, {
   position: 'relative',
   width: '100%',
@@ -21,7 +23,7 @@ export const WavySectionRoot = styled(Box, {
     top: '0.15rem',
     left: 0,
     width: '100%',
-    height: '5.66vw',
+    height: WAVY_SECTION_TOP_HEIGHT,
     maskImage: `url(${wavySectionTop})`,
     maskPosition: 'bottom',
     WebkitMaskPosition: 'bottom',

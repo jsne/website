@@ -1,4 +1,4 @@
-import { styled } from '@stitches/react';
+import { styled } from '~/styles/stitches.config';
 
 export const VisuallyHidden = styled('div', {
   clip: 'rect(0 0 0 0)',

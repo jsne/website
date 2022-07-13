@@ -41,7 +41,7 @@ const mapFragmentToProps = (
     alt: fragment.focalImage?.description || 'Placeholder with JSNE logo',
   },
   venue: fragment.venue,
-  speaker: fragment.speaker,
+  speakers: fragment.speakers,
 });
 
 interface PageProps {

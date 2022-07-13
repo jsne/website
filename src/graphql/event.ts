@@ -20,8 +20,8 @@ export const EventListingFragment = graphql`
     }
     id
     slug
-    speaker {
-      ...SpeakerFragment
+    speakers {
+      ...SpeakerListing
     }
     uid
     venue {

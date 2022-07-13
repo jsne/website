@@ -41,7 +41,7 @@
     "build": "gatsby build",
     "build:debug": "env NODE_ENV=production DEBUG_BUILD=true gatsby build",
     "develop": "gatsby develop",
-    "clean": "gatsby clean",
+    "clean": "rm -rf ./src/generated && gatsby clean",
     "dx": "yarn run bootstrap && yarn run prepare && cp ./.env.example .env",
     "lint": "eslint . && prettier --check .",
     "nuke": "rm -rf node_modules && gatsby clean",

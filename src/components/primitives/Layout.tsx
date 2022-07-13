@@ -4,6 +4,8 @@ import { Helmet, HelmetProps, HelmetProvider } from 'react-helmet-async';
 import '~/styles/global.css';
 import { getCssText } from '~/styles/stitches.config';
 
+import { Box } from '../atoms/Box';
+
 /**
  * `head` element with default global styles.
  * @NOTE This also wraps all Storybook stories.
@@ -41,6 +43,13 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, hea
   <HelmetProvider>
     <LayoutHead {...head} />
     {children}
-    <noscript>I can&apos;t believe you&apos;ve done this.</noscript>
+    <noscript>
+      <Box css={{ padding: '$4', textAlign: 'center' }}>
+        <div role="img" aria-label="Heartbroken">
+          💔
+        </div>
+        &nbsp; I can&apos;t believe you&apos;ve done this.
+      </Box>
+    </noscript>
   </HelmetProvider>
 );

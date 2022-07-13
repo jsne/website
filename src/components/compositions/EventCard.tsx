@@ -26,45 +26,49 @@ import { TextIcon } from './TextIcon';
 
 type EventCardInfoProps = Pick<
   GatsbyTypes.EventListingFragment,
-  'speaker' | 'eventDate' | 'venue'
+  'speakers' | 'eventDate' | 'venue'
 >;
 
-const EventCardInfo: FC<EventCardInfoProps> = ({ speaker, eventDate, venue }) => (
-  <Box
-    as="ul"
-    css={{
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '$4',
-      listStyle: 'none',
-      marginTop: 0,
-      marginBottom: 0,
-      padding: 0,
-    }}
-  >
-    <li>
-      <TextIcon iconAppearance="page" icon={Calendar}>
-        {eventDate ? toPrettyDate(eventDate) : 'Unknown'}
-      </TextIcon>
-    </li>
-    <li>
-      <TextIcon iconAppearance="page" icon={MapMarker}>
-        {venue ? (
-          <Link linkAppearance="secondary" href={venue.mapsLink as string}>
-            {venue.name}
-          </Link>
-        ) : (
-          'Unknown'
-        )}
-      </TextIcon>
-    </li>
-    <li>
-      <TextIcon iconAppearance="page" icon={User}>
-        {speaker ? speaker.name : 'Unknown'}
-      </TextIcon>
-    </li>
-  </Box>
-);
+const EventCardInfo: FC<EventCardInfoProps> = ({ speakers, eventDate, venue }) => {
+  const speakerNames = speakers?.map((speaker) => speaker?.name).join(', ');
+
+  return (
+    <Box
+      as="ul"
+      css={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        gap: '$4',
+        listStyle: 'none',
+        marginTop: 0,
+        marginBottom: 0,
+        padding: 0,
+      }}
+    >
+      <li>
+        <TextIcon iconAppearance="page" icon={Calendar}>
+          {eventDate ? toPrettyDate(eventDate) : 'Unknown'}
+        </TextIcon>
+      </li>
+      <li>
+        <TextIcon iconAppearance="page" icon={MapMarker}>
+          {venue ? (
+            <Link linkAppearance="secondary" href={venue.mapsLink as string}>
+              {venue.name}
+            </Link>
+          ) : (
+            'Unknown'
+          )}
+        </TextIcon>
+      </li>
+      <li>
+        <TextIcon iconAppearance="page" icon={User}>
+          {speakerNames}
+        </TextIcon>
+      </li>
+    </Box>
+  );
+};
 
 export interface EventCardProps
   extends Omit<CardRootProps, 'cardLayout'>,
@@ -94,7 +98,7 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
       as = 'article',
       ctas,
       venue,
-      speaker,
+      speakers,
       eventDate,
       ...props
     },
@@ -113,7 +117,7 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
           <CardPreHeading>{preHeading}</CardPreHeading>
           <CardHeading textPreset="h3">{heading}</CardHeading>
         </Box>
-        <EventCardInfo eventDate={eventDate} speaker={speaker} venue={venue} />
+        <EventCardInfo eventDate={eventDate} speakers={speakers} venue={venue} />
         <CardDescription>{description}</CardDescription>
 
         {ctas && ctas.length > 0 && (
