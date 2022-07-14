@@ -4,7 +4,6 @@ import { FC } from 'react';
 import cardPlaceholderSrc from '~/assets/images/card-placeholder.svg';
 import { MailingList } from '~/blocks/MailingList';
 import { Upsells, UpsellsProps } from '~/blocks/Upsells';
-import { Box } from '~/components/atoms/Box';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { Header } from '~/components/compositions/Header';
 import {
@@ -16,7 +15,6 @@ import {
   HeroTitle,
 } from '~/components/compositions/Hero';
 import { SpeakerCard } from '~/components/compositions/SpeakerCard';
-import { WAVY_SECTION_TOP_HEIGHT } from '~/components/compositions/WavySection';
 import { Layout } from '~/components/primitives/Layout';
 import { Mdx } from '~/components/primitives/Mdx';
 
@@ -81,15 +79,7 @@ const SpeakersPage: FC<PageProps> = ({ data }) => {
         ))}
       </Wrapper>
 
-      <Box
-        css={{
-          position: 'relative',
-          zIndex: -1,
-          marginTop: `calc(${WAVY_SECTION_TOP_HEIGHT} * -1.5)`,
-        }}
-      >
-        {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
-      </Box>
+      {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
       <Wrapper wrapperPadding="x4" wrapperWidth="medium">
         <MailingList css={{ paddingTop: '$16', paddingBottom: '$16' }} />
