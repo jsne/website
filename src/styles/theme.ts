@@ -7,6 +7,7 @@ export const themeTextStylesKeys = [
   'h1',
   'h2',
   'h3',
+  'h4',
   'p',
   'preHeading',
   'caption',
@@ -15,10 +16,11 @@ export type ThemeTextStylesKey = typeof themeTextStylesKeys[number];
 type ThemeTextStyle = Record<ThemeTextStylesKey, string>;
 
 const fontSizes: ThemeTextStyle = {
-  hero: remify(64),
-  h1: remify(52),
-  h2: remify(44),
-  h3: remify(36),
+  hero: remify(62),
+  h1: remify(50),
+  h2: remify(42),
+  h3: remify(34),
+  h4: remify(28),
   p: remify(16),
   preHeading: remify(16),
   caption: remify(14),
@@ -29,6 +31,7 @@ const lineHeights: ThemeTextStyle = {
   h1: '1.2',
   h2: '1.2',
   h3: '1.2',
+  h4: '1.2',
   p: '1.55',
   preHeading: '1.55',
   caption: '1.55',

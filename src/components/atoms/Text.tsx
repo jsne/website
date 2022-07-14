@@ -32,6 +32,11 @@ export const Text = styled(Box, {
         lineHeight: '$h3',
         fontWeight: '$heavy',
       },
+      h4: {
+        fontSize: '$h4',
+        lineHeight: '$h4',
+        fontWeight: '$heavy',
+      },
       preHeading: {
         fontSize: '$preHeading',
         lineHeight: '$preHeading',
