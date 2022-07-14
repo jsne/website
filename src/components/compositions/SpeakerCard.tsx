@@ -72,7 +72,7 @@ export const SpeakerCard: FC<SpeakerCardProps> = ({
           </TextIcon>
           <TextIcon icon={IconTwitter}>
             <Link linkAppearance="secondary" href={twitterUrl}>
-              @{twitterUrl}
+              @{new URL(twitterUrl).pathname.replace('/', '')}
             </Link>
           </TextIcon>
         </Box>

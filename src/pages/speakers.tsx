@@ -70,7 +70,7 @@ const SpeakersPage: FC<PageProps> = ({ data }) => {
             preHeading="Guest Speaker"
             heading={speaker.name}
             eventCount={speaker.event?.length || 0}
-            twitterUrl={speaker.handle as string}
+            twitterUrl={`https://twitter.com/${speaker.handle}`}
             media={{
               alt: speaker.avatar?.title || (speaker.name as string),
               src: speaker.avatar?.file?.url || cardPlaceholderSrc,
