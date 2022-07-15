@@ -17,7 +17,7 @@ const config: GatsbyConfig = {
     },
     'gatsby-plugin-preload-fonts',
     'gatsby-plugin-image',
-    'gatsby-plugin-react-helmet-async',
+    'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-svgr',
     {

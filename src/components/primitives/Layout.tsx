@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren } from 'react';
-import { Helmet, HelmetProps, HelmetProvider } from 'react-helmet-async';
+import { Helmet, HelmetProps } from 'react-helmet';
 
 import '~/styles/global.css';
 import { getCssText } from '~/styles/stitches.config';
@@ -40,7 +40,7 @@ export interface LayoutProps {
 
 /** Root component for all page layouts. */
 export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, head }) => (
-  <HelmetProvider>
+  <>
     <LayoutHead {...head} />
     {children}
     <noscript>
@@ -48,8 +48,8 @@ export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, hea
         <div role="img" aria-label="Heartbroken">
           💔
         </div>
-        &nbsp; I can&apos;t believe you&apos;ve done this.
+        &nbsp; No JS? I can&apos;t believe you&apos;ve done this.
       </Box>
     </noscript>
-  </HelmetProvider>
+  </>
 );
