@@ -6,7 +6,11 @@ import { styled } from '~/styles/stitches.config';
 import { Box } from '../atoms/Box';
 import { Wrapper } from '../atoms/Wrapper';
 import { VenueCard, VenueCardProps } from '../compositions/VenueCard';
-import { InteractiveMap, InteractiveMapProps } from '../primitives/InteractiveMap';
+import {
+  InteractiveMap,
+  InteractiveMapProps,
+  InteractiveMapStylesheet,
+} from '../primitives/InteractiveMap';
 
 const VenueSectionRoot = styled('section', {
   position: 'relative',
@@ -81,6 +85,7 @@ export const VenueSection: FC<VenueSectionProps> = ({
         lonOffset={0.075}
         {...props}
       />
+      <InteractiveMapStylesheet />
     </Box>
   </VenueSectionRoot>
 );

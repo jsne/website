@@ -6,7 +6,7 @@ import type {
   Marker,
   MarkerOptions,
 } from '!mapbox-gl';
-import React, { useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import mapMarker from '~/assets/images/map-marker.svg';
 import { styled } from '~/styles/stitches.config';
@@ -45,8 +45,15 @@ export interface InteractiveMapProps {
 
 type Mapboxgl = typeof MapboxglNamespace;
 
+export const InteractiveMapStylesheet: FC = () => (
+  <link
+    href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css"
+    rel="stylesheet"
+  />
+);
+
 // @NOTE Not called 'Map' to avoid conflicts with global `Map` interface.
-export const InteractiveMap: React.FC<InteractiveMapProps> = ({
+export const InteractiveMap: FC<InteractiveMapProps> = ({
   id,
   lonOffset = 0,
   mapOptions,
