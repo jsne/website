@@ -1,8 +1,9 @@
 import { graphql } from 'gatsby';
-import React from 'react';
+import type { FC } from 'react';
 
 import { MAILING_LIST_ELEMENT_ID, MailingList } from '~/blocks/MailingList';
-import { Upsells, UpsellsProps } from '~/blocks/Upsells';
+import type { UpsellsProps } from '~/blocks/Upsells';
+import { Upsells } from '~/blocks/Upsells';
 import { Venue } from '~/blocks/Venue';
 import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';
@@ -24,7 +25,7 @@ interface IndexPageProps {
   data: GatsbyTypes.HomeQuery;
 }
 
-const IndexPage: React.FC<IndexPageProps> = ({ data }) => {
+const IndexPage: FC<IndexPageProps> = ({ data }) => {
   const page = data.contentfulPage as GatsbyTypes.ContentfulPage;
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.nextEvent.edges[0].node;

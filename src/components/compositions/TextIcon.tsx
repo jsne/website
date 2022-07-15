@@ -1,9 +1,11 @@
-import { ComponentProps, FC, SVGAttributes } from 'react';
+import type { ComponentProps, FC, SVGAttributes } from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
-import { Icon, IconProps } from '../atoms/Icon';
-import { Text, TextProps } from '../atoms/Text';
+import type { IconProps } from '../atoms/Icon';
+import { Icon } from '../atoms/Icon';
+import type { TextProps } from '../atoms/Text';
+import { Text } from '../atoms/Text';
 
 interface TextIconUnstyledProps extends TextProps, IconProps {
   icon: FC<SVGAttributes<SVGElement>>;

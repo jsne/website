@@ -1,5 +1,5 @@
 import { Link } from 'gatsby';
-import React from 'react';
+import type { FC } from 'react';
 
 import img404Src from '~/assets/images/404-1.gif';
 import { Box } from '~/components/atoms/Box';
@@ -7,7 +7,7 @@ import { Button } from '~/components/atoms/Button';
 import { Header } from '~/components/compositions/Header';
 import { HeroBody, HeroMain, HeroRoot, HeroTitle } from '~/components/compositions/Hero';
 
-const NotFoundPage: React.FC = () => {
+const NotFoundPage: FC = () => {
   return (
     <Box
       as="main"

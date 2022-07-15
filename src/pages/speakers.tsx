@@ -1,9 +1,10 @@
 import { graphql } from 'gatsby';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import cardPlaceholderSrc from '~/assets/images/card-placeholder.svg';
 import { MailingList } from '~/blocks/MailingList';
-import { Upsells, UpsellsProps } from '~/blocks/Upsells';
+import type { UpsellsProps } from '~/blocks/Upsells';
+import { Upsells } from '~/blocks/Upsells';
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { Header } from '~/components/compositions/Header';
 import {

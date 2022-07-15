@@ -1,18 +1,17 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, FC, ReactNode } from 'react';
 
 import { Button } from '~/components/atoms/Button';
+import type { CardImgProps, CardRootProps } from '~/components/atoms/Card';
 import {
   CardBody,
   CardCtas,
   CardDescription,
   CardHeading,
   CardImg,
-  CardImgProps,
   CardLinkOverlay,
   CardMedia,
   CardPreHeading,
   CardRoot,
-  CardRootProps,
 } from '~/components/atoms/Card';
 import { AutoLink } from '~/components/primitives/AutoLink';
 import { styled } from '~/styles/stitches.config';
@@ -31,12 +30,12 @@ export interface MediaProps extends Omit<CardRootProps, 'cardLayout'> {
   /** Main image. */
   media: CardImgProps & { backgroundColor?: string };
   /** Heading shown before main heading. */
-  preHeading?: React.ReactNode | string;
+  preHeading?: ReactNode | string;
 }
 
 const defaultLayout = { '@initial': 'vertical' } as const;
 
-const MediaUnstyled: React.FC<MediaProps> = ({
+const MediaUnstyled: FC<MediaProps> = ({
   ctaPrimary,
   ctaSecondary,
   description,

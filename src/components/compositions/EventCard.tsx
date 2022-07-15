@@ -1,5 +1,6 @@
-import { AnchorHTMLAttributes, ElementType, FC, ReactNode, forwardRef } from 'react';
-import { PolymorphicComponentProps } from 'react-polymorphic-box';
+import type { AnchorHTMLAttributes, ElementType, FC, ReactNode } from 'react';
+import { forwardRef } from 'react';
+import type { PolymorphicComponentProps } from 'react-polymorphic-box';
 
 import { ReactComponent as Calendar } from '~/assets/images/icon-calendar.svg';
 import { ReactComponent as MapMarker } from '~/assets/images/icon-map-marker.svg';
@@ -8,17 +9,16 @@ import { toPrettyDate } from '~/utilities';
 
 import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
+import type { CardImgProps, CardRootProps } from '../atoms/Card';
 import {
   CardBody,
   CardCtas,
   CardDescription,
   CardHeading,
   CardImg,
-  CardImgProps,
   CardMedia,
   CardPreHeading,
   CardRoot,
-  CardRootProps,
 } from '../atoms/Card';
 import { Link } from '../atoms/Link';
 import { AutoLink } from '../primitives/AutoLink';

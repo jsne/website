@@ -1,18 +1,17 @@
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { ReactComponent as IconPresentation } from '~/assets/images/icon-presentation.svg';
 import { ReactComponent as IconTwitter } from '~/assets/images/icon-twitter.svg';
 
 import { Box } from '../atoms/Box';
+import type { CardImgProps, CardRootProps } from '../atoms/Card';
 import {
   CardBody,
   CardHeading,
   CardImg,
-  CardImgProps,
   CardMedia,
   CardPreHeading,
   CardRoot,
-  CardRootProps,
 } from '../atoms/Card';
 import { Link } from '../atoms/Link';
 import { TextIcon } from './TextIcon';

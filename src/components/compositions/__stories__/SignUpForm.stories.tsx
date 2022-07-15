@@ -1,9 +1,10 @@
 /* eslint no-console: 0 */
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
 import { Box } from '~/components/atoms/Box';
 
-import { SignUpForm, SignUpFormProps } from '../SignUpForm';
+import type { SignUpFormProps } from '../SignUpForm';
+import { SignUpForm } from '../SignUpForm';
 
 export default {
   title: 'Compositions/SignUpForm',

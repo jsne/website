@@ -1,6 +1,7 @@
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
-import { Link, LinkProps } from '../Link';
+import type { LinkProps } from '../Link';
+import { Link } from '../Link';
 
 export default {
   title: 'Atoms/Link',

@@ -1,5 +1,6 @@
-import { FC, PropsWithChildren } from 'react';
-import { Helmet, HelmetProps } from 'react-helmet';
+import type { FC, PropsWithChildren } from 'react';
+import type { HelmetProps } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 import '~/styles/global.css';
 import { getCssText } from '~/styles/stitches.config';
@@ -35,7 +36,7 @@ export interface LayoutProps {
 }
 
 /** Root component for all page layouts. */
-export const Layout: React.FC<PropsWithChildren<LayoutProps>> = ({ children, head }) => (
+export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, head }) => (
   <>
     <LayoutHead {...head} />
     {children}

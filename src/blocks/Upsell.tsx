@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { Media } from '~/components/compositions/Media';
 import { Mdx } from '~/components/primitives/Mdx';

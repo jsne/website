@@ -1,8 +1,9 @@
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
 import { ReactComponent as Calendar } from '~/assets/images/icon-calendar.svg';
 
-import { TextIcon, TextIconProps } from '../TextIcon';
+import type { TextIconProps } from '../TextIcon';
+import { TextIcon } from '../TextIcon';
 
 export default {
   title: 'Compositions/TextIcon',

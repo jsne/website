@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { ReactComponent as Mail } from '~/assets/images/icon-mail.svg';
 import { styled } from '~/styles/stitches.config';
@@ -7,8 +7,9 @@ import { Box } from '../atoms/Box';
 import { CardBody, CardHeading, CardPreHeading, CardRoot } from '../atoms/Card';
 import { Icon } from '../atoms/Icon';
 import { Text } from '../atoms/Text';
-import { MediaProps } from './Media';
-import { SignUpForm, SignUpFormProps } from './SignUpForm';
+import type { MediaProps } from './Media';
+import type { SignUpFormProps } from './SignUpForm';
+import { SignUpForm } from './SignUpForm';
 
 const MailingListCardRoot = styled(CardRoot, {
   position: 'relative',

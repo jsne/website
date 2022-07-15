@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { ReactComponent as Logo } from '~/assets/images/logo.svg';
 import { Wrapper } from '~/components/atoms/Wrapper';

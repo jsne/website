@@ -6,7 +6,8 @@ import type {
   Marker,
   MarkerOptions,
 } from '!mapbox-gl';
-import { FC, useEffect, useRef, useState } from 'react';
+import type { FC } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import mapMarker from '~/assets/images/map-marker.svg';
 import { styled } from '~/styles/stitches.config';

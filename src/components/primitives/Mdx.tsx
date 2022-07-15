@@ -1,9 +1,13 @@
-import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
-import { MDXRenderer, MDXRendererProps } from 'gatsby-plugin-mdx';
-import { FC } from 'react';
+import type { MDXProviderComponentsProp } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react';
+import type { MDXRendererProps } from 'gatsby-plugin-mdx';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import type { FC } from 'react';
 
-import { Link, LinkProps } from '~/components/atoms/Link';
-import { Text, TextProps } from '~/components/atoms/Text';
+import type { LinkProps } from '~/components/atoms/Link';
+import { Link } from '~/components/atoms/Link';
+import type { TextProps } from '~/components/atoms/Text';
+import { Text } from '~/components/atoms/Text';
 
 export interface MdxProps
   extends Omit<MDXRendererProps, 'children'>,

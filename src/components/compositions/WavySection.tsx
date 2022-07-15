@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import wavySectionBottomShadow from '~/assets/images/wavy-section-bottom-shadow.svg';
 import wavySectionBottom from '~/assets/images/wavy-section-bottom.svg';

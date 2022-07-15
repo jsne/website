@@ -56,6 +56,7 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
 
+    '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 0,
     '@typescript-eslint/no-non-null-assertion': 'warn',
     '@typescript-eslint/no-explicit-any': 'error',

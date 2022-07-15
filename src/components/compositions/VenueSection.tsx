@@ -1,16 +1,14 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import { ReactComponent as Top } from '~/assets/images/map-section-top.svg';
 import { styled } from '~/styles/stitches.config';
 
 import { Box } from '../atoms/Box';
 import { Wrapper } from '../atoms/Wrapper';
-import { VenueCard, VenueCardProps } from '../compositions/VenueCard';
-import {
-  InteractiveMap,
-  InteractiveMapProps,
-  InteractiveMapStylesheet,
-} from '../primitives/InteractiveMap';
+import type { VenueCardProps } from '../compositions/VenueCard';
+import { VenueCard } from '../compositions/VenueCard';
+import type { InteractiveMapProps } from '../primitives/InteractiveMap';
+import { InteractiveMap, InteractiveMapStylesheet } from '../primitives/InteractiveMap';
 
 const VenueSectionRoot = styled('section', {
   position: 'relative',

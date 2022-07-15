@@ -1,4 +1,4 @@
-import React from 'react';
+import type { FC, ReactElement } from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
@@ -24,7 +24,7 @@ interface VenueCardVenue {
   preHeading: string;
   heading: string;
   postHeading: string;
-  body: React.ReactElement | string;
+  body: ReactElement | string;
   cta: string;
 }
 
@@ -32,7 +32,7 @@ export interface VenueCardProps {
   venue: VenueCardVenue;
 }
 
-const VenueCardUnstyled: React.FC<VenueCardProps> = ({ venue, ...props }) => (
+const VenueCardUnstyled: FC<VenueCardProps> = ({ venue, ...props }) => (
   <VenueCardRoot {...props} as="section">
     <Text as="h1" css={{ display: 'grid', gap: '$2' }}>
       <Text textPreset="preHeading" css={{ color: '$pageContrast1' }}>
