@@ -1,9 +1,10 @@
 /* eslint no-console: 0 */
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
 import { Box } from '~/components/atoms/Box';
 
-import { MailingListCard, MailingListCardProps } from '../MailingListCard';
+import type { MailingListCardProps } from '../MailingListCard';
+import { MailingListCard } from '../MailingListCard';
 
 export default {
   title: 'Compositions/MailingListCard',

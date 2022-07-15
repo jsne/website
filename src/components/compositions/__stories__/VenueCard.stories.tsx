@@ -1,7 +1,8 @@
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
 import { Box } from '../../atoms/Box';
-import { VenueCard, VenueCardProps } from '../VenueCard';
+import type { VenueCardProps } from '../VenueCard';
+import { VenueCard } from '../VenueCard';
 
 export default {
   title: 'Compositions/VenueCard',

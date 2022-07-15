@@ -4,7 +4,8 @@ import { forwardRef } from 'react';
 import { styled } from '~/styles/stitches.config';
 import { getLinkType } from '~/utilities';
 
-import { ScrollAnchor, ScrollAnchorProps } from './ScrollAnchor';
+import type { ScrollAnchorProps } from './ScrollAnchor';
+import { ScrollAnchor } from './ScrollAnchor';
 
 export type AutoLinkProps = ScrollAnchorProps;
 

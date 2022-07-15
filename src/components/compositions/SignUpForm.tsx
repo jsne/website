@@ -1,4 +1,5 @@
-import { ComponentProps, HTMLProps, forwardRef } from 'react';
+import type { ComponentProps, HTMLProps } from 'react';
+import { forwardRef } from 'react';
 
 import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';

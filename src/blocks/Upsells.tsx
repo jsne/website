@@ -1,10 +1,11 @@
-import { FC, ReactNode } from 'react';
+import type { FC, ReactNode } from 'react';
 
 import { Wrapper } from '~/components/atoms/Wrapper';
 import { WavySection } from '~/components/compositions/WavySection';
 import { styled } from '~/styles/stitches.config';
 
-import { Upsell, UpsellProps } from './Upsell';
+import type { UpsellProps } from './Upsell';
+import { Upsell } from './Upsell';
 
 export interface UpsellsProps {
   children?: ReactNode;

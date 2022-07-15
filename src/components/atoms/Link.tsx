@@ -1,8 +1,9 @@
-import { ComponentProps } from 'react';
+import type { ComponentProps } from 'react';
 
 import { styled } from '~/styles/stitches.config';
 
-import { AutoLink, AutoLinkProps } from '../primitives/AutoLink';
+import type { AutoLinkProps } from '../primitives/AutoLink';
+import { AutoLink } from '../primitives/AutoLink';
 
 export const Link = styled(AutoLink, {
   position: 'relative',

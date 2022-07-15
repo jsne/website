@@ -1,6 +1,7 @@
 /* eslint no-console: 0 */
 import { graphql, useStaticQuery } from 'gatsby';
-import { FC, useRef, useState } from 'react';
+import type { FC } from 'react';
+import { useRef, useState } from 'react';
 
 import { Box } from '~/components/atoms/Box';
 import { MailingListCard } from '~/components/compositions/MailingListCard';

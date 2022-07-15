@@ -1,6 +1,7 @@
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
-import { EventCard, EventCardProps } from '../EventCard';
+import type { EventCardProps } from '../EventCard';
+import { EventCard } from '../EventCard';
 
 export default {
   title: 'Compositions/EventCard',

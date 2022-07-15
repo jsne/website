@@ -1,6 +1,7 @@
-import { FC } from 'react';
+import type { FC } from 'react';
 
-import { VenueSection, VenueSectionProps } from '~/components/compositions/VenueSection';
+import type { VenueSectionProps } from '~/components/compositions/VenueSection';
+import { VenueSection } from '~/components/compositions/VenueSection';
 import { Mdx } from '~/components/primitives/Mdx';
 
 interface VenueProps {

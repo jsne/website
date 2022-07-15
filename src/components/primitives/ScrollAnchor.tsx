@@ -1,8 +1,9 @@
-import React, { forwardRef, useCallback } from 'react';
+import type { AnchorHTMLAttributes, MouseEventHandler } from 'react';
+import { forwardRef, useCallback } from 'react';
 
 import { getPrefersMotion } from '~/utilities';
 
-type BaseProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+type BaseProps = AnchorHTMLAttributes<HTMLAnchorElement>;
 
 export type ScrollAnchorProps = Omit<BaseProps, 'href'> &
   Required<Pick<BaseProps, 'href'>>;
@@ -10,8 +11,8 @@ export type ScrollAnchorProps = Omit<BaseProps, 'href'> &
 /** Smooth scroll to an anchor if the user prefers motion. */
 export const ScrollAnchor = forwardRef<HTMLAnchorElement, ScrollAnchorProps>(
   ({ href, onClick, ...props }, ref) => {
-    const handleClick = useCallback(
-      (ev: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const handleClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
+      (ev) => {
         if (typeof window === 'undefined') {
           return;
         }

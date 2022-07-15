@@ -1,11 +1,13 @@
 import { graphql } from 'gatsby';
-import { FC } from 'react';
+import type { FC } from 'react';
 
 import cardPlaceholderSrc from '~/assets/images/card-placeholder.svg';
 import { MAILING_LIST_ELEMENT_ID, MailingList } from '~/blocks/MailingList';
-import { Upsells, UpsellsProps } from '~/blocks/Upsells';
+import type { UpsellsProps } from '~/blocks/Upsells';
+import { Upsells } from '~/blocks/Upsells';
 import { Wrapper } from '~/components/atoms/Wrapper';
-import { EventCard, EventCardProps } from '~/components/compositions/EventCard';
+import type { EventCardProps } from '~/components/compositions/EventCard';
+import { EventCard } from '~/components/compositions/EventCard';
 import { Header } from '~/components/compositions/Header';
 import {
   HERO_BOTTOM_HEIGHT,

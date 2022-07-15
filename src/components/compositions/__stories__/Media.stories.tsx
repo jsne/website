@@ -1,6 +1,7 @@
-import { Story } from '@storybook/react';
+import type { Story } from '@storybook/react';
 
-import { Media, MediaProps } from '../Media';
+import type { MediaProps } from '../Media';
+import { Media } from '../Media';
 
 export default {
   title: 'Compositions/Media',
