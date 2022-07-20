@@ -1,20 +1,6 @@
-/** Determine whether the provided date is in the past. */
-export const dateIsInPast = (date: string) =>
-  new Date(date).getSeconds() < new Date().getSeconds();
+import { createLogger } from '~/utilities/logger';
 
-export const getPrefersMotion = () =>
-  typeof window !== 'undefined' &&
-  window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
-
-/** Convert timestamp to a pretty date. */
-export const toPrettyDate = (date: string) =>
-  new Intl.DateTimeFormat(
-    typeof navigator !== 'undefined' ? navigator.language : 'en-GB',
-    {
-      dateStyle: 'short',
-      timeStyle: 'short',
-    },
-  ).format(new Date(date));
+const logger = createLogger({ prefix: 'getLinkType' });
 
 interface GetLinkTypeReturn {
   /** Whether the link is on the current site. */
@@ -26,7 +12,19 @@ interface GetLinkTypeReturn {
 }
 
 /** Determine if link is internal and is on the same page. */
-export const getLinkType = (path: string): GetLinkTypeReturn => {
+export const getLinkType = (path?: string): GetLinkTypeReturn => {
+  // Some third party sources for links may not have a valid path.
+  if (!path) {
+    logger.trace();
+    logger.error('no path provided');
+
+    return {
+      isInternal: false,
+      isSamePage: false,
+      isAnchor: false,
+    };
+  }
+
   const isAnchor = new RegExp('#.*$').test(path);
 
   if (path.startsWith('#')) {

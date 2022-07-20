@@ -2,7 +2,7 @@ import { Link } from 'gatsby';
 import { forwardRef } from 'react';
 
 import { styled } from '~/styles/stitches.config';
-import { getLinkType } from '~/utilities';
+import { getLinkType } from '~/utilities/getLinkType';
 
 import type { ScrollAnchorProps } from './ScrollAnchor';
 import { ScrollAnchor } from './ScrollAnchor';
@@ -24,7 +24,7 @@ const AutoLinkUnstyled = forwardRef<HTMLAnchorElement, AutoLinkProps>((props, re
 
   if (isInternal) {
     // 'lil `as` hack, Gatsby types could be better.
-    return <Link ref={ref as unknown as string} {...props} to={props.href} />;
+    return <Link ref={ref as unknown as string} {...props} to={props.href as string} />;
   }
 
   return (

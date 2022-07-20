@@ -34,6 +34,7 @@ interface MapBaseOptions {
 type MapOptions = Omit<MapboxOptions, 'center' | 'container' | 'zoom'> &
   MapBaseOptions &
   Required<Pick<MapboxOptions, 'zoom'>>;
+
 type MapMarkerOptions = MarkerOptions & MapBaseOptions;
 
 export interface InteractiveMapProps {
@@ -105,7 +106,7 @@ export const InteractiveMap: FC<InteractiveMapProps> = ({
           center: {
             ...marker.getLngLat(),
             lng: marker.getLngLat().lng + lonOffset / map.current.getZoom(),
-          } as LngLatLike,
+          },
         }),
       );
     } catch (err) {
