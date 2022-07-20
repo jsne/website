@@ -5,7 +5,7 @@ import type { PolymorphicComponentProps } from 'react-polymorphic-box';
 import { ReactComponent as Calendar } from '~/assets/images/icon-calendar.svg';
 import { ReactComponent as MapMarker } from '~/assets/images/icon-map-marker.svg';
 import { ReactComponent as User } from '~/assets/images/icon-user.svg';
-import { toPrettyDate } from '~/utilities';
+import { toPrettyDate } from '~/utilities/date';
 
 import { Box } from '../atoms/Box';
 import { Button } from '../atoms/Button';
