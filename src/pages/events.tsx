@@ -19,7 +19,7 @@ import {
 } from '~/components/compositions/Hero';
 import { Layout } from '~/components/primitives/Layout';
 import { Mdx } from '~/components/primitives/Mdx';
-import { dateIsInPast } from '~/utilities';
+import { dateIsInPast } from '~/utilities/date';
 
 const mapFragmentToProps = (
   fragment: GatsbyTypes.EventListingFragment,
