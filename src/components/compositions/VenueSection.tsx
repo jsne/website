@@ -60,7 +60,7 @@ export const VenueSection: FC<VenueSectionProps> = ({
           setShouldMountMap(true);
         }
       },
-      { rootMargin: '0px -200px 0px 0px' },
+      { rootMargin: '0px -400px 0px 0px' },
     );
 
     intersectionObserver.observe(rootRef.current as HTMLElement);
@@ -72,8 +72,7 @@ export const VenueSection: FC<VenueSectionProps> = ({
   }, []);
 
   return (
-    <VenueSectionRoot>
-      <div ref={rootRef}>hello</div>
+    <VenueSectionRoot ref={rootRef}>
       <VenueSectionTop aria-hidden />
 
       <Wrapper
