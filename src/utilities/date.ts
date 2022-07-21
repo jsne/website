@@ -1,5 +1,5 @@
-export const dateIsInPast = (date: string) =>
-  new Date(date).getSeconds() < new Date().getSeconds();
+export const dateIsInPast = (date?: string | null) =>
+  date ? new Date(date).getTime() < new Date().getTime() : true;
 
 /** Convert timestamp to a pretty date. */
 export const toPrettyDate = (date: string) =>

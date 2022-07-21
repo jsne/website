@@ -31,10 +31,7 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.nextEvent.edges[0].node;
   const { placeholderEvent } = data;
-
-  const nextEventHasExpired =
-    (nextEvent?.eventDate && dateIsInPast(nextEvent.eventDate)) || true;
-
+  const nextEventHasExpired = dateIsInPast(nextEvent.eventDate);
   const eventPreHeading = nextEventHasExpired ? 'Event Update' : 'Next Event';
   const event = nextEventHasExpired ? placeholderEvent : nextEvent;
 
