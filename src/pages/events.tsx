@@ -47,7 +47,7 @@ const mapFragmentToProps = (
 });
 
 interface PageProps {
-  data: GatsbyTypes.EventPageQuery;
+  data: GatsbyTypes.EventsPageQuery;
 }
 
 const IndexPage: FC<PageProps> = ({ data }) => {
@@ -80,9 +80,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
     : undefined;
 
   return (
-    <Layout
-      head={{ title: page.title as string, description: page.description as string }}
-    >
+    <Layout head={{ title: page.title, description: page.description }}>
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">
@@ -131,7 +129,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
 };
 
 export const pageQuery = graphql`
-  query EventPage {
+  query EventsPage {
     contentfulPage(slug: { eq: "/events" }) {
       ...Page
     }

@@ -7,8 +7,9 @@ import { getCssText } from '~/styles/stitches.config';
 
 import { Box } from '../atoms/Box';
 
-interface LayoutHeadProps extends HelmetProps {
-  description: string;
+interface LayoutHeadProps extends Omit<HelmetProps, 'title'> {
+  title: HelmetProps['title'] | null;
+  description: string | null;
 }
 
 /**
@@ -20,12 +21,18 @@ const LayoutHead: FC<PropsWithChildren<LayoutHeadProps>> = ({
   htmlAttributes,
   children,
   meta = [],
+  title,
   ...props
 }) => (
   <Helmet
+    title={`${title || 'JavaScript North East'} - JSNE`}
     htmlAttributes={{ lang: 'en', ...htmlAttributes } as HelmetProps['htmlAttributes']}
     meta={[
-      { name: 'description', content: description },
+      {
+        name: 'description',
+        content:
+          description || 'The all things JavaScript meetup in Newcastle upon Tyne.',
+      },
       // Allow other sources of metadata to override the provided description.
       ...meta,
     ]}
