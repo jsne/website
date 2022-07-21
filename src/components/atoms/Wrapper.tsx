@@ -1,7 +1,9 @@
 import { styled } from '~/styles/stitches.config';
 
+import { Box } from './Box';
+
 /** Generic wrapper for any content. */
-export const Wrapper = styled('div', {
+export const Wrapper = styled(Box, {
   width: '100%',
   maxWidth: '$wrapperWidth3',
   marginRight: 'auto',

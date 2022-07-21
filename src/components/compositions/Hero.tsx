@@ -4,7 +4,7 @@ import { Wrapper } from '~/components/atoms/Wrapper';
 import { styled } from '~/styles/stitches.config';
 
 /** Root element. */
-export const HeroRoot = styled('section', {
+export const HeroRoot = styled('div', {
   withLinearGradient: { variant: 'primary' },
 });
 
@@ -27,6 +27,8 @@ export const HeroMain = styled(Wrapper, {
     },
   },
 });
+
+HeroMain.defaultProps = { as: 'section' };
 
 export const HERO_BOTTOM_HEIGHT = 'clamp(4rem, 13vw, 12rem)';
 

@@ -57,7 +57,11 @@ export interface LayoutProps {
 export const Layout: FC<PropsWithChildren<LayoutProps>> = ({ children, head }) => (
   <>
     <LayoutHead {...head} />
-    {children}
+
+    <Box as="main" css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+      {children}
+    </Box>
+
     <noscript>
       <Box css={{ padding: '$4', textAlign: 'center' }}>
         <div role="img" aria-label="Heartbroken">

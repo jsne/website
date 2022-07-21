@@ -1,4 +1,5 @@
 <svg width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <desc>JSNE logo</desc>
   <path fill="#DAD9E8" d="M0 0h120v120H0z" />
   <g style="mix-blend-mode:luminosity" opacity=".25" filter="url(#card-placeholder-a)">
     <path

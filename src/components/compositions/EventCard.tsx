@@ -34,6 +34,7 @@ const EventCardInfo: FC<EventCardInfoProps> = ({ speakers, eventDate, venue }) =
 
   return (
     <Box
+      aria-label="Venue Information"
       as="ul"
       css={{
         display: 'flex',
@@ -46,12 +47,12 @@ const EventCardInfo: FC<EventCardInfoProps> = ({ speakers, eventDate, venue }) =
       }}
     >
       <li>
-        <TextIcon iconAppearance="page" icon={Calendar}>
+        <TextIcon iconAppearance="page" icon={Calendar} aria-label="Date">
           {eventDate ? toPrettyDate(eventDate) : 'Unknown'}
         </TextIcon>
       </li>
       <li>
-        <TextIcon iconAppearance="page" icon={MapMarker}>
+        <TextIcon iconAppearance="page" icon={MapMarker} aria-label="Location">
           {venue ? (
             <Link linkAppearance="secondary" href={venue.mapsLink as string}>
               {venue.name}
@@ -62,7 +63,7 @@ const EventCardInfo: FC<EventCardInfoProps> = ({ speakers, eventDate, venue }) =
         </TextIcon>
       </li>
       <li>
-        <TextIcon iconAppearance="page" icon={User}>
+        <TextIcon iconAppearance="page" icon={User} aria-label="Speaker">
           {speakerNames}
         </TextIcon>
       </li>
@@ -117,6 +118,7 @@ export const EventCard = forwardRef<HTMLElement, EventCardProps>(
           <CardPreHeading>{preHeading}</CardPreHeading>
           <CardHeading textPreset="h3">{heading}</CardHeading>
         </Box>
+
         <EventCardInfo eventDate={eventDate} speakers={speakers} venue={venue} />
         <CardDescription>{description}</CardDescription>
 
