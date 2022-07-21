@@ -28,9 +28,7 @@ const SpeakersPage: FC<PageProps> = ({ data }) => {
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
 
   return (
-    <Layout
-      head={{ title: page.title as string, description: page.description as string }}
-    >
+    <Layout head={{ title: page.title, description: page.description }}>
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">
