@@ -51,7 +51,7 @@ interface PageProps {
 }
 
 const IndexPage: FC<PageProps> = ({ data }) => {
-  const page = data.contentfulPage as GatsbyTypes.ContentfulPage;
+  const page = data.contentfulPage!;
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.events.edges[0].node;
   const { placeholderEvent } = data;
@@ -80,7 +80,9 @@ const IndexPage: FC<PageProps> = ({ data }) => {
     : undefined;
 
   return (
-    <Layout head={{ title: page.title as string }}>
+    <Layout
+      head={{ title: page.title as string, description: page.description as string }}
+    >
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">

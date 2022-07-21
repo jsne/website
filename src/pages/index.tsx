@@ -46,7 +46,9 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
   };
 
   return (
-    <Layout head={{ title: page.title as string }}>
+    <Layout
+      head={{ title: page.title as string, description: page.description as string }}
+    >
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="center" wrapperPadding="x4">

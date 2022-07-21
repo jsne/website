@@ -24,11 +24,13 @@ interface PageProps {
 }
 
 const SpeakersPage: FC<PageProps> = ({ data }) => {
-  const page = data.contentfulPage as GatsbyTypes.ContentfulPage;
+  const page = data.contentfulPage!;
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
 
   return (
-    <Layout head={{ title: page.title as string }}>
+    <Layout
+      head={{ title: page.title as string, description: page.description as string }}
+    >
       <HeroRoot>
         <Header />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">
