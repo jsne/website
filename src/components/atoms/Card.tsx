@@ -87,6 +87,8 @@ export const CardImg = styled('img', {
   },
 });
 
+CardImg.defaultProps = { loading: 'lazy' };
+
 export type CardImgProps = ComponentProps<typeof CardImg>;
 
 export const CardBody = styled('div', {
