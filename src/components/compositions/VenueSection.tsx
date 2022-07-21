@@ -60,7 +60,10 @@ export const VenueSection: FC<VenueSectionProps> = ({
           setShouldMountMap(true);
         }
       },
-      { rootMargin: '0px -400px 0px 0px' },
+      {
+        rootMargin: '0px 0px 50% 0px',
+        threshold: 0,
+      },
     );
 
     intersectionObserver.observe(rootRef.current as HTMLElement);
