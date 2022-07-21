@@ -1,8 +1,8 @@
 <svg width="111" height="5" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-  <path d="M1 3.609C44.89-2.587 89.261 9.153 110 1" stroke="url(#a)" stroke-width="2" stroke-linecap="round"
+  <path d="M1 3.609C44.89-2.587 89.261 9.153 110 1" stroke="url(#link-underline-a)" stroke-width="2" stroke-linecap="round"
     stroke-linejoin="bevel" />
   <defs>
-    <linearGradient id="a" x1="-11.944" y1="4" x2="18.818" y2="-53.464" gradientUnits="userSpaceOnUse">
+    <linearGradient id="link-underline-a" x1="-11.944" y1="4" x2="18.818" y2="-53.464" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFE358" />
       <stop offset=".516" stop-color="#F9CC2F" />
       <stop offset="1" stop-color="#FFC01E" />
