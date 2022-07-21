@@ -20,20 +20,20 @@ import {
 import { AutoLink } from '~/components/primitives/AutoLink';
 import { Layout } from '~/components/primitives/Layout';
 import { Mdx } from '~/components/primitives/Mdx';
+import { dateIsInPast } from '~/utilities/date';
 
 interface IndexPageProps {
   data: GatsbyTypes.HomeQuery;
 }
 
 const IndexPage: FC<IndexPageProps> = ({ data }) => {
-  const page = data.contentfulPage as GatsbyTypes.ContentfulPage;
+  const page = data.contentfulPage!;
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.nextEvent.edges[0].node;
   const { placeholderEvent } = data;
 
   const nextEventHasExpired =
-    nextEvent?.eventDate &&
-    new Date(nextEvent.eventDate).getSeconds() < new Date().getSeconds();
+    (nextEvent?.eventDate && dateIsInPast(nextEvent.eventDate)) || true;
 
   const eventPreHeading = nextEventHasExpired ? 'Event Update' : 'Next Event';
   const event = nextEventHasExpired ? placeholderEvent : nextEvent;
