@@ -30,7 +30,7 @@ const mapFragmentToProps = (
   preHeading:
     fragment.uid === 'placeholder' ? (
       'Event Update'
-    ) : dateIsInPast(fragment.eventDate as string) ? (
+    ) : dateIsInPast(fragment.eventDate) ? (
       'Previous Event'
     ) : (
       <>
@@ -55,7 +55,7 @@ const IndexPage: FC<PageProps> = ({ data }) => {
   const heroBody = page?.titleBody?.childrenMdx?.[0]?.body;
   const nextEvent = data.events.edges[0].node;
   const { placeholderEvent } = data;
-  const nextEventHasExpired = dateIsInPast(nextEvent.eventDate as string);
+  const nextEventHasExpired = dateIsInPast(nextEvent.eventDate);
 
   /** Next event or placeholder event if next event is in the past. */
   const primaryEvent = mapFragmentToProps(
