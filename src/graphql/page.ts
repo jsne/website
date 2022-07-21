@@ -11,6 +11,7 @@ export const PageFragment = graphql`
     navigationLabel
     slug
     title
+    description
     titleBody {
       childrenMdx {
         body

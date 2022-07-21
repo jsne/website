@@ -7,17 +7,28 @@ import { getCssText } from '~/styles/stitches.config';
 
 import { Box } from '../atoms/Box';
 
+interface LayoutHeadProps extends HelmetProps {
+  description: string;
+}
+
 /**
  * `head` element with default global styles.
  * @NOTE This also wraps all Storybook stories.
  */
-const LayoutHead: FC<PropsWithChildren<HelmetProps>> = ({
+const LayoutHead: FC<PropsWithChildren<LayoutHeadProps>> = ({
+  description,
   htmlAttributes,
   children,
+  meta = [],
   ...props
 }) => (
   <Helmet
     htmlAttributes={{ lang: 'en', ...htmlAttributes } as HelmetProps['htmlAttributes']}
+    meta={[
+      { name: 'description', content: description },
+      // Allow other sources of metadata to override the provided description.
+      ...meta,
+    ]}
     {...props}
   >
     {children}
@@ -32,7 +43,7 @@ const LayoutHead: FC<PropsWithChildren<HelmetProps>> = ({
 
 export interface LayoutProps {
   /** Props to apply within `head` element via Helmet. */
-  head: HelmetProps;
+  head: LayoutHeadProps;
 }
 
 /** Root component for all page layouts. */
