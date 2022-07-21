@@ -59,7 +59,7 @@ export interface HeaderProps {
 
 /** Main website header. */
 export const Header: FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
-  <HeaderRoot as="header" role="banner" wrapperPadding="x4" {...props}>
+  <HeaderRoot as="header" wrapperPadding="x4" {...props}>
     <HeaderLink href={logoSlug} title="Go to Homepage">
       <HeaderLogo aria-hidden />
     </HeaderLink>

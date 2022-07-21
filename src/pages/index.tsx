@@ -78,6 +78,7 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
           }}
         >
           <Text
+            as="h1"
             textPreset="preHeading"
             css={{
               color: '$bodyContrast3',
@@ -85,9 +86,11 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
           >
             {eventPreHeading}
           </Text>
-          <Text textPreset="h1" css={{ marginBottom: '$2' }}>
+
+          <Text as="h2" textPreset="h1" css={{ marginBottom: '$2' }}>
             {event?.heading}
           </Text>
+
           <Box
             css={{
               display: 'grid',
