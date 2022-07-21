@@ -8,8 +8,8 @@
 <a href="https://www.figma.com/file/O24nLj4pfD9rMKYhkjetzM/JSNE-Site-2020?node-id=252%3A0">
   <img alt="Figma label" src="https://img.shields.io/badge/design-figma-blue">
 </a>
-<a href="https://app.netlify.com/sites/jsne-website/deploys">
-  <img alt="Live deployment status" src="https://img.shields.io/netlify/57164a3b-9cad-472f-bfc4-56171dc261c3?label=live%20deploy">
+<a href="https://app.netlify.com/sites/jsne/deploys">
+  <img alt="Live deployment status" src="https://img.shields.io/netlify/409c5c17-66c8-4e64-a4c0-7eb5c699d57f?label=live%20deploy">
 </a>
 <a href="https://jsne.vercel.app">
   <img alt="Head deployment status" src="https://img.shields.io/github/deployments/jsne/website/Production%20%E2%80%93%20website?label=head%20deploy">
@@ -23,9 +23,9 @@
 
 ## Built with
 
-- [Gatsby](https://www.gatsbyjs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [GraphQL Code Generator](https://www.graphql-code-generator.com/)
-- [Stitches](https://stitches.dev/)
-- [Contentful](https://www.contentful.com/)
-- [Cloudflare Workers](https://workers.cloudflare.com/)
+- [🧑‍💻 Gatsby](https://www.gatsbyjs.com/)
+- [💪 TypeScript](https://www.typescriptlang.org/)
+- [🏭️ GraphQL Code Generator](https://www.graphql-code-generator.com/)
+- [🪡 Stitches](https://stitches.dev/)
+- [📄 Contentful](https://www.contentful.com/)
+- [👷 Cloudflare Workers](https://workers.cloudflare.com/)
