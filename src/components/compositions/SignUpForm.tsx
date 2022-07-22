@@ -21,6 +21,8 @@ export const SignUpForm = forwardRef<HTMLFormElement, HTMLProps<HTMLFormElement>
         withBoxShadow: { color: '$shadow1' },
         withLinearGradient: { variant: 'primary' },
         withTransition: 'outline',
+        withOutline: '$secondaryContrast3Alpha',
+        outlineWidth: 0,
 
         '&:focus-within': {
           withOutline: '$secondaryContrast3Alpha',

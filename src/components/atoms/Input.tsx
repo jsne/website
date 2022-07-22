@@ -32,16 +32,22 @@ export const Input = styled('input', {
     },
     inputFocusAppearance: {
       primary: {
+        withOutline: '$primary2',
+        outlineWidth: 0,
         '&:focus:not(:disabled)': {
           withOutline: '$primary2',
         },
       },
       secondary: {
+        withOutline: '$secondary2',
+        outlineWidth: 0,
         '&:focus:not(:disabled)': {
           withOutline: '$secondary2',
         },
       },
       tertiary: {
+        withOutline: '$tertiary1',
+        outlineWidth: 0,
         '&:focus:not(:disabled)': {
           withOutline: '$tertiary1',
         },

@@ -59,16 +59,12 @@ export const Button = styled(Box, {
     buttonAppearance: {
       primary: {
         withLinearGradient: { variant: 'primary' },
-        '&:focus-visible': {
-          withOutline: '$secondary1',
-        },
+        withOutlineFocus: '$secondary1',
       },
 
       secondary: {
         withLinearGradient: { variant: 'secondary' },
-        '&:focus-visible': {
-          withOutline: '$tertiary1',
-        },
+        withOutlineFocus: '$tertiary1',
       },
     },
   },

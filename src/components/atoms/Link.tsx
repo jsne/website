@@ -9,9 +9,8 @@ export const Link = styled(AutoLink, {
   position: 'relative',
   fontWeight: '$medium',
   borderRadius: '$1',
-  WebkitBackgroundClip: 'text',
-  WebkitTextFillColor: 'transparent',
   withTransition: 'outline',
+  textDecoration: 'none',
 
   /** @NOTE Using psuedo-element to avoid box size issues. */
   '&::after': {
@@ -21,6 +20,7 @@ export const Link = styled(AutoLink, {
     left: 0,
     width: '100%',
     height: '0.125rem',
+    backgroundColor: 'CurrentColor',
     backgroundImage: 'inherit',
     opacity: 0,
     withTransition: 'opacity',
@@ -35,24 +35,24 @@ export const Link = styled(AutoLink, {
   variants: {
     linkAppearance: {
       primary: {
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
         withLinearGradient: { variant: 'primary' },
-        '&:focus-visible': {
-          withOutline: '$primary1',
-        },
+        withOutlineFocus: '$primary1',
       },
+
       secondary: {
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
         withLinearGradient: { variant: 'secondary' },
-        '&:focus-visible': {
-          withOutline: '$secondary1',
-        },
+        withOutlineFocus: '$secondary1',
       },
+
       tertiary: {
-        withLinearGradient: {
-          variant: 'tertiary',
-        },
-        '&:focus-visible': {
-          withOutline: '$tertiary1',
-        },
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        withLinearGradient: { variant: 'tertiary' },
+        withOutlineFocus: '$tertiary1',
       },
     },
   },
