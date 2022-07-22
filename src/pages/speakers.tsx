@@ -2,11 +2,11 @@ import { graphql } from 'gatsby';
 import type { FC } from 'react';
 
 import cardPlaceholderSrc from '~/assets/images/card-placeholder.svg';
+import { Banner } from '~/blocks/Banner';
 import { MailingList } from '~/blocks/MailingList';
 import type { UpsellsProps } from '~/blocks/Upsells';
 import { Upsells } from '~/blocks/Upsells';
 import { Wrapper } from '~/components/atoms/Wrapper';
-import { Header } from '~/components/compositions/Header';
 import {
   HERO_BOTTOM_HEIGHT,
   HeroBody,
@@ -30,7 +30,7 @@ const SpeakersPage: FC<PageProps> = ({ data }) => {
   return (
     <Layout head={{ title: page.title, description: page.description }}>
       <HeroRoot>
-        <Header />
+        <Banner />
         <HeroMain heroLayout="left" wrapperPadding="x4" wrapperWidth="large">
           <HeroTitle as="h1" textPreset="h2">
             {page.title}

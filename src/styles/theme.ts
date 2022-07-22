@@ -152,6 +152,8 @@ export const theme = {
     '14': '3.5rem',
     '15': '3.75rem',
     '16': '4rem',
+    '17': '4.25rem',
+    '18': '4.5rem',
   },
   transitions: {
     timingFunction: 'cubic-bezier(.56, -0.93, .47, 1.92)',
