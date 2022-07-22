@@ -7,6 +7,7 @@ import { MailingList } from '~/blocks/MailingList';
 import type { UpsellsProps } from '~/blocks/Upsells';
 import { Upsells } from '~/blocks/Upsells';
 import { Wrapper } from '~/components/atoms/Wrapper';
+import { FOOTER_TOP_OFFSET, Footer } from '~/components/compositions/Footer';
 import {
   HERO_BOTTOM_HEIGHT,
   HeroBody,
@@ -82,9 +83,15 @@ const SpeakersPage: FC<PageProps> = ({ data }) => {
 
       {page.upsells && <Upsells upsells={page.upsells as UpsellsProps['upsells']} />}
 
-      <Wrapper wrapperPadding="x4" wrapperWidth="medium">
+      <Wrapper
+        wrapperPadding="x4"
+        wrapperWidth="medium"
+        css={{ marginBottom: FOOTER_TOP_OFFSET }}
+      >
         <MailingList css={{ paddingTop: '$16', paddingBottom: '$16' }} />
       </Wrapper>
+
+      <Footer />
     </Layout>
   );
 };

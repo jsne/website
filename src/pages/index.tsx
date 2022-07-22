@@ -10,6 +10,7 @@ import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';
 import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
+import { Footer } from '~/components/compositions/Footer';
 import {
   HeroBody,
   HeroBottom,
@@ -117,6 +118,8 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
       </Wrapper>
 
       {event?.venue && <Venue venue={event.venue} />}
+
+      <Footer />
     </Layout>
   );
 };

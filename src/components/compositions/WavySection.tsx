@@ -29,7 +29,7 @@ export const WavySectionRoot = styled(Box, {
     WebkitMaskPosition: 'bottom',
     maskRepeat: 'no-repeat',
     WebkitMaskRepeat: 'no-repeat',
-    withLinearGradient,
+    withLinearGradient: { variant: 'tertiary' },
   },
 
   '&::after': {
@@ -47,7 +47,7 @@ export const WavySectionRoot = styled(Box, {
     WebkitMaskRepeat: 'no-repeat',
     maskSize: '120% 69%, 120% 100%',
     WebkitMaskSize: '120% 69%, 120% 100%',
-    withLinearGradient,
+    withLinearGradient: { variant: 'tertiary' },
   },
 });
 

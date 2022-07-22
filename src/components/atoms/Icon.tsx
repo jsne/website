@@ -3,6 +3,8 @@ import type { ComponentProps } from 'react';
 import { styled } from '~/styles/stitches.config';
 
 export const Icon = styled('svg', {
+  display: 'block',
+
   variants: {
     iconAppearance: {
       body: {
