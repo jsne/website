@@ -1,6 +1,7 @@
 import { graphql } from 'gatsby';
 import type { FC } from 'react';
 
+import { Banner } from '~/blocks/Banner';
 import { MAILING_LIST_ELEMENT_ID, MailingList } from '~/blocks/MailingList';
 import type { UpsellsProps } from '~/blocks/Upsells';
 import { Upsells } from '~/blocks/Upsells';
@@ -9,7 +10,6 @@ import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';
 import { Text } from '~/components/atoms/Text';
 import { Wrapper } from '~/components/atoms/Wrapper';
-import { Header } from '~/components/compositions/Header';
 import {
   HeroBody,
   HeroBottom,
@@ -45,7 +45,7 @@ const IndexPage: FC<IndexPageProps> = ({ data }) => {
   return (
     <Layout head={{ title: page.title, description: page.description }}>
       <HeroRoot>
-        <Header />
+        <Banner css={{ marginBottom: '$6' }} />
         <HeroMain heroLayout="center" wrapperPadding="x4">
           <HeroTitle as="h1" textPreset="hero">
             {page.title}

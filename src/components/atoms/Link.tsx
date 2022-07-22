@@ -9,7 +9,7 @@ export const Link = styled(AutoLink, {
   position: 'relative',
   fontWeight: '$medium',
   borderRadius: '$1',
-  withTransition: 'outline',
+  withTransition: 'color, outline',
   textDecoration: 'none',
 
   /** @NOTE Using psuedo-element to avoid box size issues. */
@@ -20,10 +20,10 @@ export const Link = styled(AutoLink, {
     left: 0,
     width: '100%',
     height: '0.125rem',
-    backgroundColor: 'CurrentColor',
+    backgroundColor: 'currentcolor',
     backgroundImage: 'inherit',
     opacity: 0,
-    withTransition: 'opacity',
+    withTransition: 'opacity, backgroundColor',
   },
 
   '&:hover': {

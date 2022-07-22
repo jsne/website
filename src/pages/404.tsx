@@ -2,21 +2,22 @@ import { Link } from 'gatsby';
 import type { FC } from 'react';
 
 import img404Src from '~/assets/images/404-1.gif';
+import { Banner } from '~/blocks/Banner';
 import { Box } from '~/components/atoms/Box';
 import { Button } from '~/components/atoms/Button';
-import { Header } from '~/components/compositions/Header';
 import { HeroBody, HeroMain, HeroRoot, HeroTitle } from '~/components/compositions/Hero';
+import { Layout } from '~/components/primitives/Layout';
 
 const NotFoundPage: FC = () => {
   return (
-    <Box
-      as="main"
-      role="main"
-      css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}
+    <Layout
+      head={{
+        title: 'Page not found',
+        description: `The page you're looking for does not exist.`,
+      }}
     >
-      <title>Not found</title>
       <HeroRoot css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-        <Header />
+        <Banner />
         <Box css={{ display: 'flex', flexGrow: 1, alignItems: 'center' }}>
           <HeroMain heroLayout="center" wrapperPadding="x4">
             <Box
@@ -40,7 +41,7 @@ const NotFoundPage: FC = () => {
           </HeroMain>
         </Box>
       </HeroRoot>
-    </Box>
+    </Layout>
   );
 };
 

@@ -5,6 +5,8 @@ import { Wrapper } from '~/components/atoms/Wrapper';
 import { keyframes, styled } from '~/styles/stitches.config';
 
 import { AutoLink } from '../primitives/AutoLink';
+import type { HeaderNavigationProps } from './HeaderNavigation';
+import { HeaderNavigation } from './HeaderNavigation';
 
 export const HeaderRoot = styled(Wrapper, {
   display: 'flex',
@@ -52,16 +54,19 @@ export const HeaderLogo = styled(Logo, {
   },
 });
 
-export interface HeaderProps {
+export interface HeaderProps extends HeaderNavigationProps {
   /** URL applied to logo. */
   logoSlug?: string;
 }
 
 /** Main website header. */
-export const Header: FC<HeaderProps> = ({ logoSlug = '/', ...props }) => (
+const HeaderUnstyled: FC<HeaderProps> = ({ logoSlug = '/', items, ...props }) => (
   <HeaderRoot as="header" wrapperPadding="x4" {...props}>
     <HeaderLink href={logoSlug} title="Go to Homepage">
       <HeaderLogo aria-hidden />
     </HeaderLink>
+    <HeaderNavigation items={items} />
   </HeaderRoot>
 );
+
+export const Header = styled(HeaderUnstyled, {});
