@@ -83,9 +83,18 @@ export const {
       };
     },
 
-    /** Apply 'outline' styles (really uses `box-shadow`). */
     withOutline: (color: ThemeColorsTokenKey = '$secondary1') => ({
       outline: `0.25rem solid $colors${color}`,
+    }),
+
+    /** Apply `outline` to elements on `:focus-visible`. */
+    withOutlineFocus: (color: ThemeColorsTokenKey = '$secondary1') => ({
+      // Set initial outline to prevent flicker of uncoloured outline on visible.
+      outline: `0 solid $colors${color}`,
+
+      '&:focus-visible': {
+        outline: `0.25rem solid $colors${color}`,
+      },
     }),
 
     /** Apply tokenised transition targeting specific CSS properties. */
